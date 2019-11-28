@@ -18,6 +18,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavBarTopComponent } from './components/nav-bar-top/nav-bar-top.component';
+import { ConnexionPageComponent } from './pages/connexion-page/connexion-page.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -35,12 +42,18 @@ import { NavBarTopComponent } from './components/nav-bar-top/nav-bar-top.compone
     AcceuilPageComponent,
     NavBarComponent,
     FooterComponent,
-    NavBarTopComponent
+    NavBarTopComponent,
+    ConnexionPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
+    MatCardModule,
+    FormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
