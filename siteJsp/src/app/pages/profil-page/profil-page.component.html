@@ -4,7 +4,7 @@
   <div class="left">
     <img [src]="currentUser.imgUrl" alt="image de l'utilisateur">
     <div class="note">
-      <p>Notes : </p>
+      <h2>Notes: </h2>
       <p>17</p>
       <p>16</p>
       <p>16</p>
@@ -14,14 +14,14 @@
   </div>
 
   <div class="right">
-    <p> {{currentUser.firstname}} {{currentUser.lastname}}</p>
+    <h1>{{currentUser.firstname}} {{currentUser.lastname}}</h1>
     <p>{{currentUser.status}}</p>
     <h2>A propos</h2>
     <ul>
-      <li>Date de naissance: {{currentUser.birthday}}</li>
-      <li>N° de téléphone: {{currentUser.tel}}</li>
-      <li>Adresse: {{currentUser.adress}}</li>
-      <li>Email: {{currentUser.email}}</li>
+      <li><label>Date de naissance:</label>     {{currentUser.birthday}}</li>
+      <li><label>N° de téléphone:</label>    {{currentUser.tel}}</li>
+      <li><label>Adresse: </label>   {{currentUser.adress}}</li>
+      <li><label>Email: </label>   {{currentUser.email}}</li>
     </ul>
   </div>
 </div>

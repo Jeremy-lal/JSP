@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  width: 30%;
+}
+img {
+  width: 100%;
+}
+.note {
+  border: 2px solid black;
+}
+.note p {
+  text-align: right;
+}
+h2 {
+  text-align: center;;
+}
+
+
+.right {
+  width: 70%;
+  padding: 0 10% 0 10%;
+}
+.right h2 {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+.right ul li {
+  font-size: 2rem;
+  margin: 2rem;
+}
+li {
+  list-style: none;
+}
+h1 {
+  font-size: 4rem;
+}
+label {
+  font-weight: bold;
+}
