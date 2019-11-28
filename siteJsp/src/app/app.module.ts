@@ -13,6 +13,11 @@ import { ProfilPageComponent } from './pages/profil-page/profil-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { ModifierPageComponent } from './pages/modifier-page/modifier-page.component';
 import { AddNoteComponent } from './pages/add-note/add-note.component';
+import { AcceuilPageComponent } from './pages/acceuil-page/acceuil-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavBarTopComponent } from './components/nav-bar-top/nav-bar-top.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +31,16 @@ import { AddNoteComponent } from './pages/add-note/add-note.component';
     ProfilPageComponent,
     AdminPageComponent,
     ModifierPageComponent,
-    AddNoteComponent
+    AddNoteComponent,
+    AcceuilPageComponent,
+    NavBarComponent,
+    FooterComponent,
+    NavBarTopComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
