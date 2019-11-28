@@ -1,4 +1,6 @@
+import { Comment } from './../../shared/models/comment';
 import { Component, OnInit } from '@angular/core';
+import { CommentService } from 'src/app/shared/services/comment.service';
 
 @Component({
   selector: 'app-jsp4-page',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Jsp4PageComponent implements OnInit {
 
-  constructor() { }
+  jsp4Comment: Comment[];
+
+  constructor(private commentService: CommentService) { }
 
   ngOnInit() {
+    this.jsp4Comment =  this.commentService.getCommunComment();
   }
-
 }

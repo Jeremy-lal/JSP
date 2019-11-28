@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.example-header-image {
+  background-image: url('https://cdn.static01.nicematin.com/media/npo/mobile_1440w/2016/01/31594295.jpg');
+  background-size: cover;
+}
+mat-card-header {
+  width: 100%;
+}
+mat-card {
+  width: 70%;
+  margin: 1.5rem;
+  align-self: center;
+}
+
+h2 {
+  text-align: center;
+}
+p {
+  font-size: 1.2rem;
+  text-align: justify;
+  padding: 0 10% 0 10%;
+}
+.logo {
+  justify-self: flex-end;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+i {
+  margin: 0 0.5rem 0 0.5rem;
+}

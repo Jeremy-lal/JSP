@@ -1,4 +1,6 @@
+import { Comment } from './../../shared/models/comment';
 import { Component, OnInit } from '@angular/core';
+import { CommentService } from 'src/app/shared/services/comment.service';
 
 @Component({
   selector: 'app-question-page',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionPageComponent implements OnInit {
 
-  constructor() { }
+  questionComment: Comment[];
+
+  constructor(private commentService: CommentService) { }
 
   ngOnInit() {
+    this.questionComment =  this.commentService.getCommunComment();
   }
-
 }

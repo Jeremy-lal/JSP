@@ -1,4 +1,6 @@
+import { Comment } from './../../shared/models/comment';
 import { Component, OnInit } from '@angular/core';
+import { CommentService } from 'src/app/shared/services/comment.service';
 
 @Component({
   selector: 'app-jsp3-page',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Jsp3PageComponent implements OnInit {
 
-  constructor() { }
+  jsp3Comment: Comment[];
+
+  constructor(private commentService: CommentService) { }
 
   ngOnInit() {
+    this.jsp3Comment =  this.commentService.getCommunComment();
   }
-
 }

@@ -1,0 +1,20 @@
+div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: black;
+}
+
+button {
+  margin: 2rem 3rem 2rem 3rem;
+  padding: 0.5rem;
+  width: 10%;
+  font-size: 1.4rem;
+  background-color: white;
+  border-radius: 30px;
+  border: none;
+}
+
+button:hover {
+  background-color: grey;
+}

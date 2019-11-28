@@ -1,1 +1,23 @@
 <app-nav-bar-top></app-nav-bar-top>
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+
+  <mat-card class="example-card" *ngFor='let comment of communComment'>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title> {{comment.user.firstname}} {{comment.user.lastname}}</mat-card-title>
+      <mat-card-subtitle>{{comment.date | date:'M/d/yy, h:mm a'}}</mat-card-subtitle>
+      <div class="logo">
+        <i class="material-icons">create</i>
+        <i class="material-icons">delete</i>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <h2>{{comment.title}}</h2>
+      <p> {{comment.content}} </p>
+    </mat-card-content>
+  </mat-card>
+
+</div>
