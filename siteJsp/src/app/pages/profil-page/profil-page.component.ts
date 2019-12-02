@@ -13,7 +13,7 @@ export class ProfilPageComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-      this.currentUser =  this.userService.currentUser;
+      // this.currentUser =  this.userService.currentUser;
   }
 
 }

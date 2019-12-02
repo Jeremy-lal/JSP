@@ -1,0 +1,37 @@
+.grandform {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.container, .result{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 15px;
+  align-items: center;
+  width: 800px;
+  height: 850px;
+  background-image: url('https://www.vocaza.com/wp-content/uploads/2018/05/background-formulaire.jpg');
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+input {
+  width: 300px;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.result {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+label{
+  display:block;
+  float:left;
+  width:300px;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  }

@@ -1,19 +1,4 @@
 <app-nav-bar-top></app-nav-bar-top>
 <app-nav-bar></app-nav-bar>
 
-<div class="container">
-
-  <mat-card class="example-card" *ngFor='let comment of jsp4Comment'>
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title> {{comment.user.firstname}} {{comment.user.lastname}}</mat-card-title>
-      <mat-card-subtitle>{{comment.date | date:'M/d/yy, h:mm a'}}</mat-card-subtitle>
-    </mat-card-header>
-
-    <mat-card-content>
-      <h2>{{comment.title}}</h2>
-      <p> {{comment.content}} </p>
-    </mat-card-content>
-  </mat-card>
-
-</div>
+<app-comment [comment]="comment" *ngFor='let comment of jsp4Comment'></app-comment>

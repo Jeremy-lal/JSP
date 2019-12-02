@@ -24,6 +24,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { CommentComponent } from './components/comment/comment.component';
+import { FormNewUserComponent } from './components/form-new-user/form-new-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -43,7 +47,10 @@ import {MatIconModule} from '@angular/material/icon';
     NavBarComponent,
     FooterComponent,
     NavBarTopComponent,
-    ConnexionPageComponent
+    ConnexionPageComponent,
+    CommentComponent,
+    FormNewUserComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatProgressSpinnerModule,
     MatCardModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

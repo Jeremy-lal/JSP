@@ -1,0 +1,92 @@
+<form [formGroup]="userForm" (ngSubmit)="submit()">
+
+  <div class="container">
+
+    <div>
+      <label>
+        Prénom:
+        <input type="text" formControlName="firstname">
+      </label>
+    </div>
+    <div>
+      <label>
+        Nom:
+        <input type="text" formControlName="lastname">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Date d'anniversaire:
+        <input type="date" formControlName="birthday">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Numéro de téléphone:
+        <input type="text" formControlName="tel">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Email:
+        <input type="text" formControlName="email">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Nom d'utilisateur:
+        <input type="text" formControlName="username">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Password:
+        <input type="text" formControlName="pwd">
+      </label>
+    </div>
+
+    <div formGroupName="address">
+      <div>
+        <label>
+          Street:
+          <input type="text" formControlName="street">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          City:
+          <input type="text" formControlName="city">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Postcode:
+          <input type="text" formControlName="postCode">
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <label>
+        Status:
+        <input type="text" formControlName="status">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Image:
+        <input type="text" formControlName="imgUrl">
+      </label>
+    </div>
+
+    <button type="submit"> Submit</button>
+  </div>
+</form>
