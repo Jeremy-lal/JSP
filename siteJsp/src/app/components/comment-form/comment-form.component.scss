@@ -1,18 +1,17 @@
 .container {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
   border-radius: 15px;
+  justify-content: center;
   align-items: center;
-  width: 600px;
-  background-image: url('https://www.vocaza.com/wp-content/uploads/2018/05/background-formulaire.jpg');
+  width: 500px;
   color: white;
   font-weight: bold;
   font-size: 2rem;
 }
 
-input {
-  width: 300px;
+input, textarea, select {
+  width: 400px;
   height: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -20,7 +19,7 @@ input {
 label{
   display:block;
   float:left;
-  width:500px;
+  width:400px;
   font-size: 1.5rem;
   color: white;
   font-weight: bold;
@@ -37,8 +36,6 @@ label{
     font-size: 2rem;
   }
 
-  select {
-    height:30px;
-    line-height:30px;
-    background:#f4f4f4;
+textarea {
+  height: 100px;
 }

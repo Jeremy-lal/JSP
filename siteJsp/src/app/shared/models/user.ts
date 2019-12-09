@@ -17,5 +17,5 @@ export class User {
     city: string;
   };
 
-  imgUrl: string;
+  imgURL: string;
 }

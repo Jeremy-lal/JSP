@@ -10,10 +10,11 @@ export class UserService {
 
   static URL = 'http://localhost:3000/api/users/';
   currentUser: User;
+  id = 1;
 
   constructor(private http: HttpClient) { }
 
-  getCurrentUser(id) {
+  getCurrentUser(id): Observable<User> {
     return this.http.get<User>(UserService.URL + id);
   }
 

@@ -16,7 +16,7 @@ export class CommunPageComponent implements OnInit {
 
   ngOnInit() {
     this.communComment =  this.commentService.getCommunComment();
-    this.userService.getCurrentUser(2).subscribe(data => this.userService.currentUser = data);
+    this.userService.getCurrentUser(2).subscribe(data => this.userService.currentUser = data[0]);
   }
 
 }

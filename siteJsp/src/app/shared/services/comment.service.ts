@@ -7,8 +7,10 @@ import { Injectable } from '@angular/core';
 })
 export class CommentService {
 
-  static URL = 'url/';
-  commentsCommun: Comment[]
+  static URL = 'http://localhost:3000/api/comment/';
+
+  toUpdate = false;
+  commentsCommun: Comment[];
   // = [
   //   {
   //     id: 1,
@@ -111,7 +113,7 @@ export class CommentService {
   }
 
   createComment(newComment) {
-    this.http.post(CommentService.URL, newComment);
+    return this.http.post(CommentService.URL, newComment);
   }
 
   updateUser(updateComment) {

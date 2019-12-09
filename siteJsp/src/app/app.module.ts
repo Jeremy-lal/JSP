@@ -29,7 +29,9 @@ import { CommentComponent } from './components/comment/comment.component';
 import { FormNewUserComponent } from './components/form-new-user/form-new-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormNewNoteComponent } from './components/form-new-note/form-new-note.component';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatDialog, MatDialogModule } from '@angular/material';
+import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { OpenCommentFromComponent } from './components/open-comment-from/open-comment-from.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { MatInputModule } from '@angular/material';
     ConnexionPageComponent,
     CommentComponent,
     FormNewUserComponent,
-    FormNewNoteComponent
+    FormNewNoteComponent,
+    CommentFormComponent,
+    OpenCommentFromComponent
   ],
   imports: [
     BrowserModule,
@@ -64,9 +68,11 @@ import { MatInputModule } from '@angular/material';
     MatIconModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CommentFormComponent]
 })
 export class AppModule { }

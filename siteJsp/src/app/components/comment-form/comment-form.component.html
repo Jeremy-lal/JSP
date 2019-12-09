@@ -1,0 +1,30 @@
+<form [formGroup]="commentForm" (ngSubmit)="sendComment()">
+
+  <div class="container">
+    <h2>Ajouter un commentaire</h2>
+    <div>
+      <label>
+        Titre du commentaire:
+        <input type="text" formControlName="title">
+      </label>
+    </div>
+    <div>
+      <label>
+        Contenu:
+        <textarea type="text" formControlName="content"></textarea>
+      </label>
+    </div>
+
+    <select name="grp" class="choose" formControlName="grp">
+        <option value="">--Choisir un groupe--</option>
+        <option value="Commun">Commun</option>
+        <option value="Jsp1">Jsp1</option>
+        <option value="Jsp2">Jsp2</option>
+        <option value="Jsp3">Jsp3</option>
+        <option value="Jsp4">Jsp4</option>
+        <option value="Question">Question</option>
+    </select>
+
+    <button type="submit"> Ajouter </button>
+  </div>
+</form>
