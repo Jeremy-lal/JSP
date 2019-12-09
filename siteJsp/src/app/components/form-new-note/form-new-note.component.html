@@ -1,0 +1,20 @@
+<form [formGroup]="noteForm" (ngSubmit)="submit()">
+
+  <div class="container">
+    <h2>Ajouter une note</h2>
+    <div>
+      <label>
+        Nom de la note:
+        <input type="text" formControlName="titlenote">
+      </label>
+    </div>
+    <div>
+      <label>
+        Note:
+        <input type="text" formControlName="score">
+      </label>
+    </div>
+
+    <button type="submit"> Ajouter </button>
+  </div>
+</form>

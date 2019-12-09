@@ -28,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommentComponent } from './components/comment/comment.component';
 import { FormNewUserComponent } from './components/form-new-user/form-new-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormNewNoteComponent } from './components/form-new-note/form-new-note.component';
+import { MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ConnexionPageComponent,
     CommentComponent,
     FormNewUserComponent,
-
+    FormNewNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +63,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatIconModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

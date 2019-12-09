@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="left">
-    <img [src]="currentUser.imgUrl" alt="image de l'utilisateur">
+    <img [src]="currentUser[0].imgUrl" alt="image de l'utilisateur">
     <div class="note">
       <h2>Notes: </h2>
       <p>17</p>
@@ -14,7 +14,7 @@
   </div>
 
   <div class="right">
-    <h1>{{currentUser.firstname}} {{currentUser.lastname}}</h1>
+    <h1>{{currentUser[0].firstname}} {{currentUser[0].lastname}}</h1>
     <p>{{currentUser.status}}</p>
     <h2>A propos</h2>
     <ul>
