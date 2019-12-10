@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   static URL = 'http://localhost:3000/api/users/';
+  toUpdate = false;
   currentUser: User;
   id = 1;
 
@@ -43,7 +44,7 @@ export class UserService {
   }
 
   createUser(newUser) {
-    this.http.post(UserService.URL, newUser);
+    return this.http.post(UserService.URL, newUser);
   }
 
   updateUser(newUser) {

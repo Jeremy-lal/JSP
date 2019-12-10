@@ -1,6 +1,8 @@
+import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { User } from 'src/app/shared/models/user';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-form-new-user',
@@ -34,13 +36,20 @@ export class FormNewUserComponent implements OnInit {
 
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<FormNewUserComponent>, private userService: UserService) { }
 
   ngOnInit() {
   }
 
   submit() {
     console.log(this.userForm.value);
+  }
+  sendUser(): void {
+    const userToPost = this.userForm.value;
+    this.userService.createUser(userToPost).subscribe((eventPosted) => {
+      console.log(eventPosted);
+    });
+    this.dialogRef.close();
   }
 
 }

@@ -9,6 +9,9 @@ import { Injectable } from '@angular/core';
 export class NoteService {
 
   static noteUrl = 'url';
+
+  toUpdate = false;
+
   constructor(private http: HttpClient, private userService: UserService) { }
 
   addNote(note: Note) {

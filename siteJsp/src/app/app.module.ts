@@ -73,6 +73,6 @@ import { OpenCommentFromComponent } from './components/open-comment-from/open-co
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [CommentFormComponent]
+  entryComponents: [CommentFormComponent, FormNewUserComponent]
 })
 export class AppModule { }
