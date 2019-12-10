@@ -19,28 +19,28 @@ export class UserService {
     return this.http.get<User>(UserService.URL + id);
   }
 
-  getAllUsers() {
-    this.http.get(UserService.URL);
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(UserService.URL);
   }
 
-  getjsp1() {
-    this.http.get(UserService.URL + 'role/jsp1' );
+  getjsp1(): Observable<User[]> {
+    return this.http.get<User[]>(UserService.URL + 'role/jsp1' );
   }
 
-  getjsp2() {
-    this.http.get(UserService.URL + 'role/jsp2' );
+  getjsp2(): Observable<User[]> {
+    return this.http.get<User[]>(UserService.URL + 'role/jsp2' );
   }
 
-  getjsp3() {
-    this.http.get(UserService.URL + 'role/jsp3' );
+  getjsp3(): Observable<User[]> {
+    return this.http.get<User[]>(UserService.URL + 'role/jsp3' );
   }
 
-  getjsp4() {
-    this.http.get(UserService.URL + 'role/jsp4' );
+  getjsp4(): Observable<User[]> {
+    return this.http.get<User[]>(UserService.URL + 'role/jsp4' );
   }
 
-  getAdmin() {
-    this.http.get(UserService.URL + 'role/admin' );
+  getAdmin(): Observable<User[]> {
+    return this.http.get<User[]>(UserService.URL + 'role/admin' );
   }
 
   createUser(newUser) {
@@ -48,11 +48,11 @@ export class UserService {
   }
 
   updateUser(newUser) {
-    this.http.put(UserService.URL, newUser);
+    return this.http.put(UserService.URL, newUser);
   }
 
   deleteUser(id) {
-    this.http.delete(UserService.URL + id);
+    return this.http.delete(UserService.URL + id);
   }
 
 }

@@ -1,18 +1,70 @@
 <app-nav-bar-top></app-nav-bar-top>
 
-<!-- <div class="container">
-  <div class="op1"> Créer un utilisateur </div>
-  <div class="op2" routerLink="/modifier"> Modifier un utilisateur </div>
-  <div class="op3" routerLink="/note"> Ajouter une note</div>
-</div> -->
+
+<div class="micro"> utilisateur <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
 
 <div class="container">
-  <div class="micro">
-  utilisateur <i class="material-icons" (click)="openUserForm()"> add_circle_outline </i></div>
-</div>
+  <h2>JSP1</h2>
+  <div class="pers" *ngFor="let pers1 of listjsp1">
+    <div class="identity">
+      <p>{{pers1.firstname}}</p>
+      <p>{{pers1.lastname}}</p>
+    </div>
+    <div class="action">
+      <div class="addnote"> note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+      <div class="modif"> <i class="material-icons"> create </i></div>
+      <div class="deleteUser"> <i class="material-icons"> delete </i></div>
+    </div>
+  </div>
 
+  <h2>JSP2</h2>
+  <div class="pers" *ngFor="let pers2 of listjsp2">
+    <div class="identity">
+      <p>{{pers2.firstname}}</p>
+      <p>{{pers2.lastname}}</p>
+    </div>
+    <div class="action">
+      <div class="addnote"> note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+      <div class="modif"> <i class="material-icons"> create </i></div>
+      <div class="deleteUser"> <i class="material-icons"> delete </i></div>
+    </div>
+  </div>
 
-<div class="action">
-    <div class="micro">
-        note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+  <h2>JSP3</h2>
+  <div class="pers" *ngFor="let pers3 of listjsp3">
+    <div class="identity">
+      <p>{{pers3.firstname}}</p>
+      <p>{{pers3.lastname}}</p>
+    </div>
+    <div class="action">
+      <div class="addnote"> note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+      <div class="modif"> <i class="material-icons"> create </i></div>
+      <div class="deleteUser"> <i class="material-icons"> delete </i></div>
+    </div>
+  </div>
+
+  <h2>JSP4</h2>
+  <div class="pers" *ngFor="let pers4 of listjsp4">
+    <div class="identity">
+      <p>{{pers4.firstname}}</p>
+      <p>{{pers4.lastname}}</p>
+    </div>
+    <div class="action">
+      <div class="addnote"> note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+      <div class="modif"> <i class="material-icons"> create </i></div>
+      <div class="deleteUser"> <i class="material-icons"> delete </i></div>
+    </div>
+  </div>
+
+  <h2>Admin</h2>
+  <div class="pers" *ngFor="let persa of listadmin">
+    <div class="identity">
+      <p>{{persa.firstname}}</p>
+      <p>{{persa.lastname}}</p>
+    </div>
+    <div class="action">
+      <div class="modif"> <i class="material-icons"> create </i></div>
+      <div class="deleteUser"> <i class="material-icons"> delete </i></div>
+    </div>
+  </div>
 </div>
