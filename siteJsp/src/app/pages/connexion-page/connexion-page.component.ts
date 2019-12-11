@@ -1,3 +1,4 @@
+import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -11,14 +12,16 @@ export class ConnexionPageComponent implements OnInit {
   username: string;
   password: string;
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private userService: UserService) { }
 
   ngOnInit() {
   }
 
-
   login() {
-    this.route.navigateByUrl('/commun');
+    this.userService.getCurrentUser(1).subscribe(data => {
+      this.userService.currentUser = data[0];
+      this.route.navigateByUrl('/commun');
+    });
   }
 
 

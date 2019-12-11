@@ -9,11 +9,11 @@ import { CommentService } from 'src/app/shared/services/comment.service';
 })
 export class Jsp4PageComponent implements OnInit {
 
-  jsp4Comment: Comment[];
+  jsp4Comments: Comment[];
 
   constructor(private commentService: CommentService) { }
 
   ngOnInit() {
-    this.jsp4Comment =  this.commentService.getCommunComment();
+    this.commentService.getJsp4Comment().subscribe(((data: Comment[]) => this.jsp4Comments = data));
   }
 }

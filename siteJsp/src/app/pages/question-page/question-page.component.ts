@@ -9,11 +9,11 @@ import { CommentService } from 'src/app/shared/services/comment.service';
 })
 export class QuestionPageComponent implements OnInit {
 
-  questionComment: Comment[];
+  questionComments: Comment[];
 
   constructor(private commentService: CommentService) { }
 
   ngOnInit() {
-    this.questionComment =  this.commentService.getCommunComment();
+    this.commentService.getQuestionComment().subscribe(((data: Comment[]) => this.questionComments = data));
   }
 }

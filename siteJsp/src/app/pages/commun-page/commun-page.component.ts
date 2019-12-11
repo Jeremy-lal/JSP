@@ -1,3 +1,4 @@
+import { User } from 'src/app/shared/models/user';
 import { UserService } from './../../shared/services/user.service';
 import { Comment } from './../../shared/models/comment';
 import { CommentService } from './../../shared/services/comment.service';
@@ -10,13 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommunPageComponent implements OnInit {
 
-  communComment: Comment[];
+  communComments: Comment[];
+  currentUser: User;
 
   constructor(private commentService: CommentService, private userService: UserService) { }
 
   ngOnInit() {
-    this.communComment =  this.commentService.getCommunComment();
-    this.userService.getCurrentUser(1).subscribe(data => this.userService.currentUser = data[0]);
+    this.commentService.getCommunComment().subscribe(((data: Comment[]) => this.communComments = data));
+
+    this.currentUser = this.userService.currentUser;
   }
 
 }

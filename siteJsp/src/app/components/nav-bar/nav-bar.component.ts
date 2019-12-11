@@ -1,3 +1,5 @@
+import { User } from 'src/app/shared/models/user';
+import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  currentUser: User;
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.currentUser = this.userService.currentUser;
   }
 
 }
