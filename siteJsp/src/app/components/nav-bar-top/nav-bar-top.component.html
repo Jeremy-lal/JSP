@@ -3,7 +3,7 @@
     <p>Section JSP Mérignac</p>
   </div>
   <div class="logo">
-    <i class="material-icons" routerLink="/admin" >dashboard</i>
+    <i class="material-icons" routerLink="/admin" *ngIf="(currentUser.status=='Admin')||(currentUser.status=='superAdmin')">dashboard</i>
     <i class="material-icons" routerLink="/profil">perm_identity</i>
     <i class="material-icons" routerLink="/">power_settings_new</i>
   </div>

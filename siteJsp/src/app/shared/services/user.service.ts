@@ -2,6 +2,7 @@ import { User } from './../models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LocalStorage } from '@ngx-pwa/local-storage';
 
 @Injectable({
   providedIn: 'root'
@@ -13,46 +14,49 @@ export class UserService {
   currentUser: User;
   id = 1;
 
-  constructor(private http: HttpClient) { }
+  // localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
 
-  getCurrentUser(id): Observable<User> {
-    return this.http.get<User>(UserService.URL + id);
-  }
 
-  getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL);
-  }
+constructor(private http: HttpClient) { }
 
-  getjsp1(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/jsp1' );
-  }
+getCurrentUser(id): Observable < User > {
+  return this.http.get<User>(UserService.URL + id);
+}
 
-  getjsp2(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/jsp2' );
-  }
+getAllUsers(): Observable < User[] > {
+  return this.http.get<User[]>(UserService.URL);
+}
 
-  getjsp3(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/jsp3' );
-  }
+getjsp1(): Observable < User[] > {
+  return this.http.get<User[]>(UserService.URL + 'role/jsp1');
+}
 
-  getjsp4(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/jsp4' );
-  }
+getjsp2(): Observable < User[] > {
+  return this.http.get<User[]>(UserService.URL + 'role/jsp2');
+}
 
-  getAdmin(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/admin' );
-  }
+getjsp3(): Observable < User[] > {
+  return this.http.get<User[]>(UserService.URL + 'role/jsp3');
+}
 
-  createUser(newUser) {
-    return this.http.post(UserService.URL, newUser);
-  }
+getjsp4(): Observable < User[] > {
+  return this.http.get<User[]>(UserService.URL + 'role/jsp4');
+}
 
-  updateUser(newUser) {
-    return this.http.put(UserService.URL, newUser);
-  }
+getAdmin(): Observable < User[] > {
+  return this.http.get<User[]>(UserService.URL + 'role/admin');
+}
 
-  deleteUser(id) {
-    return this.http.delete(UserService.URL + id);
-  }
+createUser(newUser) {
+  return this.http.post(UserService.URL, newUser);
+}
+
+updateUser(newUser) {
+  return this.http.put(UserService.URL, newUser);
+}
+
+deleteUser(id) {
+  return this.http.delete(UserService.URL + id);
+}
 
 }

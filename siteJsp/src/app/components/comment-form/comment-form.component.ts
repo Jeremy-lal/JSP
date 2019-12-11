@@ -15,7 +15,7 @@ export class CommentFormComponent implements OnInit {
     title: [''],
     content: [''],
     grp: [''],
-    user_id: [this.userService.id]
+    user_id: [this.userService.currentUser.id]
   });
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<CommentFormComponent>, private commentService: CommentService,
               private userService: UserService) { }

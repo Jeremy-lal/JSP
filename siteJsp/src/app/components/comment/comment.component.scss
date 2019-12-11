@@ -8,6 +8,9 @@
 .example-header-image {
   background-image: url('https://cdn.static01.nicematin.com/media/npo/mobile_1440w/2016/01/31594295.jpg');
   background-size: cover;
+  width: 3%;
+  border: 2px solid red;
+  border-radius: 10px;
 }
 mat-card-header {
   width: 100%;
@@ -16,6 +19,9 @@ mat-card {
   width: 70%;
   margin: 1.5rem;
   align-self: center;
+}
+.name {
+  width:37%;
 }
 
 h2 {
@@ -28,7 +34,7 @@ p {
 }
 .logo {
   justify-self: flex-end;
-  width: 100%;
+  width: 60%;
   display: flex;
   justify-content: flex-end;
 }
