@@ -5,12 +5,15 @@
   width: 100%;
 }
 
-.example-header-image {
-  background-image: url('https://cdn.static01.nicematin.com/media/npo/mobile_1440w/2016/01/31594295.jpg');
-  background-size: cover;
-  width: 3%;
-  border: 2px solid red;
-  border-radius: 10px;
+.roundedImage {
+	overflow:hidden;
+	-webkit-border-radius:50px;
+	-moz-border-radius: 50%;
+	border-radius:50px;
+	width:70px;
+  height:70px;
+  margin-right: 1rem;
+  border: 1px solid rgba(255,255,255,0.7);
 }
 mat-card-header {
   width: 100%;
@@ -19,9 +22,13 @@ mat-card {
   width: 70%;
   margin: 1.5rem;
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
 }
 .name {
-  width:37%;
+  width:33%;
 }
 
 h2 {
@@ -41,4 +48,20 @@ p {
 
 i {
   margin: 0 0.5rem 0 0.5rem;
+}
+
+button {
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 0.5rem;
+  color: white;
+  align-self: flex-end;
+}
+
+mat-card-content {
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 70%;
 }

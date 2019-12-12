@@ -14,7 +14,6 @@ export class ProfilPageComponent implements OnInit {
 
   ngOnInit() {
       this.currentUser =  this.userService.currentUser;
-      console.log(this.currentUser);
   }
 
 }

@@ -1,3 +1,4 @@
+import { User } from 'src/app/shared/models/user';
 import { UserService } from './../../shared/services/user.service';
 import { CommentService } from './../../shared/services/comment.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,10 +18,13 @@ export class CommentFormComponent implements OnInit {
     grp: [''],
     user_id: [this.userService.currentUser.id]
   });
+
+  currentUser: User;
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<CommentFormComponent>, private commentService: CommentService,
               private userService: UserService) { }
 
   ngOnInit() {
+    this.currentUser = this.userService.currentUser;
   }
 
   sendComment(): void {

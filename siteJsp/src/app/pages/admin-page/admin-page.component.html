@@ -1,7 +1,8 @@
 <app-nav-bar-top></app-nav-bar-top>
 
-
-<div class="micro"> utilisateur <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+<div class="addUser">
+  <div class="micro"> utilisateur <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+</div>
 
 <div class="container">
   <h2>JSP1</h2>
@@ -26,7 +27,7 @@
     <div class="action">
       <div class="addnote"> note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
       <div class="modif"> <i class="material-icons"> create </i></div>
-      <div class="deleteUser"> <i class="material-icons"> delete </i></div>
+      <div class="deleteUser"> <i class="material-icons" (click)="deleteUser(pers2.id)"> delete </i></div>
     </div>
   </div>
 

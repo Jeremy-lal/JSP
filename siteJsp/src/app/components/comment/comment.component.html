@@ -2,14 +2,14 @@
 
   <mat-card class="example-card">
     <mat-card-header>
-      <img [src]="comment.imgURL" alt="phto utilisateur" class="example-header-image">
+      <img [src]="comment.imgURL" alt="phto utilisateur" class="roundedImage">
       <div class="name">
         <mat-card-title> {{comment.firstname}} {{comment.lastname}}</mat-card-title>
         <mat-card-subtitle>{{comment.createAt | date:'M/d/yy, h:mm a'}}</mat-card-subtitle>
       </div>
-      <div class="logo">
+      <div class="logo" *ngIf="(comment.user_id == currentUser.id) || (currentUser.status=='Admin')||(currentUser.status=='superAdmin')">
         <i class="material-icons">create</i>
-        <i class="material-icons">delete</i>
+        <i class="material-icons" (click)="deleteComment(comment.id)">delete</i>
       </div>
     </mat-card-header>
 
@@ -17,6 +17,9 @@
       <h2>{{comment.title}}</h2>
       <p> {{comment.content}} </p>
     </mat-card-content>
+
+    <button>Commentaire</button>
+
   </mat-card>
 
 </div>

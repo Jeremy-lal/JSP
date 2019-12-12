@@ -45,7 +45,7 @@ export class AdminPageComponent implements OnInit {
   }
 
   deleteUser(id: number) {
-    // this.userService.deleteUser.subscribe(id);
+    this.userService.deleteUser(id).subscribe();
   }
 
 }

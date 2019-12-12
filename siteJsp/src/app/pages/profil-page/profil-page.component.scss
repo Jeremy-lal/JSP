@@ -8,22 +8,30 @@
 }
 img {
   width: 100%;
+  border-radius: 15px;
 }
 .note {
   border: 2px solid black;
+  width: 100%;
+  margin: 1rem;
+  border-radius: 15px;
 }
 .note p {
   text-align: right;
+  padding-right: 1rem;
 }
 h2 {
   text-align: center;;
 }
 
-
 .right {
   width: 70%;
   padding: 0 10% 0 10%;
 }
+.right p {
+  font-size: 2rem;
+}
+
 .right h2 {
   font-size: 3rem;
   margin-bottom: 5rem;
@@ -40,4 +48,8 @@ h1 {
 }
 label {
   font-weight: bold;
+}
+
+img {
+  margin: 1rem;
 }
