@@ -1,0 +1,11 @@
+<div class="pers">
+  <div class="identity">
+    <p>{{pers.firstname}}</p>
+    <p>{{pers.lastname}}</p>
+  </div>
+  <div class="action">
+    <div class="addnote"> note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+    <div class="modif"> <i class="material-icons"> create </i></div>
+    <div class="deleteUser"> <i class="material-icons" (click)="deleteUser(pers.id)"> delete </i></div>
+  </div>
+</div>

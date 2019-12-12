@@ -1,9 +1,8 @@
 import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/models/user';
 import { MatDialog } from '@angular/material';
 import { FormNewUserComponent } from 'src/app/components/form-new-user/form-new-user.component';
-import { NoteService } from 'src/app/shared/services/note.service';
-import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-admin-page',
@@ -12,14 +11,13 @@ import { User } from 'src/app/shared/models/user';
 })
 export class AdminPageComponent implements OnInit {
 
-  constructor(private userService: UserService, public dialog: MatDialog, private noteService: NoteService) { }
+  constructor(private userService: UserService, public dialog: MatDialog) { }
 
   listjsp1: User[];
   listjsp2: User[];
   listjsp3: User[];
   listjsp4: User[];
   listadmin: User[];
-  4;
 
   ngOnInit() {
     this.userService.getjsp1().subscribe((jsp1: User[]) => this.listjsp1 = jsp1);
@@ -29,23 +27,11 @@ export class AdminPageComponent implements OnInit {
     this.userService.getAdmin().subscribe((admin: User[]) => this.listadmin = admin);
   }
 
-
   openUserForm(): void {
     this.userService.toUpdate = false;
     const dialogRef = this.dialog.open(FormNewUserComponent, {
       width: '550px',
     });
-  }
-
-  openNoteForm() {
-    this.noteService.toUpdate = false;
-    const dialogRef = this.dialog.open(FormNewUserComponent, {
-      width: '550px',
-    });
-  }
-
-  deleteUser(id: number) {
-    this.userService.deleteUser(id).subscribe();
   }
 
 }

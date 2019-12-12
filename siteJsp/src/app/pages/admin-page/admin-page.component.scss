@@ -4,39 +4,12 @@
   justify-content: center;
   align-items: center;
 }
-
-.pers {
-  display: flex;
-  flex-direction: row;
-  border-radius: 10px;
-  margin-bottom: 0.5rem;
-  border: 2px solid black;
-  width:70%;
+h2 {
+  text-align: center;;
 }
 
-.identity, .action {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-}
-
-.action {
-  display: flex;
-  justify-content: flex-end;
-}
-.action div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-i {
-  margin-right: 1.5rem;
-
-}
-
-p {
-  margin-left: 0.5rem;
+app-user-admin {
+  width: 70%;
 }
 
 .addUser {

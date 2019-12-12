@@ -50,11 +50,17 @@
       </label>
     </div>
 
-    <div formGroupName ="adress">
+    <div formGroupName="adress">
       <div>
         <label>
           Rue:
           <input type="text" formControlName="street">
+        </label>
+      </div>
+      <div>
+        <label>
+          Code postal:
+          <input type="text" formControlName="postcode">
         </label>
       </div>
 
@@ -65,20 +71,23 @@
         </label>
       </div>
 
-      <div>
-        <label>
-          Code postal:
-          <input type="text" formControlName="postcode">
-        </label>
-      </div>
     </div>
 
     <div>
       <label>
         Status:
-        <input type="text" formControlName="status">
+        <select name="grp" class="choose" formControlName="status">
+          <option value="">--Choisir un groupe--</option>
+          <option value="Jsp1">Jsp1</option>
+          <option value="Jsp2">Jsp2</option>
+          <option value="Jsp3">Jsp3</option>
+          <option value="Jsp4">Jsp4</option>
+          <option value="admin">Admin</option>
+          <option value="superAdmin" *ngIf="(currentUser.status=='superAdmin')">SuperAdmin</option>
+        </select>
       </label>
     </div>
+
 
     <div>
       <label>

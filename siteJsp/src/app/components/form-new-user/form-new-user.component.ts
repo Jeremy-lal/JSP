@@ -11,6 +11,7 @@ import { MatDialogRef } from '@angular/material';
 })
 export class FormNewUserComponent implements OnInit {
 
+  currentUser: User;
   user = new User();
 
   userForm = this.fb.group({
@@ -39,6 +40,7 @@ export class FormNewUserComponent implements OnInit {
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<FormNewUserComponent>, private userService: UserService) { }
 
   ngOnInit() {
+      this.currentUser = this.userService.currentUser;
   }
 
   submit() {
