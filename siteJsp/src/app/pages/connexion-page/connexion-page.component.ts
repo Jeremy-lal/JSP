@@ -18,7 +18,7 @@ export class ConnexionPageComponent implements OnInit {
   }
 
   login() {
-    this.userService.getCurrentUser(2).subscribe(data => {
+    this.userService.getCurrentUser(3).subscribe(data => {
       this.userService.currentUser = data[0];
       this.route.navigateByUrl('/commun');
     });
