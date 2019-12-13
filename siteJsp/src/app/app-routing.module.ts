@@ -1,5 +1,3 @@
-import { AddNoteComponent } from './pages/add-note/add-note.component';
-import { ModifierPageComponent } from './pages/modifier-page/modifier-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { ProfilPageComponent } from './pages/profil-page/profil-page.component';
 import { Jsp4PageComponent } from './pages/jsp4-page/jsp4-page.component';
@@ -25,9 +23,6 @@ const routes: Routes = [
   { path: 'jsp4', component: Jsp4PageComponent },
   { path: 'profil', component: ProfilPageComponent },
   { path: 'admin', component: AdminPageComponent },
-  { path: 'modifier', component: ModifierPageComponent },
-  { path: 'note', component: AddNoteComponent  },
-
 ];
 
 @NgModule({

@@ -11,8 +11,6 @@ import { Jsp3PageComponent } from './pages/jsp3-page/jsp3-page.component';
 import { Jsp4PageComponent } from './pages/jsp4-page/jsp4-page.component';
 import { ProfilPageComponent } from './pages/profil-page/profil-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
-import { ModifierPageComponent } from './pages/modifier-page/modifier-page.component';
-import { AddNoteComponent } from './pages/add-note/add-note.component';
 import { AcceuilPageComponent } from './pages/acceuil-page/acceuil-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -45,8 +43,6 @@ import { UserAdminComponent } from './components/user-admin/user-admin.component
     Jsp4PageComponent,
     ProfilPageComponent,
     AdminPageComponent,
-    ModifierPageComponent,
-    AddNoteComponent,
     AcceuilPageComponent,
     NavBarComponent,
     FooterComponent,
@@ -71,7 +67,8 @@ import { UserAdminComponent } from './components/user-admin/user-admin.component
     HttpClientModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

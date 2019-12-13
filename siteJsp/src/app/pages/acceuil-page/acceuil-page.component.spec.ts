@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AcceuilPageComponent } from './acceuil-page.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AcceuilPageComponent', () => {
   let component: AcceuilPageComponent;
@@ -8,7 +9,8 @@ describe('AcceuilPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AcceuilPageComponent ]
+      declarations: [ AcceuilPageComponent ],
+      imports: [RouterTestingModule],
     })
     .compileComponents();
   }));

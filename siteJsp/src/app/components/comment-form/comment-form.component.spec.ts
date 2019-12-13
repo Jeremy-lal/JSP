@@ -1,3 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommentFormComponent } from './comment-form.component';
@@ -8,9 +11,21 @@ describe('CommentFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommentFormComponent ]
+      declarations: [
+        CommentFormComponent,
+      ],
+      imports: [
+        ReactiveFormsModule,
+        MatDialogModule,
+        HttpClientTestingModule
+      ],
+      providers: [
+        {
+          provide: MatDialogRef,
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

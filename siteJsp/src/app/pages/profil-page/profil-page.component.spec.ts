@@ -1,3 +1,5 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NavBarTopComponent } from './../../components/nav-bar-top/nav-bar-top.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfilPageComponent } from './profil-page.component';
@@ -8,9 +10,12 @@ describe('ProfilPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfilPageComponent ]
+      declarations: [
+        ProfilPageComponent,
+        NavBarTopComponent],
+      imports: [HttpClientTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,3 +1,7 @@
+import { MatDialogModule } from '@angular/material';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { UserAdminComponent } from './../../components/user-admin/user-admin.component';
+import { NavBarTopComponent } from './../../components/nav-bar-top/nav-bar-top.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminPageComponent } from './admin-page.component';
@@ -8,9 +12,16 @@ describe('AdminPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminPageComponent ]
+      declarations: [
+        AdminPageComponent,
+        NavBarTopComponent,
+        UserAdminComponent
+      ],
+      imports: [
+        HttpClientTestingModule,
+        MatDialogModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

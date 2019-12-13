@@ -17,11 +17,11 @@
 
     <select name="grp" class="choose" formControlName="grp">
         <option value="">--Choisir un groupe--</option>
-        <option value="Commun" *ngIf="(currentUser.status=='Admin')|| (currentUser.status=='superAdmin')">Commun</option>
-        <option value="Jsp1" *ngIf="(currentUser.status=='Admin')||(currentUser.status=='Jsp1') || (currentUser.status=='superAdmin')">Jsp1</option>
-        <option value="Jsp2" *ngIf="(currentUser.status=='Admin')||(currentUser.status=='Jsp2') || (currentUser.status=='superAdmin')">Jsp2</option>
-        <option value="Jsp3" *ngIf="(currentUser.status=='Admin')||(currentUser.status=='Jsp3') || (currentUser.status=='superAdmin')">Jsp3</option>
-        <option value="Jsp4" *ngIf="(currentUser.status=='Admin')||(currentUser.status=='Jsp4') || (currentUser.status=='superAdmin')">Jsp4</option>
+        <option value="Commun" *ngIf="(currentUser?.status=='Admin')|| (currentUser?.status=='superAdmin')">Commun</option>
+        <option value="Jsp1" *ngIf="(currentUser?.status=='Admin')||(currentUser?.status=='Jsp1') || (currentUser?.status=='superAdmin')">Jsp1</option>
+        <option value="Jsp2" *ngIf="(currentUser?.status=='Admin')||(currentUser?.status=='Jsp2') || (currentUser?.status=='superAdmin')">Jsp2</option>
+        <option value="Jsp3" *ngIf="(currentUser?.status=='Admin')||(currentUser?.status=='Jsp3') || (currentUser?.status=='superAdmin')">Jsp3</option>
+        <option value="Jsp4" *ngIf="(currentUser?.status=='Admin')||(currentUser?.status=='Jsp4') || (currentUser?.status=='superAdmin')">Jsp4</option>
         <option value="Question">Question</option>
     </select>
 

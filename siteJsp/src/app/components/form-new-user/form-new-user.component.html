@@ -83,7 +83,7 @@
           <option value="Jsp3">Jsp3</option>
           <option value="Jsp4">Jsp4</option>
           <option value="admin">Admin</option>
-          <option value="superAdmin" *ngIf="(currentUser.status=='superAdmin')">SuperAdmin</option>
+          <option value="superAdmin" *ngIf="(currentUser?.status=='superAdmin')">SuperAdmin</option>
         </select>
       </label>
     </div>

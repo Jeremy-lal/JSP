@@ -1,3 +1,5 @@
+import { MatDialog, MatDialogModule } from '@angular/material';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OpenCommentFromComponent } from './open-comment-from.component';
@@ -8,9 +10,14 @@ describe('OpenCommentFromComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OpenCommentFromComponent ]
+      declarations: [
+        OpenCommentFromComponent,
+      ],
+      imports: [
+        HttpClientTestingModule,
+        MatDialogModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

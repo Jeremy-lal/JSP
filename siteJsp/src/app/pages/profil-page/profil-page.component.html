@@ -2,8 +2,8 @@
 
 <div class="container">
   <div class="left">
-    <img [src]="currentUser.imgURL" alt="image de l'utilisateur">
-    <div class="note" *ngIf="(currentUser.status =='Admin') == false ||(currentUser.status !='superAdmin') == false">
+    <img [src]="currentUser?.imgURL" alt="image de l'utilisateur">
+    <div class="note" *ngIf="(currentUser?.status =='Admin') == false ||(currentUser?.status !='superAdmin') == false">
       <h2>Notes: </h2>
       <p>17</p>
       <p>16</p>
@@ -14,14 +14,14 @@
   </div>
 
   <div class="right">
-    <h1>{{currentUser.firstname}} {{currentUser.lastname}}</h1>
-    <p>Status : {{currentUser.status}}</p>
+    <h1>{{currentUser?.firstname}} {{currentUser?.lastname}}</h1>
+    <p>Status : {{currentUser?.status}}</p>
     <h2>A propos</h2>
     <ul>
-      <li><label>Date de naissance:</label>     {{currentUser.birthday | date :'mediumDate'}}</li>
-      <li><label>N° de téléphone:</label>    {{currentUser.tel}}</li>
-      <li><label>Adresse: </label>   {{currentUser.adress}}</li>
-      <li><label>Email: </label>   {{currentUser.email}}</li>
+      <li><label>Date de naissance:</label>     {{currentUser?.birthday | date :'mediumDate'}}</li>
+      <li><label>N° de téléphone:</label>    {{currentUser?.tel}}</li>
+      <li><label>Adresse: </label>   {{currentUser?.adress}}</li>
+      <li><label>Email: </label>   {{currentUser?.email}}</li>
     </ul>
   </div>
 </div>
