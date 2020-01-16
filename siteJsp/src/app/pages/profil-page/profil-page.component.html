@@ -3,7 +3,7 @@
 <div class="container">
   <div class="left">
     <img [src]="currentUser?.imgURL" alt="image de l'utilisateur">
-    <div class="note" *ngIf="(currentUser?.status =='Admin') == false ||(currentUser?.status !='superAdmin') == false">
+    <div class="note" *ngIf=" currentUser?.status =='Admin' ||  currentUser?.status !='superAdmin'">
       <h2>Notes: </h2>
       <p>17</p>
       <p>16</p>

@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'siteJsp';
 
   constructor(private userService: UserService) { ///// mettre avec form de connecxon
-    this.userService.connexion('inco.inco', 'inconnu1 ').subscribe((token: string) => {
-    });
+    // this.userService.connexion('inco.inco', 'inconnu1 ').subscribe((token: string) => {
+    // });
   }
 }

@@ -1,26 +1,28 @@
+<div class="container">
+  <img [src]="imgArray[indexPicture]" alt="Photo">
+  <div class="description">
 
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form class="example-form">
-      <table class="example-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-            <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-        <td><mat-form-field class="example-full-width">
-          <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
-        </mat-form-field></td>
-      </tr></table>
-    </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
-  </mat-card-actions>
-</mat-card>
+
+    <div class="reg-form">
+      <div class="section-username">
+          <form action="" class="login-form">
+              <input type="text" name="username" title="Enter Your Username" required>
+              <label class="label-name"><span class="content-name">Utilisateur</span></label>
+          </form>
+      </div>
+
+      <div class="section-confirm-password">
+          <form action="" class="login-form">
+              <input type="password" name="password" title="Enter Your Confrim Password" required>
+              <label class="label-name"><span class="content-name">Mot de passe</span></label>
+          </form>
+      </div>
+      <form action="" class="login-form">
+          <button type="button" class="form-btn" (click)='login()'>Connexion</button>
+      </form>
+  </div>
+
+
+  </div>
+
+</div>

@@ -31,6 +31,7 @@ import { MatInputModule, MatDialog, MatDialogModule } from '@angular/material';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { OpenCommentFromComponent } from './components/open-comment-from/open-comment-from.component';
 import { UserAdminComponent } from './components/user-admin/user-admin.component';
+import { UserAdminDetailComponent } from './components/user-admin-detail/user-admin-detail.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { UserAdminComponent } from './components/user-admin/user-admin.component
     FormNewNoteComponent,
     CommentFormComponent,
     OpenCommentFromComponent,
-    UserAdminComponent
+    UserAdminComponent,
+    UserAdminDetailComponent
   ],
   imports: [
     BrowserModule,

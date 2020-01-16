@@ -1,7 +1,7 @@
 import { User } from './../models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of} from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 
@@ -10,9 +10,9 @@ import { LocalStorage } from '@ngx-pwa/local-storage';
 })
 export class UserService {
 
-  static URL = 'envir';
+  static URL = 'http://localhost:3000/users/';
 
-  static UrlConnexion = 'http://localhost:3000/';
+  static UrlConnexion = '';
   toUpdate = false;
   currentUser: User;
   id = 1;
@@ -24,54 +24,48 @@ export class UserService {
 
 
 
-  public connexion(username: string, pwd: string) {
-    return this.http.post(UserService.UrlConnexion + 'auth/signin', { username, pwd })
-      .pipe(tap((token) => localStorage.set('TOKEN', token.token)));
+  // public connexion(username: string, pwd: string) {
+  //   return this.http.post(UserService.UrlConnexion + 'auth/signin', { username, pwd })
+  //     .pipe(tap((token) => localStorage.set('TOKEN', token.token)));
+  // }
+
+  getCurrentUser(id): Observable<User> {
+    return this.http.get<User>(UserService.URL + id);
   }
 
-  login(): Observable<boolean>  {
-    return of(false).pipe(
-            delay(3000)
-    );
-
-
-    getCurrentUser(id);: Observable < User > {
-    return this.http.get<User>(UserService.URL + id);
-  };
-
-    getAllUsers();: Observable < User[] > {
+  getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(UserService.URL);
-  };
+  }
 
-    getjsp1();: Observable < User[] > {
+  getjsp1(): Observable<User[]> {
     return this.http.get<User[]>(UserService.URL + 'role/jsp1');
-  };
+  }
 
-    getjsp2();: Observable < User[] > {
+  getjsp2(): Observable<User[]> {
     return this.http.get<User[]>(UserService.URL + 'role/jsp2');
-  };
+  }
 
-    getjsp3();: Observable < User[] > {
+  getjsp3(): Observable<User[]> {
     return this.http.get<User[]>(UserService.URL + 'role/jsp3');
-  };
+  }
 
-    getjsp4();: Observable < User[] > {
+  getjsp4(): Observable<User[]> {
     return this.http.get<User[]>(UserService.URL + 'role/jsp4');
-  };
+  }
 
-    getAdmin();: Observable < User[] > {
+  getAdmin(): Observable<User[]> {
     return this.http.get<User[]>(UserService.URL + 'role/admin');
-  };
+  }
 
-    createUser(newUser); {
+  createUser(newUser) {
     return this.http.post(UserService.URL, newUser);
   }
 
-    updateUser(newUser); {
+  updateUser(newUser) {
     return this.http.put(UserService.URL, newUser);
   }
 
-    deleteUser(id); {
+  deleteUser(id) {
     return this.http.delete(UserService.URL + id);
   }
 
