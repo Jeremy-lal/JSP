@@ -1,6 +1,8 @@
+import { NoteService } from './../../shared/services/note.service';
 import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/models/user';
+import { Note } from 'src/app/shared/models/note';
 
 @Component({
   selector: 'app-profil-page',
@@ -10,10 +12,15 @@ import { User } from 'src/app/shared/models/user';
 export class ProfilPageComponent implements OnInit {
 
   currentUser: User;
-  constructor(private userService: UserService) { }
+  notecurrentUser: Note[];
+
+  constructor(private userService: UserService, private noteService: NoteService) { }
 
   ngOnInit() {
       this.currentUser =  this.userService.currentUser;
+      this.noteService.getUserNote(this.currentUser.id).subscribe((data) => {
+        this.notecurrentUser = data;
+      });
   }
 
 }

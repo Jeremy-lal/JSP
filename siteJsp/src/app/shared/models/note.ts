@@ -1,6 +1,6 @@
 export class Note {
   id: number;
   title: string;
-  score: number;
+  valeur: number;
   userId: number;
 }

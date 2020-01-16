@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 })
 export class CommentService {
 
-  static URL = 'http://localhost:3000/api/comment/';
+  static URL = 'http://localhost:3000/comments/';
 
   toUpdate = false;
   commentsCommun: Comment[];
@@ -16,34 +16,34 @@ export class CommentService {
   constructor(private http: HttpClient) { }
 
   getCommunComment() {
-    return this.http.get(CommentService.URL + 'Commun');
+    return this.http.get(CommentService.URL + 'grp/Commun');
   }
 
   getJsp1Comment() {
-    return this.http.get(CommentService.URL + 'Jsp1');
+    return this.http.get(CommentService.URL + 'grp/Jsp1');
   }
 
   getJsp2Comment() {
-    return this.http.get(CommentService.URL + 'Jsp2');
+    return this.http.get(CommentService.URL + 'grp/Jsp2');
   }
 
   getJsp3Comment() {
-    return this.http.get(CommentService.URL + 'Jsp3');
+    return this.http.get(CommentService.URL + 'grp/Jsp3');
   }
 
   getJsp4Comment() {
-    return this.http.get(CommentService.URL + 'Jsp4');
+    return this.http.get(CommentService.URL + 'grp/Jsp4');
   }
 
   getQuestionComment() {
-    return this.http.get(CommentService.URL + 'question');
+    return this.http.get(CommentService.URL + 'grp/question');
   }
 
   createComment(newComment) {
     return this.http.post(CommentService.URL, newComment);
   }
 
-  updateUser(updateComment) {
+  updateComment(updateComment) {
     return this.http.put(CommentService.URL, updateComment);
   }
 
