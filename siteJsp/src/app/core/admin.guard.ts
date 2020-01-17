@@ -1,6 +1,6 @@
 import { UserService } from 'src/app/shared/services/user.service';
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,13 +8,20 @@ import { Observable } from 'rxjs';
 })
 export class AdminGuard implements CanActivate {
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.userService.currentUser.status === 'superAdmin' || this.userService.currentUser.status === 'Admin';
+
+      const token = this.userService.currentUser.status;
+      if (token === 'Admin' || token === 'superAdmin') {
+        return true;
+      } else {
+        this.router.navigate(['/commun']);
+        return false;
+      }
   }
 
 }

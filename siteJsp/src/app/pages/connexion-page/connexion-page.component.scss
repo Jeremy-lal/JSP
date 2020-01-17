@@ -25,13 +25,15 @@ span{
   font-size: 3rem;
 }
 
-
+form {
+  width: 500px;
+}
 .reg-form {
   position: relative;
   top: 0px;
-  width: 50%;
   background-color: rgba(0,0,0,0.9);
   border-radius: 10px;
+  padding: 1rem;
 }
 
 .section-username,

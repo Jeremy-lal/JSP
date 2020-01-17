@@ -1,6 +1,7 @@
 import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-connexion-page',
@@ -9,8 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ConnexionPageComponent implements OnInit {
 
-  username: string;
-  password: string;
+  signInForm: FormGroup;
 
   imgArray = [
     '../../../assets/jsp1.jpeg',
@@ -20,18 +20,32 @@ export class ConnexionPageComponent implements OnInit {
 
   indexPicture: number;
 
-  constructor(private route: Router, private userService: UserService) { }
+  constructor(private route: Router, private userService: UserService, private router: Router,
+              private fb: FormBuilder) { }
 
   ngOnInit() {
     this.indexPicture = Math.floor(Math.random() * (this.imgArray.length));
-  }
 
-  login() {
-    this.userService.getCurrentUser(1).subscribe(data => {
-      this.userService.currentUser = data[0];
-      this.route.navigateByUrl('/commun');
+    this.signInForm = this.fb.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
+
+  // login() {
+  //   this.userService.getCurrentUser(1).subscribe(data => {
+  //     this.userService.currentUser = data[0];
+  //     this.route.navigateByUrl('/commun');
+  //   });
+  // }
+
+
+  login() {
+    this.userService.connexion(this.signInForm.value).subscribe(() => {
+      this.router.navigate(['/dashboard']);
+    });
+  }
+
 
 
 }

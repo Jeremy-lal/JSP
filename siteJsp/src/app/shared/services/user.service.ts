@@ -1,8 +1,8 @@
 import { User } from './../models/user';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
+import { tap, delay, map } from 'rxjs/operators';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 
 @Injectable({
@@ -11,6 +11,7 @@ import { LocalStorage } from '@ngx-pwa/local-storage';
 export class UserService {
 
   static URL = 'http://localhost:3000/users/';
+  static URL_AUTH = 'http://localhost:3000/auth';
 
   static UrlConnexion = '';
   toUpdate = false;
@@ -23,11 +24,32 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
+  public getMe() {
+    return this.http.get(UserService.URL + '/user/me').pipe(
+      tap((user: User) => {
+        this.currentUser = user;
+      })
+    );
+  }
 
-  // public connexion(username: string, pwd: string) {
-  //   return this.http.post(UserService.UrlConnexion + 'auth/signin', { username, pwd })
-  //     .pipe(tap((token) => localStorage.set('TOKEN', token.token)));
-  // }
+  public isLogged(): Observable<boolean> {
+    return this.getMe().pipe(
+      map((user: User) => {
+        return (user != null);
+      }
+      ));
+  }
+
+
+  public connexion(user: User) {
+    return this.http.post(UserService.URL_AUTH + '/signin', user, { observe: 'response' }).pipe(
+      tap((response: HttpResponse<any>) => {
+        const token = response.headers.get('JWT-TOKEN');
+        localStorage.setItem('JWT-TOKEN', token);
+        this.currentUser = response.body;
+        return response.body;
+      }));
+  }
 
   getCurrentUser(id): Observable<User> {
     return this.http.get<User>(UserService.URL + id);
