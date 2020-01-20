@@ -5,7 +5,7 @@
   <div class="logo">
     <i class="material-icons" routerLink="/admin" *ngIf="(currentUser?.status=='Admin')||(currentUser?.status=='superAdmin')">dashboard</i>
     <i class="material-icons" routerLink="/profil">perm_identity</i>
-    <i class="material-icons" routerLink="/">power_settings_new</i>
+    <i class="material-icons" routerLink="/" (click)='logOut()'>power_settings_new</i>
   </div>
 </div>
 

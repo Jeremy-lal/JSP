@@ -11,7 +11,7 @@ import { LocalStorage } from '@ngx-pwa/local-storage';
 export class UserService {
 
   static URL = 'http://localhost:3000/users/';
-  static URL_AUTH = 'http://localhost:3000/auth';
+  static URL_AUTH = 'http://localhost:3000/auth/';
 
   static UrlConnexion = '';
   toUpdate = false;
@@ -25,7 +25,7 @@ export class UserService {
 
 
   public getMe() {
-    return this.http.get(UserService.URL + '/user/me').pipe(
+    return this.http.get(UserService.URL + 'user/me').pipe(
       tap((user: User) => {
         this.currentUser = user;
       })
@@ -42,11 +42,12 @@ export class UserService {
 
 
   public connexion(user: User) {
-    return this.http.post(UserService.URL_AUTH + '/signin', user, { observe: 'response' }).pipe(
+    return this.http.post(UserService.URL_AUTH + 'signin', user, { observe: 'response' }).pipe(
       tap((response: HttpResponse<any>) => {
         const token = response.headers.get('JWT-TOKEN');
         localStorage.setItem('JWT-TOKEN', token);
         this.currentUser = response.body;
+        console.log(this.currentUser);
         return response.body;
       }));
   }
@@ -80,7 +81,7 @@ export class UserService {
   }
 
   createUser(newUser) {
-    return this.http.post(UserService.URL, newUser);
+    return this.http.post(UserService.URL_AUTH + 'signup', newUser);
   }
 
   updateUser(newUser) {

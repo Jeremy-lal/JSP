@@ -18,6 +18,7 @@ export class ProfilPageComponent implements OnInit {
 
   ngOnInit() {
       this.currentUser =  this.userService.currentUser;
+      console.log(this.currentUser);
       this.noteService.getUserNote(this.currentUser.id).subscribe((data) => {
         this.notecurrentUser = data;
       });

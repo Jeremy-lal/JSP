@@ -15,11 +15,11 @@ export class AdminGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      const token = this.userService.currentUser.status;
-      if (token === 'Admin' || token === 'superAdmin') {
+      const userStatus = this.userService.currentUser.status;
+      if (userStatus === 'Admin' || userStatus === 'superAdmin') {
         return true;
       } else {
-        this.router.navigate(['/commun']);
+        this.router.navigateByUrl('/commun');
         return false;
       }
   }

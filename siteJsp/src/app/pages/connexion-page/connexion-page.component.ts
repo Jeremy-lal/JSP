@@ -28,21 +28,13 @@ export class ConnexionPageComponent implements OnInit {
 
     this.signInForm = this.fb.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      pwd: ['', [Validators.required]]
     });
   }
 
-  // login() {
-  //   this.userService.getCurrentUser(1).subscribe(data => {
-  //     this.userService.currentUser = data[0];
-  //     this.route.navigateByUrl('/commun');
-  //   });
-  // }
-
-
   login() {
     this.userService.connexion(this.signInForm.value).subscribe(() => {
-      this.router.navigate(['/dashboard']);
+      this.router.navigateByUrl('/commun');
     });
   }
 
