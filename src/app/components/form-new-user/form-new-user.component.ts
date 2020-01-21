@@ -11,6 +11,7 @@ import { MatDialogRef } from '@angular/material';
 })
 export class FormNewUserComponent implements OnInit {
 
+  isLinear = false;
   currentUser: User;
   user = new User();
 

@@ -12,6 +12,7 @@ import { AcceuilPageComponent } from './pages/acceuil-page/acceuil-page.componen
 import { ConnexionPageComponent } from './pages/connexion-page/connexion-page.component';
 import { AuthGuard } from './core/auth.guard';
 import { AdminGuard } from './core/admin.guard';
+import { Page404Component } from './pages/page404/page404.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'jsp4', component: Jsp4PageComponent, canActivate: [AuthGuard] },
   { path: 'profil', component: ProfilPageComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
+  { path: '**', component: Page404Component }
 ];
 
 @NgModule({

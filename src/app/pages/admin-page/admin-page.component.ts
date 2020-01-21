@@ -30,7 +30,7 @@ export class AdminPageComponent implements OnInit {
   openUserForm(): void {
     this.userService.toUpdate = false;
     const dialogRef = this.dialog.open(FormNewUserComponent, {
-      width: '550px',
+      width: '70%',
     });
   }
 

@@ -15,7 +15,25 @@ export class UserService {
 
   static UrlConnexion = '';
   toUpdate = false;
-  currentUser: User;
+  // currentUser: User;
+  currentUser: User =
+    {
+      id: 21,
+      firstname: 'Jeremy',
+      lastname: 'Lalait',
+      birthday: new Date(),
+      tel: '0620460443',
+      email: 'jlalait33700@gmail.com',
+      adress: {
+        street: 'bjbhjbjhbj',
+        postcode: 33700,
+        city: 'string'
+      },
+      status: 'superAdmin',
+      username: 'j.lalait',
+      pwd: '$argon2i$v=19$m=4096,t=3,p=1$on5LhE4QZI4DvNmtmyD2vw$aJ7WNcKXyEUSCcUhnCFI7ne3CnvAB9r+yymdD4QPZWw',
+      imgURL: 'https://image.shutterstock.com/image-vector/admin-stamp-watermark-scratched-style-260nw-1138728377.jpg'
+    };
   id = 1;
 
   // localStorage.setItem('currentUser', JSON.stringify(this.currentUser));

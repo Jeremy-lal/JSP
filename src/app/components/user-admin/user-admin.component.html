@@ -1,11 +1,23 @@
-<div class="pers">
-  <div class="identity">
-    <p>{{pers?.firstname}}</p>
-    <p>{{pers?.lastname}}</p>
-  </div>
-  <div class="action">
-    <div class="addnote"> note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
-    <div class="modif"> <i class="material-icons"> create </i></div>
-    <div class="deleteUser"> <i class="material-icons" (click)="deleteUser(pers.id)"> delete </i></div>
-  </div>
-</div>
+<mat-accordion *ngIf="pers">
+  <mat-expansion-panel>
+
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <p>{{pers.firstname}} {{pers.lastname}}</p>
+        <div class="action">
+          <div class="addnote"> note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+          <div class="modif"> <i class="material-icons"> create </i></div>
+          <div class="deleteUser"> <i class="material-icons" (click)="deleteUser(pers.id)"> delete </i></div>
+        </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <p>Date de naissance : {{pers.birthday | date:'dd/MM/yyyy'}}</p>
+    <p>Adresse : {{pers.adress}}</p>
+    <p>Email : {{pers.email}}</p>
+    <p>N° de téléphone :{{pers.tel}}</p>
+    <p>Status : {{pers.status}}</p>
+    <p>Nom d'utilisateur : {{pers.username}}</p>
+  </mat-expansion-panel>
+
+</mat-accordion>

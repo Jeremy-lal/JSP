@@ -1,18 +1,3 @@
-.pers {
-  display: flex;
-  flex-direction: row;
-  border-radius: 10px;
-  margin-bottom: 0.5rem;
-  border: 2px solid black;
-  width:100%;
-}
-
-.identity, .action {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-}
-
 .action {
   display: flex;
   justify-content: flex-end;
@@ -23,11 +8,16 @@
   align-items: center;
 }
 
-i {
-  margin-right: 1.5rem;
-
-}
-
-p {
+p { 
   margin-left: 0.5rem;
+  font-size: 1.3rem;
 }
+
+mat-panel-title {
+  display: flex;
+  flex-direction: row;
+}
+mat-panel-title p, mat-panel-title div {
+  width: 50%;
+}
+
