@@ -19,7 +19,6 @@ export class NoteService {
   }
 
   addNote(note: Note) {
-    note.userId = this.userService.currentUser.id;
     return  this.http.post(NoteService.URL, note);
   }
 
@@ -28,8 +27,8 @@ export class NoteService {
     return this.http.put(NoteService.URL + id, note);
   }
 
-  deleteNote(note: Note) {
-    return this.http.delete(NoteService.URL + note.id);
+  deleteNote(id: number) {
+    return this.http.delete(NoteService.URL + id);
   }
 }
 

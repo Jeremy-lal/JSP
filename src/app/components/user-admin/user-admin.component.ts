@@ -1,3 +1,4 @@
+import { Note } from 'src/app/shared/models/note';
 import { FormNewNoteComponent } from './../form-new-note/form-new-note.component';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NoteService } from 'src/app/shared/services/note.service';
@@ -20,15 +21,20 @@ export class UserAdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  openNoteForm() {
+  openNoteForm(userId) {
     this.noteService.toUpdate = false;
     const dialogRef = this.dialog.open(FormNewNoteComponent, {
       width: '550px',
+      data: userId
     });
   }
 
 
   deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe();
+  }
+
+  deleteNote(id: number) {
+    this.noteService.deleteNote(id).subscribe();
   }
 }

@@ -34,9 +34,7 @@ export class CommentFormComponent implements OnInit {
       commentToPost.comment_id = this.commentClick.id;
       // commentToPost.grp = this.commentClick.grp;
     }
-    this.commentService.createComment(commentToPost).subscribe((eventPosted) => {
-      console.log(eventPosted);
-    });
+    this.commentService.createComment(commentToPost).subscribe();
     this.dialogRef.close();
   }
 }

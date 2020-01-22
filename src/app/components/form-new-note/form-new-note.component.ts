@@ -1,7 +1,8 @@
 import { Note } from './../../shared/models/note';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { NoteService } from 'src/app/shared/services/note.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-form-new-note',
@@ -13,20 +14,23 @@ export class FormNewNoteComponent implements OnInit {
   note = new Note();
 
   noteForm = this.fb.group({
-    titlenote: [''],
-    score: ['']
+    title: [''],
+    valeur: [''],
+    user_id: []
   });
 
-  constructor(private fb: FormBuilder, private noteService: NoteService) { }
+  constructor(private fb: FormBuilder, private noteService: NoteService, public dialogRef: MatDialogRef<FormNewNoteComponent>,
+              @Inject(MAT_DIALOG_DATA) public userId: number) { }
 
   ngOnInit() {
   }
 
   sendNote(): void {
-    this.noteService.addNote(this.noteForm.value).subscribe((eventPosted) => {
+    const noteToPost: Note = this.noteForm.value;
+    noteToPost.user_id = this.userId;
+    this.noteService.addNote(noteToPost).subscribe((eventPosted) => {
       console.log(eventPosted);
-
     });
-    // this.dialogRef.close();
+    this.dialogRef.close();
   }
 }
