@@ -32,7 +32,8 @@ export class UserService {
       status: 'superAdmin',
       username: 'j.lalait',
       pwd: '$argon2i$v=19$m=4096,t=3,p=1$on5LhE4QZI4DvNmtmyD2vw$aJ7WNcKXyEUSCcUhnCFI7ne3CnvAB9r+yymdD4QPZWw',
-      imgURL: 'https://image.shutterstock.com/image-vector/admin-stamp-watermark-scratched-style-260nw-1138728377.jpg'
+      imgURL: 'https://image.shutterstock.com/image-vector/admin-stamp-watermark-scratched-style-260nw-1138728377.jpg',
+      note: []
     };
   id = 1;
 

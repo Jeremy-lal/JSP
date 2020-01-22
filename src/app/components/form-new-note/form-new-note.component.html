@@ -1,20 +1,22 @@
 <form [formGroup]="noteForm" (ngSubmit)="sendNote()">
 
-  <div class="container">
-    <h2>Ajouter une note</h2>
-    <div>
-      <label>
-        Nom de la note:
-        <input type="text" formControlName="titlenote">
-      </label>
+  <div class="reg-form">
+    <div class="section-username">
+      <div action="" class="login-form">
+        <input type="text" name="username" formControlName="titlenote" title="Enter Your Username" required>
+        <label class="label-name"><span class="content-name">Description</span></label>
+      </div>
     </div>
-    <div>
-      <label>
-        Note:
-        <input type="text" formControlName="score">
-      </label>
+  
+    <div class="section-confirm-password">
+      <div action="" class="login-form">
+        <input type="password" name="password" formControlName="score" required>
+        <label class="label-name"><span class="content-name">Note</span></label>
+      </div>
     </div>
 
     <button type="submit"> Ajouter </button>
   </div>
 </form>
+
+

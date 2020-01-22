@@ -1,8 +1,8 @@
+import { FormNewNoteComponent } from './../form-new-note/form-new-note.component';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NoteService } from 'src/app/shared/services/note.service';
 import { UserService } from 'src/app/shared/services/user.service';
 import { MatDialog } from '@angular/material';
-import { FormNewUserComponent } from 'src/app/components/form-new-user/form-new-user.component';
 import { User } from 'src/app/shared/models/user';
 
 
@@ -22,7 +22,7 @@ export class UserAdminComponent implements OnInit {
 
   openNoteForm() {
     this.noteService.toUpdate = false;
-    const dialogRef = this.dialog.open(FormNewUserComponent, {
+    const dialogRef = this.dialog.open(FormNewNoteComponent, {
       width: '550px',
     });
   }

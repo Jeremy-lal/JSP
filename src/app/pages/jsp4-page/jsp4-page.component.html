@@ -1,6 +1,12 @@
-<app-nav-bar-top></app-nav-bar-top>
 <app-nav-bar></app-nav-bar>
 <app-open-comment-from></app-open-comment-from>
 
 
-<app-comment [comment]="comment" *ngFor='let comment of jsp4Comments'></app-comment>
+<div class="comment" *ngFor='let comment of jsp4Comments'>
+    <app-comment [comment]="comment" (click)="showResponse(comment)"></app-comment>
+    <div class="showReponse" *ngIf="comment.show">
+        <div class="response" *ngFor='let response of jsp4ResponseComments'>
+            <app-response [response]="response" *ngIf="comment.id === response.comment_id"></app-response>
+        </div>
+    </div>
+</div>

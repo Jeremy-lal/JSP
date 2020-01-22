@@ -18,6 +18,9 @@ export class QuestionPageComponent implements OnInit {
   ngOnInit() {
     this.commentService.getComment(this.grp).subscribe(((data: Comment[]) => this.questionComments = data));
     this.commentService.getResponseComment(this.grp).subscribe(((data: Comment[]) => this.questionResponseComments = data));
+  }
 
+  showResponse(comment: Comment) {
+    comment.show = !comment.show;
   }
 }

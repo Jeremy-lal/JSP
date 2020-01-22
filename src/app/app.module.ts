@@ -85,7 +85,7 @@ import { ResponseComponent } from './components/response/response.component';
               { provide: MAT_DIALOG_DATA, useValue: {} },
   ],
   bootstrap: [AppComponent],
-  entryComponents: [CommentFormComponent, FormNewUserComponent]
+  entryComponents: [CommentFormComponent, FormNewUserComponent, FormNewNoteComponent]
 })
 export class AppModule { }
 

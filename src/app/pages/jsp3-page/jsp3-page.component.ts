@@ -18,6 +18,10 @@ export class Jsp3PageComponent implements OnInit {
   ngOnInit() {
     this.commentService.getComment(this.grp).subscribe(((data: Comment[]) => this.jsp3Comments = data));
     this.commentService.getResponseComment(this.grp).subscribe(((data: Comment[]) => this.jsp3ResponseComments = data));
-
   }
+
+  showResponse(comment: Comment) {
+    comment.show = !comment.show;
+  }
+
 }

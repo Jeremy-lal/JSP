@@ -19,6 +19,9 @@ export class Jsp1PageComponent implements OnInit {
   ngOnInit() {
     this.commentService.getComment(this.grp).subscribe(((data: Comment[]) => this.jsp1Comments = data));
     this.commentService.getResponseComment(this.grp).subscribe(((data: Comment[]) => this.jsp1ResponseComments = data));
+  }
 
+  showResponse(comment: Comment) {
+    comment.show = !comment.show;
   }
 }

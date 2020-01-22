@@ -18,6 +18,9 @@ export class Jsp4PageComponent implements OnInit {
   ngOnInit() {
     this.commentService.getComment(this.grp).subscribe(((data: Comment[]) => this.jsp4Comments = data));
     this.commentService.getResponseComment(this.grp).subscribe(((data: Comment[]) => this.jsp4ResponseComments = data));
+  }
 
+  showResponse(comment: Comment) {
+    comment.show = !comment.show;
   }
 }

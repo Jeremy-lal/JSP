@@ -5,19 +5,38 @@
       <mat-panel-title>
         <p>{{pers.firstname}} {{pers.lastname}}</p>
         <div class="action">
-          <div class="addnote"> note <i class="material-icons" (click)="openNoteForm()"> add_circle_outline </i></div>
+          <div class="addnote"> note <i class="material-icons" (click)="openNoteForm(pers.id)"> add_circle_outline </i>
+          </div>
           <div class="modif"> <i class="material-icons"> create </i></div>
           <div class="deleteUser"> <i class="material-icons" (click)="deleteUser(pers.id)"> delete </i></div>
         </div>
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <p>Date de naissance : {{pers.birthday | date:'dd/MM/yyyy'}}</p>
-    <p>Adresse : {{pers.adress}}</p>
-    <p>Email : {{pers.email}}</p>
-    <p>N° de téléphone :{{pers.tel}}</p>
-    <p>Status : {{pers.status}}</p>
-    <p>Nom d'utilisateur : {{pers.username}}</p>
+    <div class="details">
+
+      <div class="left">
+        <p>Date de naissance : {{pers.birthday | date:'dd/MM/yyyy'}}</p>
+        <p>Adresse : {{pers.adress}}</p>
+        <p>Email : {{pers.email}}</p>
+        <p>N° de téléphone :{{pers.tel}}</p>
+        <p>Status : {{pers.status}}</p>
+        <p>Nom d'utilisateur : {{pers.username}}</p>
+      </div>
+      
+      <div class="right" *ngIf="pers.note.length != 0" >
+        <table>
+          <tr class="titretab">
+            <td>Description</td>
+            <td>Note</td>
+          </tr>
+          <tr *ngFor="let note of pers.note">
+            <td>{{note.title}}</td>
+            <td>{{note.valeur}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </mat-expansion-panel>
 
 </mat-accordion>

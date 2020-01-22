@@ -21,3 +21,19 @@ mat-panel-title p, mat-panel-title div {
   width: 50%;
 }
 
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+td {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+.titretab td {
+  font-size: 1.5rem;
+  background-color: red;
+}
+

@@ -5,14 +5,16 @@ div {
   background-color: black;
 }
 
-button {
+li {
   margin: 2rem 3rem 2rem 3rem;
   padding: 0.5rem;
-  width: 10%;
-  font-size: 1.4rem;
-  background-color: white;
-  border-radius: 30px;
-  border: none;
+  font-size: 2rem;
+  color:white;
+  list-style: none;
+}
+
+li:hover {
+  cursor: pointer;
 }
 
 button:hover {
