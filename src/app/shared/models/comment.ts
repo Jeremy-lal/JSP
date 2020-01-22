@@ -6,4 +6,6 @@ export class Comment {
   title: string;
   content: string;
   grp: string;
+  comment_id: number;
+  show = false;
 }

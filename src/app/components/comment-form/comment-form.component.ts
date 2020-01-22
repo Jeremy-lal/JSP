@@ -1,9 +1,10 @@
+import { Comment } from './../../shared/models/comment';
 import { User } from 'src/app/shared/models/user';
 import { UserService } from './../../shared/services/user.service';
 import { CommentService } from './../../shared/services/comment.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-comment-form',
@@ -16,19 +17,23 @@ export class CommentFormComponent implements OnInit {
     title: [''],
     content: [''],
     grp: [''],
-    user_id: [this.userService.currentUser.id]
+    user_id: [this.userService.currentUser.id],
   });
 
   currentUser: User;
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<CommentFormComponent>, private commentService: CommentService,
-              private userService: UserService) { }
+              private userService: UserService, @Inject(MAT_DIALOG_DATA) public commentClick: Comment) { }
 
   ngOnInit() {
     this.currentUser = this.userService.currentUser;
   }
 
   sendComment(): void {
-    const commentToPost = this.commentForm.value;
+    const commentToPost: Comment = this.commentForm.value;
+    if (this.commentClick !== undefined) {
+      commentToPost.comment_id = this.commentClick.id;
+      // commentToPost.grp = this.commentClick.grp;
+    }
     this.commentService.createComment(commentToPost).subscribe((eventPosted) => {
       console.log(eventPosted);
     });

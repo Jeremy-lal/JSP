@@ -6,22 +6,22 @@
         <ng-template matStepLabel>Informations personnelles</ng-template>
 
         <div class="section-input">
-          <div action="" class="login-form">
-            <input type="text" name="username" formControlName="firstname" required>
+          <div class="login-form">
+            <input type="text" name="firstname" formControlName="firstname" required>
             <label class="label-name"><span class="content-name">Prénom</span></label>
           </div>
         </div>
 
         <div class="section-input">
-          <div action="" class="login-form">
-            <input type="text" name="password" formControlName="lastname" required>
+          <div class="login-form">
+            <input type="text" name="lastname" formControlName="lastname" required>
             <label class="label-name"><span class="content-name">Nom</span></label>
           </div>
         </div>
 
         <div class="section-input">
-          <div action="" class="login-form">
-            <input type="date" name="password" formControlName="birthday" required>
+          <div class="login-form">
+            <input type="date" name="birthday" formControlName="birthday" required>
           </div>
         </div>
 
@@ -31,37 +31,37 @@
         <ng-template matStepLabel>Informations complémentaires</ng-template>
 
       <div class="section-input">
-        <div action="" class="login-form">
-          <input type="text" name="password" formControlName="tel" required>
+        <div class="login-form">
+          <input type="text" name="tel" formControlName="tel" required>
           <label class="label-name"><span class="content-name">Numéro de téléphone</span></label>
         </div>
       </div>
 
       <div class="section-input">
-        <div action="" class="login-form">
-          <input type="text" name="password" formControlName="email" required>
+        <div class="login-form">
+          <input type="text" name="email" formControlName="email" required>
           <label class="label-name"><span class="content-name">Email</span></label>
         </div>
       </div>
 
       <div formGroupName="adress">
         <div class="section-input">
-          <div action="" class="login-form">
-            <input type="text" name="password" formControlName="street" required>
+          <div class="login-form">
+            <input type="text" name="street" formControlName="street" required>
             <label class="label-name"><span class="content-name">Rue</span></label>
           </div>
         </div>
 
         <div class="section-input">
-          <div action="" class="login-form">
-            <input type="text" name="password" formControlName="postcode" required>
+          <div class="login-form">
+            <input type="text" name="postcode" formControlName="postcode" required>
             <label class="label-name"><span class="content-name">Code postal</span></label>
           </div>
         </div>
 
         <div class="section-input">
-          <div action="" class="login-form">
-            <input type="text" name="password" formControlName="city" required>
+          <div class="login-form">
+            <input type="text" name="city" formControlName="city" required>
             <label class="label-name"><span class="content-name">Ville</span></label>
           </div>
         </div>
@@ -73,25 +73,8 @@
     <mat-step>
       <ng-template matStepLabel>Paramètre du compte</ng-template>
 
-      <div class="section-input">
-        <div action="" class="login-form">
-          <input type="text" name="password" formControlName="username" required>
-          <label class="label-name"><span class="content-name">Nom d'utilisateur</span></label>
-        </div>
-      </div>
-
-      <div class="section-input">
-        <div action="" class="login-form">
-          <input type="password" name="password" formControlName="pwd" required>
-          <label class="label-name"><span class="content-name">Mot de passe</span></label>
-        </div>
-      </div>
-
-
-      
-
-      <div>
-        <label class="select-wrapper">
+      <div class="select">
+        <label>
           Status:
           <select name="grp" class="select" formControlName="status">
             <option value="">--Choisir un groupe--</option>
@@ -105,20 +88,32 @@
         </label>
       </div>
 
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="username" formControlName="username" required>
+          <label class="label-name"><span class="content-name">Nom d'utilisateur</span></label>
+        </div>
+      </div>
 
       <div class="section-input">
-        <div action="" class="login-form">
-          <input type="text" name="password" formControlName="imgUrl" required>
+        <div class="login-form">
+          <input type="text" name="pwd" formControlName="pwd" required>
+          <label class="label-name"><span class="content-name">Mot de passe</span></label>
+        </div>
+      </div>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="imgUrl" formControlName="imgUrl" required>
           <label class="label-name"><span class="content-name">Photo</span></label>
         </div>
       </div>
 
-      <button type="submit"> Submit</button>
+      <div class="center">
+        <button type="submit"> Submit</button>
+      </div>
+
     </mat-step>
-
-
-
-
 
 
     </mat-horizontal-stepper>

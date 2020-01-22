@@ -27,7 +27,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { FormNewUserComponent } from './components/form-new-user/form-new-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormNewNoteComponent } from './components/form-new-note/form-new-note.component';
-import { MatInputModule, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material';
+import { MatInputModule, MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { OpenCommentFromComponent } from './components/open-comment-from/open-comment-from.component';
 import { UserAdminComponent } from './components/user-admin/user-admin.component';
@@ -35,6 +35,7 @@ import { UserAdminDetailComponent } from './components/user-admin-detail/user-ad
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatStepperModule} from '@angular/material/stepper';
 import { Page404Component } from './pages/page404/page404.component';
+import { ResponseComponent } from './components/response/response.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { Page404Component } from './pages/page404/page404.component';
     OpenCommentFromComponent,
     UserAdminComponent,
     UserAdminDetailComponent,
-    Page404Component
+    Page404Component,
+    ResponseComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,9 @@ import { Page404Component } from './pages/page404/page404.component';
     MatExpansionModule,
     MatStepperModule
   ],
-  providers: [{ provide: MatDialogRef}],
+  providers: [{ provide: MatDialogRef, useValue: {}},
+              { provide: MAT_DIALOG_DATA, useValue: {} },
+  ],
   bootstrap: [AppComponent],
   entryComponents: [CommentFormComponent, FormNewUserComponent]
 })

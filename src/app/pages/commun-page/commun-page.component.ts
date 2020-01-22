@@ -11,15 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommunPageComponent implements OnInit {
 
+  grp = 'Commun';
+
   communComments: Comment[];
+  communResponseComments: Comment[];
   currentUser: User;
 
   constructor(private commentService: CommentService, private userService: UserService) { }
 
   ngOnInit() {
-    this.commentService.getCommunComment().subscribe(((data: Comment[]) => this.communComments = data));
+    this.commentService.getComment(this.grp).subscribe(((data: Comment[]) => this.communComments = data));
+    this.commentService.getResponseComment(this.grp).subscribe(((data: Comment[]) => {
+      this.communResponseComments = data;
+      console.log(this.communResponseComments);
+    }));
 
     this.currentUser = this.userService.currentUser;
   }
+
+  showResponse(comment: Comment) {
+    comment.show = !comment.show;
+  }
+
 
 }

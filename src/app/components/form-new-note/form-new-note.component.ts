@@ -22,11 +22,11 @@ export class FormNewNoteComponent implements OnInit {
   ngOnInit() {
   }
 
-  // sendNote(): void {
-  //   this.noteService.addNote(this.noteForm.value).subscribe((eventPosted) => {
-  //     console.log(eventPosted);
+  sendNote(): void {
+    this.noteService.addNote(this.noteForm.value).subscribe((eventPosted) => {
+      console.log(eventPosted);
 
-  //   });
-  //   this.dialogRef.close();
-  // }
+    });
+    // this.dialogRef.close();
+  }
 }

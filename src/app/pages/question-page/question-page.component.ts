@@ -9,11 +9,15 @@ import { CommentService } from 'src/app/shared/services/comment.service';
 })
 export class QuestionPageComponent implements OnInit {
 
+  grp = 'question';
   questionComments: Comment[];
+  questionResponseComments: Comment[];
 
   constructor(private commentService: CommentService) { }
 
   ngOnInit() {
-    this.commentService.getQuestionComment().subscribe(((data: Comment[]) => this.questionComments = data));
+    this.commentService.getComment(this.grp).subscribe(((data: Comment[]) => this.questionComments = data));
+    this.commentService.getResponseComment(this.grp).subscribe(((data: Comment[]) => this.questionResponseComments = data));
+
   }
 }

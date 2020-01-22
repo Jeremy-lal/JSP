@@ -9,11 +9,15 @@ import { CommentService } from 'src/app/shared/services/comment.service';
 })
 export class Jsp2PageComponent implements OnInit {
 
+  grp = 'Jsp2';
   jsp2Comments: Comment[];
+  jsp2ResponseComments: Comment[];
 
   constructor(private commentService: CommentService) { }
 
   ngOnInit() {
-    this.commentService.getJsp2Comment().subscribe(((data: Comment[]) => this.jsp2Comments = data));
+    this.commentService.getComment(this.grp).subscribe(((data: Comment[]) => this.jsp2Comments = data));
+    this.commentService.getResponseComment(this.grp).subscribe(((data: Comment[]) => this.jsp2ResponseComments = data));
+
   }
 }

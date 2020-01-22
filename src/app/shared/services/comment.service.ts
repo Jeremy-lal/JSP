@@ -15,28 +15,12 @@ export class CommentService {
 
   constructor(private http: HttpClient) { }
 
-  getCommunComment() {
-    return this.http.get(CommentService.URL + 'grp/Commun');
+  getComment(grp) {
+    return this.http.get(CommentService.URL + 'grp/' + grp);
   }
 
-  getJsp1Comment() {
-    return this.http.get(CommentService.URL + 'grp/Jsp1');
-  }
-
-  getJsp2Comment() {
-    return this.http.get(CommentService.URL + 'grp/Jsp2');
-  }
-
-  getJsp3Comment() {
-    return this.http.get(CommentService.URL + 'grp/Jsp3');
-  }
-
-  getJsp4Comment() {
-    return this.http.get(CommentService.URL + 'grp/Jsp4');
-  }
-
-  getQuestionComment() {
-    return this.http.get(CommentService.URL + 'grp/question');
+  getResponseComment(grp) {
+    return this.http.get(CommentService.URL + 'response/grp/' + grp);
   }
 
   createComment(newComment) {

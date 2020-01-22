@@ -1,5 +1,6 @@
+import { Comment } from './../../shared/models/comment';
 import { CommentService } from './../../shared/services/comment.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { CommentFormComponent } from '../comment-form/comment-form.component';
 
@@ -10,6 +11,7 @@ import { CommentFormComponent } from '../comment-form/comment-form.component';
 })
 export class OpenCommentFromComponent implements OnInit {
 
+  @Input() commentClick: Comment;
   constructor(private commentService: CommentService,  public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -19,6 +21,7 @@ export class OpenCommentFromComponent implements OnInit {
     this.commentService.toUpdate = false;
     const dialogRef = this.dialog.open(CommentFormComponent, {
       width: '550px',
+      data : this.commentClick
     });
   }
 }
