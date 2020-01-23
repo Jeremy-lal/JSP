@@ -20,6 +20,7 @@ export class CommunPageComponent implements OnInit {
   constructor(private commentService: CommentService, private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.isLogged();
     this.commentService.getComment(this.grp).subscribe(((data: Comment[]) => this.communComments = data));
     this.commentService.getResponseComment(this.grp).subscribe(((data: Comment[]) => {
       this.communResponseComments = data;

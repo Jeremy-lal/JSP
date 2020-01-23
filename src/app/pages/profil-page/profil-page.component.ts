@@ -17,11 +17,12 @@ export class ProfilPageComponent implements OnInit {
   constructor(private userService: UserService, private noteService: NoteService) { }
 
   ngOnInit() {
-      this.currentUser =  this.userService.currentUser;
-      console.log(this.currentUser);
-      this.noteService.getUserNote(this.currentUser.id).subscribe((data) => {
-        this.notecurrentUser = data;
-      });
+    this.userService.isLogged();
+    this.currentUser = this.userService.currentUser;
+    console.log(this.currentUser);
+    this.noteService.getUserNote(this.currentUser.id).subscribe((data) => {
+      this.notecurrentUser = data;
+    });
   }
 
 }

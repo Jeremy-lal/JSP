@@ -87,7 +87,7 @@ import { PopupSignOutComponent } from './components/popup-sign-out/popup-sign-ou
               { provide: MAT_DIALOG_DATA, useValue: {} },
   ],
   bootstrap: [AppComponent],
-  entryComponents: [CommentFormComponent, FormNewUserComponent, FormNewNoteComponent]
+  entryComponents: [CommentFormComponent, FormNewUserComponent, FormNewNoteComponent, PopupSignOutComponent]
 })
 export class AppModule { }
 

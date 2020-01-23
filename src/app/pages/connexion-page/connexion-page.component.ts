@@ -33,9 +33,12 @@ export class ConnexionPageComponent implements OnInit {
   }
 
   login() {
-    // this.userService.connexion(this.signInForm.value).subscribe(() => {
-      this.router.navigateByUrl('/commun');
-    // });
+    this.userService.connexion(this.signInForm.value).subscribe(() => {
+      if (this.userService.currentUser != undefined) {
+        console.log(this.userService.currentUser);
+        this.router.navigateByUrl('/commun');
+      }
+    });
   }
 
 

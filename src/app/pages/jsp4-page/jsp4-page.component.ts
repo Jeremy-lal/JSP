@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/shared/services/user.service';
 import { Comment } from './../../shared/models/comment';
 import { Component, OnInit } from '@angular/core';
 import { CommentService } from 'src/app/shared/services/comment.service';
@@ -13,9 +14,10 @@ export class Jsp4PageComponent implements OnInit {
   jsp4Comments: Comment[];
   jsp4ResponseComments: Comment[];
 
-  constructor(private commentService: CommentService) { }
+  constructor(private commentService: CommentService, private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.isLogged();
     this.commentService.getComment(this.grp).subscribe(((data: Comment[]) => this.jsp4Comments = data));
     this.commentService.getResponseComment(this.grp).subscribe(((data: Comment[]) => this.jsp4ResponseComments = data));
   }

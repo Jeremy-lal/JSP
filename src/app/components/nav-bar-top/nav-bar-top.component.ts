@@ -1,7 +1,9 @@
+import { PopupSignOutComponent } from './../popup-sign-out/popup-sign-out.component';
 import { Router } from '@angular/router';
 import { UserService } from './../../shared/services/user.service';
 import { User } from 'src/app/shared/models/user';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-nav-bar-top',
@@ -12,16 +14,16 @@ export class NavBarTopComponent implements OnInit {
 
   currentUser: User;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService,  public dialog: MatDialog) { }
 
   ngOnInit() {
     this.currentUser = this.userService.currentUser;
   }
 
   logOut() {
-    localStorage.removeItem('JWT-TOKEN');
-    this.userService.currentUser = null;
-    this.router.navigateByUrl('/');
+    const dialogRef = this.dialog.open(PopupSignOutComponent, {
+      width: '550px',
+    });
   }
 
 }

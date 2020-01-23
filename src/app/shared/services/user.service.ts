@@ -35,10 +35,6 @@ export class UserService {
       imgURL: 'https://image.shutterstock.com/image-vector/admin-stamp-watermark-scratched-style-260nw-1138728377.jpg',
       note: []
     };
-  id = 1;
-
-  // localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
-
 
   constructor(private http: HttpClient) { }
 
