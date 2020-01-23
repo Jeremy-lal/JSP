@@ -20,11 +20,11 @@ export class AdminPageComponent implements OnInit {
   listadmin: User[];
 
   ngOnInit() {
-    this.userService.getjsp1().subscribe((jsp1: User[]) => this.listjsp1 = jsp1);
-    this.userService.getjsp2().subscribe((jsp2: User[]) => this.listjsp2 = jsp2);
-    this.userService.getjsp3().subscribe((jsp3: User[]) => this.listjsp3 = jsp3);
-    this.userService.getjsp4().subscribe((jsp4: User[]) => this.listjsp4 = jsp4);
-    this.userService.getAdmin().subscribe((admin: User[]) => this.listadmin = admin);
+    this.userService.getUsersByGroup('jsp1').subscribe((jsp1: User[]) => this.listjsp1 = jsp1);
+    this.userService.getUsersByGroup('jsp2').subscribe((jsp2: User[]) => this.listjsp2 = jsp2);
+    this.userService.getUsersByGroup('jsp3').subscribe((jsp3: User[]) => this.listjsp3 = jsp3);
+    this.userService.getUsersByGroup('jsp4').subscribe((jsp4: User[]) => this.listjsp4 = jsp4);
+    this.userService.getUsersByGroup('admin').subscribe((admin: User[]) => this.listadmin = admin);
   }
 
   openUserForm(): void {

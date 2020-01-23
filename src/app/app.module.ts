@@ -36,6 +36,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatStepperModule} from '@angular/material/stepper';
 import { Page404Component } from './pages/page404/page404.component';
 import { ResponseComponent } from './components/response/response.component';
+import { PopupSignOutComponent } from './components/popup-sign-out/popup-sign-out.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { ResponseComponent } from './components/response/response.component';
     UserAdminComponent,
     UserAdminDetailComponent,
     Page404Component,
-    ResponseComponent
+    ResponseComponent,
+    PopupSignOutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,19 @@
+<app-nav-bar-top></app-nav-bar-top>
+
 <div class="container">
   <div class="left">
     <img [src]="currentUser?.imgURL" alt="image de l'utilisateur">
-    <div class="note" *ngIf=" currentUser?.status =='Admin' ||  currentUser?.status !='superAdmin'">
-      <h2>Notes: </h2>
-      <p>17</p>
-      <p>16</p>
-      <p>16</p>
-      <p>17</p>
-      <p>Moyenne : 16.5/20</p>
+    <div class="note" *ngIf=" currentUser?.status !='Admin' ||  currentUser?.status !='superAdmin' && currentUser.note">
+      <table>
+        <tr class="titretab">
+          <td>Description</td>
+          <td>Note</td>
+        </tr>
+        <tr *ngFor="let note of pers.note">
+          <td>{{note.title}}</td>
+          <td>{{note.valeur}}</td>
+        </tr>
+      </table>
     </div>
   </div>
 

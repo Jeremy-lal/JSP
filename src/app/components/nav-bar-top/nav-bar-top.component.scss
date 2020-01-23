@@ -6,9 +6,17 @@
 }
 .text {
   width: 50%;
+}
+
+h1 {
   font-size: 2rem;
   color: white;
 }
+
+h1:hover {
+  cursor: pointer;
+}
+
 .logo {
   width: 50%;
   display: flex;
@@ -20,4 +28,8 @@
 i {
   font-size: 2rem;
   margin: 1rem;
+}
+
+i:hover {
+  cursor: pointer;
 }

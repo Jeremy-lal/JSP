@@ -79,24 +79,8 @@ export class UserService {
     return this.http.get<User[]>(UserService.URL);
   }
 
-  getjsp1(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/jsp1');
-  }
-
-  getjsp2(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/jsp2');
-  }
-
-  getjsp3(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/jsp3');
-  }
-
-  getjsp4(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/jsp4');
-  }
-
-  getAdmin(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/admin');
+  getUsersByGroup(grp: string): Observable<User[]> {
+    return this.http.get<User[]>(UserService.URL + 'role/' + grp );
   }
 
   createUser(newUser) {
