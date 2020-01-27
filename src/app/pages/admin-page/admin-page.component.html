@@ -1,0 +1,23 @@
+<app-nav-bar-top></app-nav-bar-top>
+<div class="addUser">
+  <div class="newUser" (click)="openUserForm()"> utilisateur <i class="material-icons"> add_circle_outline </i></div>
+</div>
+
+<div class="container">
+  <h2>JSP1</h2>
+  <app-user-admin [pers]="pers1" *ngFor="let pers1 of listjsp1"></app-user-admin>
+
+
+  <h2>JSP2</h2>
+  <app-user-admin [pers]="pers2" *ngFor="let pers2 of listjsp2"></app-user-admin>
+
+  <h2>JSP3</h2>
+  <app-user-admin [pers]="pers3" *ngFor="let pers3 of listjsp3"></app-user-admin>
+
+  <h2>JSP4</h2>
+  <app-user-admin [pers]="pers4" *ngFor="let pers4 of listjsp4"></app-user-admin>
+
+  <h2>Admin</h2>
+  <app-user-admin [pers]="admin" *ngFor="let admin of listadmin"></app-user-admin>
+
+</div>

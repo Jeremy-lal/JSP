@@ -1,0 +1,24 @@
+<form [formGroup]="noteForm" (ngSubmit)="sendNote()">
+
+  <div class="reg-form">
+    <div class="section-input">
+      <div action="" class="login-form">
+        <input type="text" name="title" formControlName="title" required>
+        <label class="label-name"><span class="content-name">Description</span></label>
+      </div>
+    </div>
+  
+    <div class="section-input">
+      <div action="" class="login-form">
+        <input type="text" name="valeur" formControlName="valeur" required>
+        <label class="label-name"><span class="content-name">Note</span></label>
+      </div>
+    </div>
+
+    <div class="button">
+      <button type="submit"> Ajouter </button>
+    </div>
+  </div>
+</form>
+
+

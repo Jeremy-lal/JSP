@@ -1,0 +1,31 @@
+<app-nav-bar-top></app-nav-bar-top>
+
+<div class="container">
+  <div class="left">
+    <img [src]="currentUser?.imgURL" alt="image de l'utilisateur">
+    <div class="note" *ngIf=" currentUser?.note.length > 0 ">
+      <table>
+        <tr class="titretab">
+          <td>Description</td>
+          <td>Note</td>
+        </tr>
+        <tr *ngFor="let note of currentUser?.note">
+          <td>{{note.title}}</td>
+          <td>{{note.valeur}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="right">
+    <h1>{{currentUser?.firstname}} {{currentUser?.lastname}}</h1>
+    <p>Status : {{currentUser?.status}}</p>
+    <h2>A propos</h2>
+    <ul>
+      <li><label>Date de naissance:</label>     {{currentUser?.birthday | date :'mediumDate'}}</li>
+      <li><label>N° de téléphone:</label>    {{currentUser?.tel}}</li>
+      <li><label>Adresse: </label>   {{currentUser?.adress}}</li>
+      <li><label>Email: </label>   {{currentUser?.email}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<form [formGroup]="userForm" (ngSubmit)="sendUser()">
+
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+    <mat-step>
+      <ng-template matStepLabel>Informations personnelles</ng-template>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="firstname" formControlName="firstname" required>
+          <label class="label-name"><span class="content-name">Prénom</span></label>
+        </div>
+      </div>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="lastname" formControlName="lastname" required>
+          <label class="label-name"><span class="content-name">Nom</span></label>
+        </div>
+      </div>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="date" name="birthday" formControlName="birthday" required>
+        </div>
+      </div>
+
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Informations complémentaires</ng-template>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="tel" formControlName="tel" required>
+          <label class="label-name"><span class="content-name">Numéro de téléphone</span></label>
+        </div>
+      </div>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="email" formControlName="email" required>
+          <label class="label-name"><span class="content-name">Email</span></label>
+        </div>
+      </div>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="email" formControlName="adress" required>
+          <label class="label-name"><span class="content-name">Adresse</span></label>
+        </div>
+      </div>
+
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Paramètre du compte</ng-template>
+
+      <mat-form-field>
+        <mat-select placeholder="Groupe" formControlName="status">
+          <mat-option value="Jsp1">Jsp1</mat-option>
+          <mat-option value="Jsp2">Jsp2</mat-option>
+          <mat-option value="Jsp3">Jsp3</mat-option>
+          <mat-option value="Jsp4">Jsp4</mat-option>
+          <mat-option value="admin">Admin</mat-option>
+          <mat-option value="superAdmin" *ngIf="(currentUser?.status=='superAdmin')">SuperAdmin</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="username" formControlName="username" required>
+          <label class="label-name"><span class="content-name">Nom d'utilisateur</span></label>
+        </div>
+      </div>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="pwd" formControlName="pwd" required>
+          <label class="label-name"><span class="content-name">Mot de passe</span></label>
+        </div>
+      </div>
+
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="imgUrl" formControlName="imgURL" required>
+          <label class="label-name"><span class="content-name">Photo</span></label>
+        </div>
+      </div>
+
+      <div class="center">
+        <button type="submit" *ngIf="userService.toUpdate === false"> Envoyer</button>
+        <button type="submit" *ngIf="userService.toUpdate === true" (click)="updateUser()"> Modifier</button>
+      </div>
+
+    </mat-step>
+
+
+  </mat-horizontal-stepper>
+
+</form>

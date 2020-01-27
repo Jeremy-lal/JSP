@@ -1,0 +1,29 @@
+<div class="container">
+  <img [src]="imgArray[indexPicture]" alt="Photo">
+  <div class="description">
+
+    <form [formGroup]="signInForm" (ngSubmit)="login()">
+
+      <div class="reg-form">
+        <div class="section-username">
+          <div action="" class="login-form">
+            <input type="text" name="username" formControlName="username" title="Enter Your Username" required>
+            <label class="label-name"><span class="content-name">Utilisateur</span></label>
+          </div>
+        </div>
+
+        <div class="section-confirm-password">
+          <div action="" class="login-form">
+            <input type="password" name="password" formControlName="pwd" required>
+            <label class="label-name"><span class="content-name">Mot de passe</span></label>
+          </div>
+        </div>
+        <div class="login-form">
+          <button type="button" class="form-btn" (click)='login()'>Connexion</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+</div>

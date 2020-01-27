@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="text" routerLink="/commun">
+    <h1>Section JSP Mérignac</h1>
+  </div>
+  <div class="logo">
+    <i class="material-icons" routerLink="/admin" *ngIf="(currentUser?.status=='Admin')||(currentUser?.status=='superAdmin')">dashboard</i>
+    <i class="material-icons" routerLink="/profil">perm_identity</i>
+    <i class="material-icons" (click)='logOut()'>power_settings_new</i>
+  </div>
+</div>
+

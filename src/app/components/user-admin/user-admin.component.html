@@ -1,0 +1,63 @@
+<mat-accordion *ngIf="pers">
+  <mat-expansion-panel>
+
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <p>{{pers.firstname}} {{pers.lastname}}</p>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="details">
+
+      <div class="action">
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="menu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="openNoteForm(pers.id)">
+            <mat-icon> add_circle_outline </mat-icon>
+            <span>Note</span>
+          </button>
+          <button mat-menu-item (click)="updateUser(pers)">
+            <mat-icon>create</mat-icon>
+            <span>Modifier</span>
+          </button>
+          <button mat-menu-item (click)="deleteUser(pers.id)">
+            <mat-icon>delete</mat-icon>
+            <span>Supprimer</span>
+          </button>
+        </mat-menu>
+      </div>
+
+      <div class="bottom">
+
+        <div class="left">
+          <p>Date de naissance : {{pers.birthday | date:'dd/MM/yyyy'}}</p>
+          <p>Adresse : {{pers.adress}}</p>
+          <p>Email : {{pers.email}}</p>
+          <p>N° de téléphone : {{pers.tel}}</p>
+          <p>Status : {{pers.status}}</p>
+          <p>Nom d'utilisateur : {{pers.username}}</p>
+        </div>
+
+        <div class="right" >
+          <h2 *ngIf="pers.note.length == 0">Pas de note pour cette personne </h2>
+          <table *ngIf="pers.note.length != 0">
+            <tr class="titretab">
+              <td>Description</td>
+              <td>Note</td>
+            </tr>
+            <tr *ngFor="let note of pers.note">
+              <td>{{note.title}}</td>
+              <td class="note">{{note.valeur}}</td>
+              <td><i class="material-icons" (click)="deleteNote(note.id)"> delete </i></td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </mat-expansion-panel>
+
+</mat-accordion>

@@ -1,0 +1,63 @@
+.action {
+  display: flex;
+  justify-content: flex-end;
+}
+.action div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p { 
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
+}
+
+mat-panel-title {
+  display: flex;
+  flex-direction: row;
+}
+mat-panel-title p, mat-panel-title div {
+  width: 50%;
+}
+
+.menu {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+mat-icon {
+  font-size: 2rem;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+td {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+table {
+  border-collapse: collapse;
+}
+.titretab td {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: 1px solid white;
+  text-align: center;
+  min-width: 100px;
+}
+
+i {
+  cursor: pointer;
+}
+
+.note {
+  text-align: center;
+}
