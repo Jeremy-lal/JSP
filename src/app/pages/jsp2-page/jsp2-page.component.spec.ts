@@ -1,12 +1,13 @@
 import { CommentComponent } from './../../components/comment/comment.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Jsp2PageComponent } from './jsp2-page.component';
-import { NavBarTopComponent } from 'src/app/components/nav-bar-top/nav-bar-top.component';
-import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component';
-import { OpenCommentFromComponent } from 'src/app/components/open-comment-from/open-comment-from.component';
-import { MatCardModule, MatDialogModule } from '@angular/material';
+import { NavBarTopComponent } from '../../components/nav-bar-top/nav-bar-top.component';
+import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
+import { OpenCommentFromComponent } from '../../components/open-comment-from/open-comment-from.component';
+import { MatCardModule, MatDialogModule, MatIconModule, MatMenuModule } from '@angular/material';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ResponseComponent } from '../../components/response/response.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Jsp2PageComponent', () => {
   let component: Jsp2PageComponent;
@@ -19,12 +20,18 @@ describe('Jsp2PageComponent', () => {
         NavBarTopComponent,
         NavBarComponent,
         OpenCommentFromComponent,
-        CommentComponent
+        CommentComponent,
+        ResponseComponent
+
        ],
        imports: [
          MatCardModule,
          HttpClientTestingModule,
-         MatDialogModule
+         MatDialogModule,
+         MatIconModule,
+         MatMenuModule,
+         RouterTestingModule
+
         ]
 
     })

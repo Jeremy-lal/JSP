@@ -1,6 +1,8 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PopupSignOutComponent } from './popup-sign-out.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatDialogRef } from '@angular/material';
 
 describe('PopupSignOutComponent', () => {
   let component: PopupSignOutComponent;
@@ -8,7 +10,13 @@ describe('PopupSignOutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PopupSignOutComponent ]
+      declarations: [ PopupSignOutComponent ],
+      imports: [HttpClientTestingModule, RouterTestingModule],
+      providers: [
+        {
+          provide: MatDialogRef
+        }
+      ]
     })
     .compileComponents();
   }));

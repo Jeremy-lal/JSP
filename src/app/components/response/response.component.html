@@ -2,7 +2,7 @@
 
     <mat-card class="example-card">
       <mat-card-header>
-        <img [src]="response.imgURL" alt="phto utilisateur" class="roundedImage">
+        <img [src]="response?.imgURL" alt="phto utilisateur" class="roundedImage">
         <div class="name">
           <mat-card-title> {{response?.firstname}} {{response?.lastname}}</mat-card-title>
           <mat-card-subtitle>{{response?.createAt | date:'dd/MM/yy, h:mm a'}}</mat-card-subtitle>

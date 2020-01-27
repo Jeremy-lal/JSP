@@ -1,7 +1,7 @@
-import { MatDialog, MatDialogModule } from '@angular/material';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatDialogModule } from '@angular/material';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { OpenCommentFromComponent } from './open-comment-from.component';
 
 describe('OpenCommentFromComponent', () => {
@@ -15,7 +15,9 @@ describe('OpenCommentFromComponent', () => {
       ],
       imports: [
         HttpClientTestingModule,
-        MatDialogModule]
+        MatDialogModule,
+        RouterTestingModule
+      ]
     })
       .compileComponents();
   }));

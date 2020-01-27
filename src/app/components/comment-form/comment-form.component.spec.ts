@@ -1,9 +1,11 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CommentFormComponent } from './comment-form.component';
+import { MatSelectModule, MAT_DIALOG_DATA } from '@angular/material';
 
 describe('CommentFormComponent', () => {
   let component: CommentFormComponent;
@@ -17,11 +19,17 @@ describe('CommentFormComponent', () => {
       imports: [
         ReactiveFormsModule,
         MatDialogModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        MatSelectModule,
+        RouterTestingModule,
+        BrowserAnimationsModule
       ],
       providers: [
         {
-          provide: MatDialogRef,
+          provide: MatDialogRef
+        },
+        {
+          provide: MAT_DIALOG_DATA
         }
       ]
     })

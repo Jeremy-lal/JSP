@@ -44,8 +44,10 @@ p {
   color: white;
   background-color: #424242;
   font-size: 2rem;
-
+  cursor: pointer;
+  z-index: 100;
 }
+
 .logo {
   width: 60%;
   display: flex;
@@ -69,6 +71,7 @@ button {
 }
 
 .center button {
+  cursor: pointer;
   padding: 1rem;
   color: black;
   font-size: 2rem;

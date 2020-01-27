@@ -1,8 +1,8 @@
 import { NoteService } from './../../shared/services/note.service';
 import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/shared/models/user';
-import { Note } from 'src/app/shared/models/note';
+import { User } from '../../shared/models/user';
+import { Note } from '../../shared/models/note';
 
 @Component({
   selector: 'app-profil-page',

@@ -1,7 +1,7 @@
-import { UserService } from 'src/app/shared/services/user.service';
+import { UserService } from '../../shared/services/user.service';
 import { Comment } from './../../shared/models/comment';
 import { Component, OnInit } from '@angular/core';
-import { CommentService } from 'src/app/shared/services/comment.service';
+import { CommentService } from '../../shared/services/comment.service';
 
 @Component({
   selector: 'app-jsp3-page',

@@ -80,7 +80,6 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     MatInputModule,
     MatDialogModule,
-    ReactiveFormsModule,
     MatExpansionModule,
     MatStepperModule,
     MatMenuModule,

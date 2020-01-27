@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
 import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/shared/models/user';
+import { User } from '../../shared/models/user';
 import { MatDialog } from '@angular/material';
-import { FormNewUserComponent } from 'src/app/components/form-new-user/form-new-user.component';
+import { FormNewUserComponent } from '../../components/form-new-user/form-new-user.component';
 
 @Component({
   selector: 'app-admin-page',

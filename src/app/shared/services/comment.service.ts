@@ -1,4 +1,3 @@
-import { UserService } from './user.service';
 import { HttpClient } from '@angular/common/http';
 import { Comment } from './../models/comment';
 import { Injectable } from '@angular/core';

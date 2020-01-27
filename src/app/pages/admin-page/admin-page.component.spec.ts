@@ -1,4 +1,5 @@
-import { MatDialogModule } from '@angular/material';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatDialogModule, MatExpansionModule, MatIconModule, MatMenuModule } from '@angular/material';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { UserAdminComponent } from './../../components/user-admin/user-admin.component';
 import { NavBarTopComponent } from './../../components/nav-bar-top/nav-bar-top.component';
@@ -19,7 +20,12 @@ describe('AdminPageComponent', () => {
       ],
       imports: [
         HttpClientTestingModule,
-        MatDialogModule]
+        MatDialogModule,
+        MatExpansionModule,
+        MatIconModule,
+        MatMenuModule,
+        RouterTestingModule
+      ]
     })
       .compileComponents();
   }));

@@ -1,7 +1,11 @@
+import { RouterTestingModule } from '@angular/router/testing';
+import { OpenCommentFromComponent } from './../open-comment-from/open-comment-from.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommentComponent } from './comment.component';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ObserversModule } from '@angular/cdk/observers';
 import { CommonModule } from '@angular/common';
@@ -14,6 +18,7 @@ describe('CommentComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         CommentComponent,
+        OpenCommentFromComponent
       ],
       imports: [
         CommonModule,
@@ -21,7 +26,16 @@ describe('CommentComponent', () => {
         FormsModule,
         MatCardModule,
         HttpClientTestingModule,
-        ObserversModule
+        ObserversModule,
+        MatMenuModule,
+        MatIconModule,
+        MatDialogModule,
+        RouterTestingModule
+      ],
+      providers: [
+        {
+          provide: MAT_DIALOG_DATA
+        }
       ]
     })
       .compileComponents();

@@ -1,8 +1,7 @@
 import { CommentService } from './../../shared/services/comment.service';
-import { Comment } from './../../shared/models/comment';
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from 'src/app/shared/models/user';
-import { UserService } from 'src/app/shared/services/user.service';
+import { User } from '../../shared/models/user';
+import { UserService } from '../../shared/services/user.service';
 import { MatDialog } from '@angular/material';
 import { CommentFormComponent } from '../comment-form/comment-form.component';
 

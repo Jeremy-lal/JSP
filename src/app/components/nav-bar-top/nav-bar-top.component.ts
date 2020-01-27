@@ -1,7 +1,6 @@
 import { PopupSignOutComponent } from './../popup-sign-out/popup-sign-out.component';
-import { Router } from '@angular/router';
 import { UserService } from './../../shared/services/user.service';
-import { User } from 'src/app/shared/models/user';
+import { User } from '../../shared/models/user';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 

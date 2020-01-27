@@ -2,11 +2,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MatCardModule } from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
-import { MatCardTitle, MatCardHeader, MatCardContent, MatCardActions, MatCard, MatInputModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  MatInputModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ConnexionPageComponent } from './connexion-page.component';
 import { ObserversModule } from '@angular/cdk/observers';
 
@@ -26,7 +24,8 @@ describe('ConnexionPageComponent', () => {
          RouterTestingModule,
          HttpClientTestingModule,
          MatInputModule,
-         BrowserAnimationsModule
+         BrowserAnimationsModule,
+         ReactiveFormsModule
         ]
     })
     .compileComponents();

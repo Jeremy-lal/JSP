@@ -1,7 +1,7 @@
 import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { User } from 'src/app/shared/models/user';
+import { FormBuilder } from '@angular/forms';
+import { User } from '../../shared/models/user';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({

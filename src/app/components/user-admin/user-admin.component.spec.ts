@@ -1,8 +1,10 @@
-import { MatDialogModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule, MatMenuModule } from '@angular/material';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UserAdminComponent } from './user-admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('UserAdminComponent', () => {
   let component: UserAdminComponent;
@@ -13,7 +15,11 @@ describe('UserAdminComponent', () => {
       declarations: [UserAdminComponent],
       imports: [
         HttpClientTestingModule,
-        MatDialogModule]
+        MatDialogModule,
+        ReactiveFormsModule,
+        MatExpansionModule,
+        MatIconModule,
+        MatMenuModule]
     })
       .compileComponents();
   }));

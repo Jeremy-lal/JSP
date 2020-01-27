@@ -1,10 +1,9 @@
-import { Note } from 'src/app/shared/models/note';
 import { FormNewNoteComponent } from './../form-new-note/form-new-note.component';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { NoteService } from 'src/app/shared/services/note.service';
-import { UserService } from 'src/app/shared/services/user.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { NoteService } from '../../shared/services/note.service';
+import { UserService } from '../../shared/services/user.service';
 import { MatDialog } from '@angular/material';
-import { User } from 'src/app/shared/models/user';
+import { User } from '../../shared/models/user';
 import { FormNewUserComponent } from '../form-new-user/form-new-user.component';
 
 

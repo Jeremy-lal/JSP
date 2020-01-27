@@ -1,6 +1,9 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ResponseComponent } from './response.component';
+import { MatMenuModule, MatDialogModule } from '@angular/material';
 
 describe('ResponseComponent', () => {
   let component: ResponseComponent;
@@ -8,7 +11,8 @@ describe('ResponseComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResponseComponent ]
+      declarations: [ ResponseComponent ],
+      imports: [MatCardModule, MatMenuModule, MatIconModule, HttpClientTestingModule, MatDialogModule]
     })
     .compileComponents();
   }));

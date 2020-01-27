@@ -1,9 +1,9 @@
+import { CommentService } from '../../shared/services/comment.service';
+import { UserService } from './../../shared/services/user.service';
 import { CommentFormComponent } from './../comment-form/comment-form.component';
 import { Comment } from './../../shared/models/comment';
 import { User } from './../../shared/models/user';
-import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { CommentService } from 'src/app/shared/services/comment.service';
 import { MatDialog } from '@angular/material';
 
 @Component({
@@ -25,7 +25,7 @@ export class CommentComponent implements OnInit {
     this.currentUser = this.userService.currentUser;
   }
 
-  updateComment(comment) {
+  updateComment(comment: Comment) {
     this.commentService.toUpdate = true;
     const dialogRef = this.dialog.open( CommentFormComponent, {
       width: '550px',

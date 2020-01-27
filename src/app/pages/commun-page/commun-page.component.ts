@@ -1,4 +1,4 @@
-import { User } from 'src/app/shared/models/user';
+import { User } from '../../shared/models/user';
 import { UserService } from './../../shared/services/user.service';
 import { Comment } from './../../shared/models/comment';
 import { CommentService } from './../../shared/services/comment.service';
