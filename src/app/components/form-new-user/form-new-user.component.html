@@ -44,28 +44,11 @@
         </div>
       </div>
 
-      <div formGroupName="adress">
-        <div class="section-input">
-          <div class="login-form">
-            <input type="text" name="street" formControlName="street" required>
-            <label class="label-name"><span class="content-name">Rue</span></label>
-          </div>
+      <div class="section-input">
+        <div class="login-form">
+          <input type="text" name="email" formControlName="adress" required>
+          <label class="label-name"><span class="content-name">Adresse</span></label>
         </div>
-
-        <div class="section-input">
-          <div class="login-form">
-            <input type="text" name="postcode" formControlName="postcode" required>
-            <label class="label-name"><span class="content-name">Code postal</span></label>
-          </div>
-        </div>
-
-        <div class="section-input">
-          <div class="login-form">
-            <input type="text" name="city" formControlName="city" required>
-            <label class="label-name"><span class="content-name">Ville</span></label>
-          </div>
-        </div>
-
       </div>
 
     </mat-step>
@@ -104,13 +87,14 @@
 
       <div class="section-input">
         <div class="login-form">
-          <input type="text" name="imgUrl" formControlName="imgUrl" required>
+          <input type="text" name="imgUrl" formControlName="imgURL" required>
           <label class="label-name"><span class="content-name">Photo</span></label>
         </div>
       </div>
 
       <div class="center">
-        <button type="submit"> Submit</button>
+        <button type="submit" *ngIf="userService.toUpdate === false"> Envoyer</button>
+        <button type="submit" *ngIf="userService.toUpdate === true" (click)="updateUser()"> Modifier</button>
       </div>
 
     </mat-step>
@@ -119,3 +103,4 @@
     </mat-horizontal-stepper>
 
 </form>
+

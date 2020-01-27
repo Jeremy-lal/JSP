@@ -4,11 +4,26 @@
     <mat-expansion-panel-header>
       <mat-panel-title>
         <p>{{pers.firstname}} {{pers.lastname}}</p>
-        <div class="action">
-          <div class="addnote"> note <i class="material-icons" (click)="openNoteForm(pers.id)"> add_circle_outline </i>
-          </div>
-          <div class="modif"> <i class="material-icons"> create </i></div>
-          <div class="deleteUser"> <i class="material-icons" (click)="deleteUser(pers.id)"> delete </i></div>
+        
+        <div class="logo" >
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon class="menu">more_horiz</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openNoteForm(pers.id)">
+              <mat-icon> add_circle_outline </mat-icon>
+              <span>Note</span>
+            </button>
+            <button mat-menu-item (click)="updateUser(pers)">
+              <mat-icon>create</mat-icon>
+              <span>Modifier</span>
+            </button>
+            <button mat-menu-item (click)="deleteUser(pers.id)">
+              <mat-icon>delete</mat-icon>
+              <span>Supprimer</span>
+            </button>
+          </mat-menu>
+          
         </div>
       </mat-panel-title>
     </mat-expansion-panel-header>

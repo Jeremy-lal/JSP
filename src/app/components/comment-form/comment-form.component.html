@@ -25,6 +25,9 @@
         <option value="Question">Question</option>
     </select>
 
-    <button type="submit"> Ajouter </button>
+    <div class="center">
+      <button type="submit" *ngIf="commentService.toUpdate === false"> Envoyer</button>
+      <button *ngIf="commentService.toUpdate === true" (click)="updateComment()"> Modifier</button>
+    </div>
   </div>
 </form>

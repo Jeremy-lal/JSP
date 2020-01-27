@@ -8,8 +8,21 @@
         <mat-card-subtitle>{{comment?.createAt | date:'dd/MM/yy, h:mm a'}}</mat-card-subtitle>
       </div>
       <div class="logo" *ngIf="(comment?.user_id == currentUser?.id) || (currentUser?.status=='Admin')||(currentUser?.status=='superAdmin')">
-        <i class="material-icons">create</i>
-        <i class="material-icons" (click)="deleteComment(comment?.id)">delete</i>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon class="menu">more_horiz</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="updateComment(comment)">
+            <mat-icon>create</mat-icon>
+            <span>Modifier</span>
+          </button>
+          <button mat-menu-item (click)="deleteComment(comment.id)">
+            <mat-icon>delete</mat-icon>
+            <span>Supprimer</span>
+          </button>
+        </mat-menu>
+
       </div>
     </mat-card-header>
 

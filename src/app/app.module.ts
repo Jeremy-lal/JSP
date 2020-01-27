@@ -31,12 +31,12 @@ import { MatInputModule, MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { OpenCommentFromComponent } from './components/open-comment-from/open-comment-from.component';
 import { UserAdminComponent } from './components/user-admin/user-admin.component';
-import { UserAdminDetailComponent } from './components/user-admin-detail/user-admin-detail.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatStepperModule} from '@angular/material/stepper';
 import { Page404Component } from './pages/page404/page404.component';
 import { ResponseComponent } from './components/response/response.component';
 import { PopupSignOutComponent } from './components/popup-sign-out/popup-sign-out.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -61,7 +61,6 @@ import { PopupSignOutComponent } from './components/popup-sign-out/popup-sign-ou
     CommentFormComponent,
     OpenCommentFromComponent,
     UserAdminComponent,
-    UserAdminDetailComponent,
     Page404Component,
     ResponseComponent,
     PopupSignOutComponent
@@ -81,7 +80,8 @@ import { PopupSignOutComponent } from './components/popup-sign-out/popup-sign-ou
     MatDialogModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatStepperModule
+    MatStepperModule,
+    MatMenuModule
   ],
   providers: [{ provide: MatDialogRef, useValue: {}},
               { provide: MAT_DIALOG_DATA, useValue: {} },

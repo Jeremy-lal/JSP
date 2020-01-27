@@ -27,8 +27,9 @@ export class CommentService {
     return this.http.post(CommentService.URL, newComment);
   }
 
-  updateComment(updateComment) {
-    return this.http.put(CommentService.URL, updateComment);
+  updateComment(updateComment: Comment) {
+    const id = updateComment.id;
+    return this.http.put(CommentService.URL + id, updateComment);
   }
 
   deleteComment(id) {

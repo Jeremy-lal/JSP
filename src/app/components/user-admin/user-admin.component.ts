@@ -5,6 +5,7 @@ import { NoteService } from 'src/app/shared/services/note.service';
 import { UserService } from 'src/app/shared/services/user.service';
 import { MatDialog } from '@angular/material';
 import { User } from 'src/app/shared/models/user';
+import { FormNewUserComponent } from '../form-new-user/form-new-user.component';
 
 
 @Component({
@@ -32,6 +33,15 @@ export class UserAdminComponent implements OnInit {
 
   deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe();
+  }
+
+  updateUser(user) {
+    this.userService.toUpdate = true;
+    const dialogRef = this.dialog.open(FormNewUserComponent, {
+      width: '70%',
+      data: user
+    });
+
   }
 
   deleteNote(id: number) {

@@ -21,20 +21,36 @@ export class CommentFormComponent implements OnInit {
   });
 
   currentUser: User;
-  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<CommentFormComponent>, private commentService: CommentService,
-              private userService: UserService, @Inject(MAT_DIALOG_DATA) public commentClick: Comment) { }
+  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<CommentFormComponent>, public commentService: CommentService,
+              private userService: UserService, @Inject(MAT_DIALOG_DATA) public commentForAction: Comment) { }
 
   ngOnInit() {
     this.currentUser = this.userService.currentUser;
+
+    if (this.commentService.toUpdate === true) {
+      this.commentForm.controls.title.setValue(this.commentForAction.title);
+      this.commentForm.controls.content.setValue(this.commentForAction.content);
+      this.commentForm.controls.grp.setValue(this.commentForAction.grp);
+    }
   }
 
   sendComment(): void {
     const commentToPost: Comment = this.commentForm.value;
-    if (this.commentClick !== undefined) {
-      commentToPost.comment_id = this.commentClick.id;
+    if (this.commentForAction !== undefined) {
+      commentToPost.comment_id = this.commentForAction.id;
       // commentToPost.grp = this.commentClick.grp;
     }
     this.commentService.createComment(commentToPost).subscribe();
     this.dialogRef.close();
   }
-}
+
+  updateComment() {
+      const commentToUpdate: Comment = this.commentForm.value;
+      commentToUpdate.id = this.commentForAction.id;
+      this.commentService.updateComment(commentToUpdate).subscribe((eventPosted) => {
+        console.log(eventPosted);
+      });
+      this.dialogRef.close();
+      this.userService.toUpdate = false;
+    }
+  }

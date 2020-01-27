@@ -2,8 +2,8 @@ import { User } from './../models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { tap, delay, map } from 'rxjs/operators';
-import { LocalStorage } from '@ngx-pwa/local-storage';
+import { tap, map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -83,8 +83,9 @@ export class UserService {
     return this.http.post(UserService.URL_AUTH + 'signup', newUser);
   }
 
-  updateUser(newUser) {
-    return this.http.put(UserService.URL, newUser);
+  updateUser(userToUpdate) {
+    const id = userToUpdate.id;
+    return this.http.put(UserService.URL + id, userToUpdate);
   }
 
   deleteUser(id) {

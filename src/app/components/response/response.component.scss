@@ -49,24 +49,27 @@
     text-align: justify;
     padding: 0 10% 0 10%;
   }
+  .menu {
+    border: none;
+    color: white;
+    background-color: #424242;
+    font-size: 2rem;
+  
+  }
   .logo {
-    justify-self: flex-end;
-    width: 55%;
+    width: 60%;
     display: flex;
     justify-content: flex-end;
   }
   
-  i {
-    margin: 0 0.5rem 0 0.5rem;
-  }
   
   button {
-    border: 1px solid white;
     background-color: transparent;
     border-radius: 10px;
     padding: 0.5rem;
     color: white;
-    align-self: flex-end;
+    align-self: flex-start;
+    border: none;
   }
   
   mat-card-content {
