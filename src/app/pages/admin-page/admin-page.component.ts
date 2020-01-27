@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/models/user';
@@ -11,7 +12,7 @@ import { FormNewUserComponent } from 'src/app/components/form-new-user/form-new-
 })
 export class AdminPageComponent implements OnInit {
 
-  constructor(private userService: UserService, public dialog: MatDialog) { }
+  constructor(private userService: UserService, public dialog: MatDialog, private router: Router) { }
 
   listjsp1: User[];
   listjsp2: User[];

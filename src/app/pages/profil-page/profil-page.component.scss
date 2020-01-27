@@ -3,6 +3,12 @@
   flex-direction: row;
 }
 
+h1 {
+  font-size: 4rem;
+}
+
+// partie de droite
+
 .left {
   width: 30%;
 }
@@ -10,48 +16,12 @@ img {
   width: 100%;
   border-radius: 15px;
 }
+
+// note
 .note {
-  border: 2px solid black;
   width: 100%;
   margin: 1rem;
-  border-radius: 15px;
-}
-.note p {
-  text-align: right;
-  padding-right: 1rem;
-}
-h2 {
-  text-align: center;;
-}
-
-.right {
-  width: 70%;
-  padding: 0 10% 0 10%;
-}
-.right p {
-  font-size: 2rem;
-}
-
-.right h2 {
-  font-size: 3rem;
-  margin-bottom: 5rem;
-}
-.right ul li {
-  font-size: 2rem;
-  margin: 2rem;
-}
-li {
-  list-style: none;
-}
-h1 {
-  font-size: 4rem;
-}
-label {
-  font-weight: bold;
-}
-
-img {
-  margin: 1rem;
+  text-align: center;
 }
 
 td {
@@ -59,7 +29,45 @@ td {
   padding: 0.5rem;
   margin-right: 0.5rem;
 }
+
+table {
+  border-collapse: collapse;
+}
 .titretab td {
   font-size: 1.5rem;
-  background-color: red;
+  background-color: transparent;
+  border: 1px solid black;
+  text-align: center;
+  min-width: 100px;
 }
+
+
+// partie de droite
+.right {
+  width: 70%;
+  padding: 0 10% 0 10%;
+}
+
+p {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+ul li {
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+label {
+  font-weight: bold;
+}
+

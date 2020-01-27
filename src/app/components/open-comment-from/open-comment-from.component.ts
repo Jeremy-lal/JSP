@@ -3,6 +3,7 @@ import { CommentService } from './../../shared/services/comment.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { CommentFormComponent } from '../comment-form/comment-form.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-open-comment-from',
@@ -12,7 +13,7 @@ import { CommentFormComponent } from '../comment-form/comment-form.component';
 export class OpenCommentFromComponent implements OnInit {
 
   @Input() commentClick: Comment;
-  constructor(private commentService: CommentService,  public dialog: MatDialog) { }
+  constructor(private commentService: CommentService,  public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
   }
@@ -23,5 +24,9 @@ export class OpenCommentFromComponent implements OnInit {
       width: '550px',
       data : this.commentClick
     });
+
+    // dialogRef.afterClosed().subscribe((isConnectedx) => {
+    //   this.router.navigateByUrl('/amin')
+    // });
   }
 }

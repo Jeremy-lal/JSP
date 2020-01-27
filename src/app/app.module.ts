@@ -37,6 +37,8 @@ import { Page404Component } from './pages/page404/page404.component';
 import { ResponseComponent } from './components/response/response.component';
 import { PopupSignOutComponent } from './components/popup-sign-out/popup-sign-out.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -81,7 +83,8 @@ import {MatMenuModule} from '@angular/material/menu';
     ReactiveFormsModule,
     MatExpansionModule,
     MatStepperModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSelectModule
   ],
   providers: [{ provide: MatDialogRef, useValue: {}},
               { provide: MAT_DIALOG_DATA, useValue: {} },
