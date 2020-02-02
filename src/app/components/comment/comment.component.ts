@@ -16,7 +16,6 @@ export class CommentComponent implements OnInit {
   @Input() comment;
 
   currentUser: User;
-
   commentClick: number;
 
   constructor(private commentService: CommentService, private userService: UserService, public dialog: MatDialog ) { }
@@ -35,7 +34,6 @@ export class CommentComponent implements OnInit {
 
   deleteComment(event) {
       this.commentService.deleteComment(event).subscribe();
-      console.log(event);
   }
 
   commentClickId( commentId: number) {

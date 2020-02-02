@@ -50,4 +50,9 @@ describe('CommentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should work : commentClickId', () => {
+    component.commentClickId(2);
+    expect(component.commentClick).toEqual(2);
+  });
 });

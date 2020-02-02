@@ -38,7 +38,6 @@ export class CommentFormComponent implements OnInit {
     const commentToPost: Comment = this.commentForm.value;
     if (this.commentForAction !== undefined) {
       commentToPost.comment_id = this.commentForAction.id;
-      // commentToPost.grp = this.commentClick.grp;
     }
     this.commentService.createComment(commentToPost).subscribe();
     this.dialogRef.close();

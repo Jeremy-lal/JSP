@@ -5,7 +5,7 @@
       <img [src]="comment?.imgURL" alt="phto utilisateur" class="roundedImage">
       <div class="name">
         <mat-card-title> {{comment?.firstname}} {{comment?.lastname}}</mat-card-title>
-        <mat-card-subtitle>{{comment?.createAt | date:'dd/MM/yy, h:mm a'}}</mat-card-subtitle>
+        <mat-card-subtitle>{{comment?.create_at | date:'dd/MM/yy, h:mm a'}}</mat-card-subtitle>
       </div>
       <div class="logo" *ngIf="(comment?.user_id == currentUser?.id) || (currentUser?.status=='Admin')||(currentUser?.status=='superAdmin')">
 

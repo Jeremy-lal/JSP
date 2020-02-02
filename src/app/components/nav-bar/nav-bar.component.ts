@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   currentUser: User;
+
   constructor(private userService: UserService) { }
 
   ngOnInit() {

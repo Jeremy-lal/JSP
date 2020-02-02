@@ -43,10 +43,6 @@ export class FormNewUserComponent implements OnInit {
     }
   }
 
-  submit() {
-    console.log(this.userForm.value);
-  }
-
   sendUser(): void {
     const userToPost = this.userForm.value;
     this.userService.createUser(userToPost).subscribe((eventPosted) => {

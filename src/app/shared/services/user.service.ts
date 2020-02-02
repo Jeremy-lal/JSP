@@ -13,7 +13,6 @@ export class UserService {
   static URL = 'http://localhost:3000/users/';
   static URL_AUTH = 'http://localhost:3000/auth/';
 
-  static UrlConnexion = '';
   toUpdate = false;
   // currentUser: User;
   currentUser: User =
