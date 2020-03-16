@@ -1,3 +1,4 @@
+import { TchatService } from './../../shared/services/tchat.service';
 import { Comment } from './../../shared/models/comment';
 import { User } from '../../shared/models/user';
 import { UserService } from './../../shared/services/user.service';
@@ -14,33 +15,30 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class CommentFormComponent implements OnInit {
 
   commentForm = this.fb.group({
-    title: [''],
     content: [''],
-    grp: [''],
-    user_id: [this.userService.currentUser.id],
   });
 
   currentUser: User;
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<CommentFormComponent>, public commentService: CommentService,
-              private userService: UserService, @Inject(MAT_DIALOG_DATA) public commentForAction: Comment) { }
+              private userService: UserService, @Inject(MAT_DIALOG_DATA) public commentForAction: Comment,
+              private tchatService: TchatService) { }
 
   ngOnInit() {
     this.currentUser = this.userService.currentUser;
 
     if (this.commentService.toUpdate === true) {
-      this.commentForm.controls.title.setValue(this.commentForAction.title);
       this.commentForm.controls.content.setValue(this.commentForAction.content);
-      this.commentForm.controls.grp.setValue(this.commentForAction.grp);
     }
   }
 
   sendComment(): void {
     const commentToPost: Comment = this.commentForm.value;
+    commentToPost.user_id = this.userService.currentUser.id;
+    commentToPost.grp = this.tchatService.locate;
     if (this.commentForAction !== undefined) {
       commentToPost.comment_id = this.commentForAction.id;
     }
     this.commentService.createComment(commentToPost).subscribe();
-    this.dialogRef.close();
   }
 
   updateComment() {

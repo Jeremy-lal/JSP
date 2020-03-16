@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="locate">
+        <h2>{{locate}}</h2>
+    </div>
+    
+    <div class="tchat">
+        <div class="messages" *ngFor="let comment of dataToDisplay">
+            <app-message [message]="comment"></app-message>
+        </div>
+    </div>
+
+</div>

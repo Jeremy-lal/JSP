@@ -5,6 +5,7 @@ import { UserService } from '../../shared/services/user.service';
 import { MatDialog } from '@angular/material';
 import { User } from '../../shared/models/user';
 import { FormNewUserComponent } from '../form-new-user/form-new-user.component';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -15,10 +16,30 @@ import { FormNewUserComponent } from '../form-new-user/form-new-user.component';
 export class UserAdminComponent implements OnInit {
 
   @Input() pers: User;
+  URL = 'http://localhost:3000/picture';
 
-  constructor(private userService: UserService, public dialog: MatDialog, private noteService: NoteService) { }
+  images;
+
+  constructor(private http: HttpClient, private userService: UserService, public dialog: MatDialog, private noteService: NoteService) { }
 
   ngOnInit() {
+  }
+
+  selectImage(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.images = file;
+    }
+  }
+
+  onSubmit() {
+    const formData = new FormData();
+    formData.append('picture', this.images);
+
+    this.http.post<any>(this.URL, formData).subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err)
+    );
   }
 
   openNoteForm(userId) {

@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+app-sidemenu {
+    width: 15%;
+}
+app-tchat {
+    width: 85%;
+}
+.rigth {
+    display: flex;
+    flex-direction: column;
+}
+
+app-comment-form {
+    justify-self: flex-end;
+}

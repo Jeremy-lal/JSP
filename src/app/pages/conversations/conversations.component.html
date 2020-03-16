@@ -1,0 +1,7 @@
+<div class="container">
+    <app-sidemenu (dataForGroup)="getComments($event)"></app-sidemenu>
+    <div class="rigth">
+        <app-tchat [dataToDisplay]="commentsForGroup"></app-tchat>
+        <app-comment-form></app-comment-form>
+    </div>
+</div>
