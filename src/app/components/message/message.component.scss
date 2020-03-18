@@ -23,11 +23,17 @@ img {
 }
 .name {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     padding-right: 1rem;
 }
 
 .date {
     align-self: flex-end;
+}
+
+.message p{
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    overflow: hidden;
 }
 

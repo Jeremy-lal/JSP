@@ -38,7 +38,10 @@ export class CommentFormComponent implements OnInit {
     if (this.commentForAction !== undefined) {
       commentToPost.comment_id = this.commentForAction.id;
     }
-    this.commentService.createComment(commentToPost).subscribe();
+    this.commentService.createComment(commentToPost).subscribe(() => {
+      console.log(commentToPost);
+
+    });
   }
 
   updateComment() {
@@ -49,5 +52,9 @@ export class CommentFormComponent implements OnInit {
       });
       this.dialogRef.close();
       this.userService.toUpdate = false;
+    }
+
+  clearContents(element) {
+      element.value = '';
     }
   }

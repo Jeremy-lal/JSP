@@ -17,7 +17,7 @@ export class UserService {
   // currentUser: User;
   currentUser: User =
     {
-      id: 21,
+      id: 2,
       firstname: 'Jeremy',
       lastname: 'Lalait',
       birthday: new Date(),

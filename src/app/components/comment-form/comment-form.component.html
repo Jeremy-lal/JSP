@@ -1,9 +1,12 @@
-<form [formGroup]="commentForm" (ngSubmit)="sendComment()">
+<div class="container">
+  <form [formGroup]="commentForm" (ngSubmit)="sendComment()">
+  
+      <textarea formControlName="content" required onfocus="clearContents(this)" #area placeholder="Renseignez votre message"></textarea>
+  
+      <div class="center">
+        <button type="submit" *ngIf="commentService.toUpdate === false" (click)="area.value=''"> Envoyer</button>
+        <button *ngIf="commentService.toUpdate === true" (click)="updateComment()"> Modifier</button>
+      </div>
+  </form>
+</div>
 
-    <textarea formControlName="content" required></textarea>
-
-    <div class="center">
-      <button type="submit" *ngIf="commentService.toUpdate === false"> Envoyer</button>
-      <button *ngIf="commentService.toUpdate === true" (click)="updateComment()"> Modifier</button>
-    </div>
-</form>

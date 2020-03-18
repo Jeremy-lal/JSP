@@ -1,13 +1,20 @@
+
+.container {
+    width: 100%;
+    overflow: auto;
+}
+
 .locate {
     border-bottom: 1px solid black;
-    width: 100%;
+    background-color: white;
+    width: 85%;
     font-size: 2rem;
     padding: 1rem;
-    margin-bottom: 1rem;
     position: fixed;
 }
 
 .tchat {
-    width: 100%;
-    padding-top: 70px;
+    width: 95%;
+    overflow: hidden;
+    padding: 70px 0 120px 0;
 }
