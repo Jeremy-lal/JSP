@@ -32,6 +32,7 @@ import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { TchatComponent } from './components/tchat/tchat.component';
 import { MessageComponent } from './components/message/message.component';
 import { ConversationsComponent } from './pages/conversations/conversations.component';
+import { ScrollDirective } from './shared/directives/scroll.directive';
 
 
 
@@ -53,7 +54,8 @@ import { ConversationsComponent } from './pages/conversations/conversations.comp
     SidemenuComponent,
     TchatComponent,
     MessageComponent,
-    ConversationsComponent
+    ConversationsComponent,
+    ScrollDirective
   ],
   imports: [
     BrowserModule,

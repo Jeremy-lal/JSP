@@ -14,7 +14,9 @@
 }
 
 .tchat {
-    width: 95%;
-    overflow: hidden;
-    padding: 70px 0 120px 0;
+    width: 99.5%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 70px;
+    height: 79vh;
 }
