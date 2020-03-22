@@ -10,7 +10,7 @@ app-sidemenu {
     position: fixed;
 }
 
-.rigth {
+.left {
     display: flex;
     flex-direction: column;
     width: 85%;
@@ -29,4 +29,9 @@ app-comment-form {
 
 app-tchat {
     height: 83vh;
+}
+
+.rigth {
+    width: 35%;
+    height: 100vh;
 }

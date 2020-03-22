@@ -13,4 +13,5 @@ export class Comment {
   lastname;
   status;
   imgURL;
+  response = false;
 }

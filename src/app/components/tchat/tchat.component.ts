@@ -2,7 +2,7 @@ import { ScrollDirective } from './../../shared/directives/scroll.directive';
 import { CommentService } from './../../shared/services/comment.service';
 import { Comment } from './../../shared/models/comment';
 import { TchatService } from './../../shared/services/tchat.service';
-import { Component, OnInit, Input, OnChanges, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ViewChild, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tchat',
@@ -16,13 +16,13 @@ export class TchatComponent implements OnInit, OnChanges {
   scroll: ScrollDirective;
   locate: string;
 
-  constructor(private tchatService: TchatService, private commentService: CommentService) { }
+  constructor(private commentService: CommentService) { }
 
   ngOnInit() {
-    this.locate = this.tchatService.locate;
+    this.locate = this.commentService.locate;
   }
 
   ngOnChanges() {
-    this.locate = this.tchatService.locate;
+    this.locate = this.commentService.locate;
   }
 }

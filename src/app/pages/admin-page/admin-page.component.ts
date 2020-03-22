@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { UserService } from './../../shared/services/user.service';
+import { UserService } from '../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/models/user';
 import { MatDialog } from '@angular/material';

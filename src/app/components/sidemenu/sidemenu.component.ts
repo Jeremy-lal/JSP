@@ -35,13 +35,11 @@ export class SidemenuComponent implements OnInit {
   }
 
   sendDataForDisplay(where: string) {
-    this.tchatService.locate = where;
+    this.commentService.locate = where;
     this.commentService.getComment(where).subscribe(((data: Comment[]) => {
       this.comments = data;
       this.dataForGroup.emit(this.comments);
     }));
-
-
   }
 
 }

@@ -1,14 +1,26 @@
 <div class="container">
-    <div class="left">
-        <img src="https://img.favpng.com/23/0/3/computer-icons-user-profile-clip-art-portable-network-graphics-png-favpng-YEj6NsJygkt6nFTNgiXg9fg9w.jpg" alt="user">
+    <div class="comment">
+        <div class="left">
+            <img src="https://img.favpng.com/23/0/3/computer-icons-user-profile-clip-art-portable-network-graphics-png-favpng-YEj6NsJygkt6nFTNgiXg9fg9w.jpg" alt="user">
+        </div>
+        <div class="rigth">
+            <div class="details">
+                <p class="name">{{message.firstname}} {{message.lastname}}</p>
+                <p class="date">{{message.create_at | date: 'short'}}</p>
+                <div class="action">
+                    <button  (click)="reply(message)" title="Répondre"><i class="fas fa-reply"></i></button>
+                    <button  (click)="updateComment(message)" title="Modifier"><i class="fas fa-edit"></i></button>
+                    <button (click)='deleteComment(message)' title="Supprimer"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </div>
+    
+            <div class="message">
+                <p>{{message.content}}</p>
+            </div>
+        </div>
     </div>
-    <div class="rigth">
-        <div class="details">
-            <p class="name">{{message.firstname}} {{message.lastname}}</p>
-            <p class="date">{{message.create_at | date: 'short'}}</p>
-        </div>
-        <div class="message">
-            <p>{{message.content}}</p>
-        </div>
+    <app-response-form *ngIf="message.response === true && commentService.openFormForResponse === true"></app-response-form>
+    <div class="response" *ngIf="nbReponse > 0" (click)="showResponse()">
+        <p>{{nbReponse}} réponse(s)</p>
     </div>
 </div>

@@ -33,6 +33,8 @@ import { TchatComponent } from './components/tchat/tchat.component';
 import { MessageComponent } from './components/message/message.component';
 import { ConversationsComponent } from './pages/conversations/conversations.component';
 import { ScrollDirective } from './shared/directives/scroll.directive';
+import { ResponseFormComponent } from './components/response-form/response-form.component';
+import { TchatResponseComponent } from './components/tchat-response/tchat-response.component';
 
 
 
@@ -55,7 +57,9 @@ import { ScrollDirective } from './shared/directives/scroll.directive';
     TchatComponent,
     MessageComponent,
     ConversationsComponent,
-    ScrollDirective
+    ScrollDirective,
+    ResponseFormComponent,
+    TchatResponseComponent
   ],
   imports: [
     BrowserModule,

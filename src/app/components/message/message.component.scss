@@ -1,8 +1,27 @@
-.container {
+.comment {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 97%;
     padding: 0.5rem;
+}
+
+.container:hover {
+    background-color: rgba(grey, $alpha: 0.1);
+    .action {
+        display: block;
+    }
+}
+
+.action {
+    align-self: flex-end;
+    padding-left: 72%;
+    display: none;
+    
+}
+
+button {
+    border: none;
+    background-color: transparent;
 }
 
 .left {
@@ -21,6 +40,8 @@ img {
     display: flex;
     flex-direction: row;
 }
+
+
 .name {
     font-weight: bold;
     font-size: 1.7rem;
@@ -35,5 +56,18 @@ img {
     font-size: 1.5rem;
     padding: 0.3rem;
     overflow: hidden;
+}
+
+i {
+    padding-right: 0.5rem;
+    font-size: 1rem;
+    color: rgb(168, 8, 8);
+}
+i:hover {
+    cursor: pointer;
+}
+
+.response:hover {
+    cursor: pointer;
 }
 

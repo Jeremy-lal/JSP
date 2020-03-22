@@ -1,0 +1,10 @@
+<div class="align">
+    <i class="fas fa-times" (click)="close()" title="Fermer"></i>
+</div>
+
+<app-message [message]="message"></app-message>
+
+<div class="tchatResponse" *ngFor="let response of responses">
+    <app-message [message]="response"></app-message>
+</div>
+<app-comment-form></app-comment-form>

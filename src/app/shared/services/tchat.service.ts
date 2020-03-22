@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class TchatService {
 
-  locate = 'Commun';
+
 
   constructor() { }
 }

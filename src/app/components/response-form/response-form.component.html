@@ -1,0 +1,13 @@
+<div class="container">
+    <form [formGroup]="responseForm" (ngSubmit)="sendResponse()">
+    
+        <textarea formControlName="content" id="content" required onfocus="clearContents(this)" #area placeholder="Renseignez votre message"></textarea>
+    
+        <div class="center">
+          <button type="submit" (click)="area.value=''" title="Réondre"><i class="fas fa-reply"></i></button>
+        </div>
+    </form>
+  </div>
+  
+  
+  

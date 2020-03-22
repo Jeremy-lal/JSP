@@ -1,3 +1,4 @@
+import { Comment } from './../../shared/models/comment';
 import { CommentService } from './../../shared/services/comment.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,10 +11,10 @@ export class ConversationsComponent implements OnInit {
 
   commentsForGroup: Comment[];
 
-  constructor(private commentService: CommentService) { }
+  constructor(public commentService: CommentService) { }
 
   ngOnInit() {
-    this.commentService.getComment('Commun').subscribe((data: Comment[]) => {
+    this.commentService.getComment('Commun').subscribe((data) => {
       this.commentsForGroup = data;
     });
   }
@@ -21,4 +22,5 @@ export class ConversationsComponent implements OnInit {
   getComments(data) {
     this.commentsForGroup = data;
   }
+
 }
