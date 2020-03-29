@@ -36,6 +36,7 @@ export class SidemenuComponent implements OnInit {
 
   sendDataForDisplay(where: string) {
     this.commentService.locate = where;
+    this.router.navigateByUrl('/conversation');
     this.commentService.getComment(where).subscribe(((data: Comment[]) => {
       this.comments = data;
       this.dataForGroup.emit(this.comments);

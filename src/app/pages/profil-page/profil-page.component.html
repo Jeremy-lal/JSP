@@ -1,30 +1,40 @@
-
 <div class="container">
-  <div class="left">
-    <img [src]="currentUser?.imgURL" alt="image de l'utilisateur">
-    <div class="note" *ngIf=" currentUser?.note.length > 0 ">
-      <table>
-        <tr class="titretab">
-          <td>Description</td>
-          <td>Note</td>
-        </tr>
-        <tr *ngFor="let note of currentUser?.note">
-          <td>{{note.title}}</td>
-          <td>{{note.valeur}}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+  <app-sidemenu></app-sidemenu>
+  <div class="leftContainer">
 
-  <div class="right">
-    <h1>{{currentUser?.firstname}} {{currentUser?.lastname}}</h1>
-    <p>Status : {{currentUser?.status}}</p>
-    <h2>A propos</h2>
-    <ul>
-      <li><label>Date de naissance:</label>     {{currentUser?.birthday | date :'mediumDate'}}</li>
-      <li><label>N° de téléphone:</label>    {{currentUser?.tel}}</li>
-      <li><label>Adresse: </label>   {{currentUser?.adress}}</li>
-      <li><label>Email: </label>   {{currentUser?.email}}</li>
-    </ul>
+    <div class="profil">
+
+      <div class="user">
+        <img [src]="currentUser?.imgURL" alt="image de l'utilisateur">
+        <h1>{{currentUser?.firstname}} {{currentUser?.lastname}}</h1>
+      </div>
+
+      <div class="propos">
+        <h2>A propos</h2>
+        <ul>
+          <li><label>Date de naissance:</label> {{currentUser?.birthday | date :'mediumDate'}}</li>
+          <li><label>N° de téléphone:</label> {{currentUser?.tel}}</li>
+          <li><label>Adresse: </label> {{currentUser?.adress}}</li>
+          <li><label>Email: </label> {{currentUser?.email}}</li>
+          <li><label>Status: </label>{{currentUser?.status}}</li>
+        </ul>
+      </div>
+
+
+      <div class="note" *ngIf=" currentUser?.note.length > 0 ">
+        <table>
+          <tr class="titretab">
+            <td>Description</td>
+            <td>Note</td>
+          </tr>
+          <tr *ngFor="let note of currentUser?.note">
+            <td>{{note.title}}</td>
+            <td>{{note.valeur}}</td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
+
   </div>
 </div>
