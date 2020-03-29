@@ -2,7 +2,7 @@ import { SidemenuComponent } from './../sidemenu/sidemenu.component';
 import { CommentFormComponent } from './../comment-form/comment-form.component';
 import { CommentService } from './../../shared/services/comment.service';
 import { Comment } from './../../shared/models/comment';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-message',
@@ -12,6 +12,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MessageComponent implements OnInit {
 
   @Input() message: Comment;
+  @Output() showResponse = new EventEmitter<boolean>();
+  @Output() giveMessage = new EventEmitter<Comment>();
   nbReponse: number;
 
   constructor(public commentService: CommentService) { }
@@ -32,9 +34,10 @@ export class MessageComponent implements OnInit {
     this.commentService.openFormForResponse = true;
   }
 
-  showResponse() {
+  displayResponse() {
     this.commentService.commentIdForResponse = this.message.id;
-    this.commentService.showResponseTchat = true;
+    this.showResponse.emit(true);
+    this.giveMessage.emit(this.message);
   }
 
   updateComment(comment: Comment)  {

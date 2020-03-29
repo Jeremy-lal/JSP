@@ -1,23 +1,22 @@
+.container {
+    background-color: white;
+    color: black;
+}
 .comment {
     display: flex;
     flex-direction: row;
-    width: 97%;
+    // width: 97%;
     padding: 0.5rem;
 }
 
 .container:hover {
-    background-color: rgba(grey, $alpha: 0.1);
+    // background-color: rgba(grey, $alpha: 0.1);
     .action {
         display: block;
     }
 }
 
-.action {
-    align-self: flex-end;
-    padding-left: 72%;
-    display: none;
-    
-}
+
 
 button {
     border: none;
@@ -33,12 +32,21 @@ img {
 }
 
 .rigth {
+    // padding-left: 5%;
     width: 95%;
 }
 
 .details {
     display: flex;
     flex-direction: row;
+    // border: 2px solid red
+}
+
+.action {
+    // padding-left: 72%;
+    justify-self: flex-end;
+    display: none; 
+    // border: 2px solid blue; 
 }
 
 

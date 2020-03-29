@@ -4,7 +4,4 @@
         <app-tchat [dataToDisplay]="commentsForGroup"></app-tchat>
         <app-comment-form (dataForGroup)="getComments($event)"></app-comment-form>
     </div>
-    <div class="rigth">
-        <app-tchat-response *ngIf="commentService.showResponseTchat === true"></app-tchat-response>
-    </div>
 </div>

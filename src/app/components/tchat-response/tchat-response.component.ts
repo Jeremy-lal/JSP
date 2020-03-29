@@ -1,32 +1,30 @@
 import { Comment } from './../../shared/models/comment';
 import { CommentService } from './../../shared/services/comment.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tchat-response',
   templateUrl: './tchat-response.component.html',
   styleUrls: ['./tchat-response.component.scss']
 })
-export class TchatResponseComponent implements OnInit {
+export class TchatResponseComponent implements OnInit, OnChanges {
 
-  message: Comment;
+  @Input() message: Comment;
+  @Output() displayResponse = new EventEmitter<boolean>();
   responses: Comment[];
 
   constructor(private commentService: CommentService) { }
 
-  ngOnInit() {
-    this.commentService.getCommentById(this.commentService.commentIdForResponse).subscribe((data) => {
-      this.message = data;
-      this.commentService.getResponseCommentById(this.message).subscribe((datas) => {
-        this.responses = datas;
-        console.log(this.responses);
-
-      });
+  ngOnChanges() {
+    this.commentService.getResponseCommentById(this.message).subscribe((datas) => {
+      this.responses = datas;
+      console.log(this.responses);
     });
   }
+  ngOnInit() {}
 
   close() {
-    this.commentService.showResponseTchat = false;
+    this.displayResponse.emit(false);
   }
 
 }

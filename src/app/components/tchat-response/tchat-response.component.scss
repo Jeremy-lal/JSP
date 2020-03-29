@@ -1,9 +1,11 @@
-.align {
-    margin-top: 100px;
+.message {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgb(168, 8, 8);
 }
-
 i {
     font-size: 2rem;
+    margin-bottom: 1rem;
+    color: rgb(168, 8, 8);
 }
 i:hover {
     cursor: pointer;

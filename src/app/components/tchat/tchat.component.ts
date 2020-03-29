@@ -12,9 +12,11 @@ import { Component, OnInit, Input, OnChanges, ViewChild, Output, EventEmitter } 
 export class TchatComponent implements OnInit, OnChanges {
 
   @Input() dataToDisplay: Comment[];
+  message: Comment;
   @ViewChild(ScrollDirective, {static: false}) Component;
   scroll: ScrollDirective;
   locate: string;
+  opened = false;
 
   constructor(private commentService: CommentService) { }
 
@@ -25,4 +27,19 @@ export class TchatComponent implements OnInit, OnChanges {
   ngOnChanges() {
     this.locate = this.commentService.locate;
   }
+
+  displaySide(event) {
+    this.opened = event;
+  }
+
+  giveMessage(event) {
+    this.message = event;
+  }
+
+  nodisplay() {
+    this.opened = false;
+
+  }
+
+
 }

@@ -1,12 +1,20 @@
 <div class="container">
-    <div class="locate">
-        <h2>{{locate}}</h2>
-    </div>
     
-    <div class="tchat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-        <div class="messages" *ngFor="let comment of dataToDisplay">
-            <app-message [message]="comment"></app-message>
-        </div>
-    </div>
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav #sidenav mode="side" [(opened)]="opened" position="end">
+            <app-tchat-response [message]="message" (displayResponse)="displaySide($event)"></app-tchat-response>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <div class="locate">
+                <h2>{{locate}}</h2>
+            </div>
+            <div class="tchat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                <div class="messages" *ngFor="let comment of dataToDisplay">
+                    <app-message [message]="comment" (showResponse)="displaySide($event)" (giveMessage)="giveMessage($event)"></app-message>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 
 </div>
