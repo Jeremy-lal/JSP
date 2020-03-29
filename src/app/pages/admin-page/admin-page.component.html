@@ -1,22 +1,26 @@
-<div class="addUser">
-  <div class="newUser" (click)="openUserForm()"> utilisateur <i class="material-icons"> add_circle_outline </i></div>
-</div>
-
 <div class="container">
-  <h2>JSP1</h2>
-  <app-user-admin [pers]="pers1" *ngFor="let pers1 of listjsp1"></app-user-admin>
+  <app-sidemenu></app-sidemenu>
+  <div class="left" >
 
+    <h1>Tableau de bord</h1>
+    
+    <div class="addUser">
+      <div class="newUser" (click)="openUserForm()" title="Ajouter utilisateur"> <i class="fas fa-user-plus"></i></div>
+    </div>
 
-  <h2>JSP2</h2>
-  <app-user-admin [pers]="pers2" *ngFor="let pers2 of listjsp2"></app-user-admin>
-
-  <h2>JSP3</h2>
-  <app-user-admin [pers]="pers3" *ngFor="let pers3 of listjsp3"></app-user-admin>
-
-  <h2>JSP4</h2>
-  <app-user-admin [pers]="pers4" *ngFor="let pers4 of listjsp4"></app-user-admin>
-
-  <h2>Admin</h2>
-  <app-user-admin [pers]="admin" *ngFor="let admin of listadmin"></app-user-admin>
-
+    <h2 *ngIf="listjsp1?.length > 0">JSP1</h2>
+    <app-user-admin [pers]="pers1" *ngFor="let pers1 of listjsp1"></app-user-admin>
+  
+    <h2 *ngIf="listjsp2?.length > 0">JSP2</h2>
+    <app-user-admin [pers]="pers2" *ngFor="let pers2 of listjsp2"></app-user-admin>
+  
+    <h2 *ngIf="listjsp3?.length > 0">JSP3</h2>
+    <app-user-admin [pers]="pers3" *ngFor="let pers3 of listjsp3"></app-user-admin>
+  
+    <h2 *ngIf="listjsp4?.length > 0">JSP4</h2>
+    <app-user-admin [pers]="pers4" *ngFor="let pers4 of listjsp4"></app-user-admin>
+  
+    <h2 *ngIf="listadmin?.length > 0">Admin</h2>
+    <app-user-admin [pers]="admin" *ngFor="let admin of listadmin"></app-user-admin>
+  </div>
 </div>
