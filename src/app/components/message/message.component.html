@@ -8,7 +8,7 @@
                 <p class="name">{{message.firstname}} {{message.lastname}}</p>
                 <p class="date">{{message.create_at | date: 'short'}}</p>
                 <div class="action">
-                    <button  (click)="reply(message)" title="Répondre"><i class="fas fa-reply"></i></button>
+                    <button  (click)="displayResponse()" title="Répondre"><i class="fas fa-reply"></i></button>
                     <button  (click)="updateComment(message)" title="Modifier"><i class="fas fa-edit"></i></button>
                     <button (click)='deleteComment(message)' title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                 </div>
@@ -19,7 +19,6 @@
             </div>
         </div>
     </div>
-    <app-response-form *ngIf="commentService.openFormForResponse === true"></app-response-form>
     <div class="response" *ngIf="nbReponse > 0" (click)="displayResponse()">
         <p>{{nbReponse}} réponse(s)</p>
     </div>

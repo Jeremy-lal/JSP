@@ -24,7 +24,10 @@ button {
 }
 
 .left {
-    width: 5%;
+    width: 6%;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
 }
 img {
     width: 50px;
@@ -32,8 +35,7 @@ img {
 }
 
 .rigth {
-    // padding-left: 5%;
-    width: 95%;
+    width: 94%;
 }
 
 .details {
@@ -75,7 +77,9 @@ i:hover {
     cursor: pointer;
 }
 
+.response {
+    padding-left: 3%;
+}
 .response:hover {
     cursor: pointer;
 }
-

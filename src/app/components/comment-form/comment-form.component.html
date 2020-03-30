@@ -1,10 +1,15 @@
 <div class="container">
+  <div class="update">
+    <i class="fas fa-times" (click)="close()" title="Annuler"></i>
+    <h2 *ngIf="commentService.toUpdate === true">Modifier votre commentaire</h2>
+  </div>
+  
   <form [formGroup]="commentForm" (ngSubmit)="sendComment()">
   
       <textarea formControlName="content" id="content" required onfocus="clearContents(this)" #area placeholder="Renseignez votre message"></textarea>
   
       <div class="center">
-        <button type="submit" *ngIf="commentService.toUpdate === false" (click)="area.value=''" title="Envoyer"> <i class="fas fa-paper-plane"></i></button>
+        <button type="submit" *ngIf="commentService.toUpdate === false" (click)="area.value=''" title="Envoyer" [disabled]="!commentForm.valid"> <i class="fas fa-paper-plane"></i></button>
         <button *ngIf="commentService.toUpdate === true" (click)="updateComment()" title="Modifier"> <i class="fas fa-share-square"></i></button>
       </div>
   </form>

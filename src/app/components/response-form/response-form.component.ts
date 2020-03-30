@@ -2,7 +2,7 @@ import { Comment } from './../../shared/models/comment';
 import { User } from '../../shared/models/user';
 import { UserService } from './../../shared/services/user.service';
 import { CommentService } from './../../shared/services/comment.service';
-import { Component, OnInit, Inject, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter, Output, Input } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
@@ -12,6 +12,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./response-form.component.scss']
 })
 export class ResponseFormComponent implements OnInit {
+
+  @Input() message: Comment;
+  @Output() dataResponse = new EventEmitter<Comment[]>();
+  responses: Comment[];
 
   responseForm = new FormGroup({
     content: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -29,7 +33,17 @@ export class ResponseFormComponent implements OnInit {
     responseToPost.user_id = this.userService.currentUser.id;
     responseToPost.grp = this.commentService.locate;
     responseToPost.comment_id = this.commentService.commentIdForResponse;
-    this.commentService.createComment(responseToPost).subscribe();
+    this.commentService.createComment(responseToPost).subscribe(() => {
+      this.getResponse();
+    });
     this.commentService.openFormForResponse = false;
   }
+
+  getResponse() {
+    this.commentService.getResponseCommentById(this.message).subscribe(((data: Comment[]) => {
+      this.responses = data;
+      this.dataResponse.emit(this.responses);
+    }));
+  }
+
 }

@@ -38,7 +38,10 @@ export class TchatComponent implements OnInit, OnChanges {
 
   nodisplay() {
     this.opened = false;
+  }
 
+  getData(event) {
+    this.dataToDisplay = event;
   }
 
 

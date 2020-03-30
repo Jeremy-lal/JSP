@@ -42,7 +42,7 @@ export class CommentFormComponent implements OnInit {
       commentToPost.comment_id = this.commentForAction.id;
     }
     this.commentService.createComment(commentToPost).subscribe(() => {
-      console.log(commentToPost);
+      this.commentForm.controls.content.setValue('');
       this.commentService.getComment(commentToPost.grp).subscribe(((data: Comment[]) => {
         this.comments = data;
         this.dataForGroup.emit(this.comments);
@@ -70,6 +70,10 @@ export class CommentFormComponent implements OnInit {
 
   clearContents(element) {
     element.value = '';
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 
 

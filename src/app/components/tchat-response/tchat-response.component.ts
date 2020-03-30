@@ -11,7 +11,9 @@ export class TchatResponseComponent implements OnInit, OnChanges {
 
   @Input() message: Comment;
   @Output() displayResponse = new EventEmitter<boolean>();
+  @Output() dataToDisplay = new EventEmitter<Comment[]>();
   responses: Comment[];
+  comments: Comment[];
 
   constructor(private commentService: CommentService) { }
 
@@ -25,6 +27,18 @@ export class TchatResponseComponent implements OnInit, OnChanges {
 
   close() {
     this.displayResponse.emit(false);
+  }
+
+  getResponse(event) {
+    this.responses = event;
+    this.getComments();
+  }
+
+  getComments() {
+    this.commentService.getComment(this.commentService.locate).subscribe((data) => {
+      this.comments = data;
+      this.dataToDisplay.emit(this.comments);
+    });
   }
 
 }

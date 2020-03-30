@@ -4,7 +4,7 @@
         <textarea formControlName="content" id="content" required onfocus="clearContents(this)" #area placeholder="Renseignez votre message"></textarea>
     
         <div class="center">
-          <button type="submit" (click)="area.value=''" title="Réondre"><i class="fas fa-reply"></i></button>
+          <button type="submit" (click)="area.value=''" title="Réondre" [disabled]="!responseForm.valid"><i class="fas fa-reply"></i></button>
         </div>
     </form>
   </div>

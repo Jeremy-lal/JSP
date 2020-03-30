@@ -1,8 +1,8 @@
 <div class="container">
     
     <mat-sidenav-container class="example-container">
-        <mat-sidenav #sidenav mode="side" [(opened)]="opened" position="end">
-            <app-tchat-response [message]="message" (displayResponse)="displaySide($event)"></app-tchat-response>
+        <mat-sidenav #sidenav mode="side" [(opened)]="opened" position="end" mode="over">
+            <app-tchat-response [message]="message" (displayResponse)="displaySide($event)" (dataToDisplay)="getData($event)"></app-tchat-response>
         </mat-sidenav>
 
         <mat-sidenav-content>
@@ -11,7 +11,7 @@
             </div>
             <div class="tchat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
                 <div class="messages" *ngFor="let comment of dataToDisplay">
-                    <app-message [message]="comment" (showResponse)="displaySide($event)" (giveMessage)="giveMessage($event)"></app-message>
+                    <app-message [message]="comment" (showResponse)="displaySide($event)" (giveMessage)="giveMessage($event)" (dataToDisplay)="getData($event)"></app-message>
                 </div>
             </div>
         </mat-sidenav-content>

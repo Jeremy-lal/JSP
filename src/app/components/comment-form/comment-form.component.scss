@@ -3,7 +3,21 @@
   background-color: white;
   padding: 1%;
 }
+.update {
+  display: flex;
+  flex-direction: column;
+}
 
+i {
+  align-self: flex-end;
+  margin-right: 3rem;
+}
+h2 {
+  color: black;
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
 form {
   border: 1px solid black;
   width: 95.5%;
