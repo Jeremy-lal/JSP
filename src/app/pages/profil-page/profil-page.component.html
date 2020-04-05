@@ -9,31 +9,33 @@
         <h1>{{currentUser?.firstname}} {{currentUser?.lastname}}</h1>
       </div>
 
-      <div class="propos">
-        <h2>A propos</h2>
-        <ul>
-          <li><label>Date de naissance:</label> {{currentUser?.birthday | date :'mediumDate'}}</li>
-          <li><label>N° de téléphone:</label> {{currentUser?.tel}}</li>
-          <li><label>Adresse: </label> {{currentUser?.adress}}</li>
-          <li><label>Email: </label> {{currentUser?.email}}</li>
-          <li><label>Status: </label>{{currentUser?.status}}</li>
-        </ul>
+      <div class="details">
+        <div class="propos">
+          <h2>A propos</h2>
+          <ul>
+            <li><label>Date de naissance:</label> {{currentUser?.birthday | date :'mediumDate'}}</li>
+            <li><label>N° de téléphone:</label> {{currentUser?.tel}}</li>
+            <li><label>Adresse: </label> {{currentUser?.adress}}</li>
+            <li><label>Email: </label> {{currentUser?.email}}</li>
+            <li><label>Status: </label>{{currentUser?.status}}</li>
+          </ul>
+        </div>
+
+        <div class="note" *ngIf=" currentUser?.note.length > 0 ">
+          <h2>Notes</h2>
+          <table>
+            <tr class="titretab">
+              <td>Description</td>
+              <td>Note</td>
+            </tr>
+            <tr *ngFor="let note of currentUser?.note">
+              <td>{{note.title}}</td>
+              <td>{{note.valeur}}</td>
+            </tr>
+          </table>
+        </div>
       </div>
 
-
-      <div class="note" *ngIf=" currentUser?.note.length > 0 ">
-        <table>
-          <tr class="titretab">
-            <td>Description</td>
-            <td>Note</td>
-          </tr>
-          <tr *ngFor="let note of currentUser?.note">
-            <td>{{note.title}}</td>
-            <td>{{note.valeur}}</td>
-          </tr>
-        </table>
-      </div>
-      
     </div>
 
   </div>

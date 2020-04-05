@@ -1,12 +1,12 @@
-import { Comment } from './../../shared/models/comment';
+import { UserService } from 'src/app/shared/services/user.service';
+import { User } from 'src/app/shared/models/user';
 import { CommentService } from './../../shared/services/comment.service';
-import { TchatService } from './../../shared/services/tchat.service';
+import { Comment } from './../../shared/models/comment';
+import { PopupSignOutComponent } from '../popup-sign-out/popup-sign-out.component';
+import { environment, Environment } from './../../../environments/environment';
 import { Router } from '@angular/router';
-import { User } from './../../shared/models/user';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { PopupSignOutComponent } from '../popup-sign-out/popup-sign-out.component';
-import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-sidemenu',
@@ -16,16 +16,15 @@ import { UserService } from 'src/app/shared/services/user.service';
 export class SidemenuComponent implements OnInit {
 
   @Output() dataForGroup = new EventEmitter<Comment[]>();
-
-  comments: Comment[];
-
+  varEnv: Environment;
   currentUser: User;
 
-  constructor(public dialog: MatDialog, private userService: UserService, private router: Router, private tchatService: TchatService,
-              private commentService: CommentService) { }
+  constructor(public dialog: MatDialog, private router: Router, private commentService: CommentService,
+              private userService: UserService) { }
 
   ngOnInit() {
     this.currentUser = this.userService.currentUser;
+    this.varEnv = environment;
   }
 
   logOut() {
@@ -38,9 +37,7 @@ export class SidemenuComponent implements OnInit {
     this.commentService.locate = where;
     this.router.navigateByUrl('/conversation');
     this.commentService.getComment(where).subscribe(((data: Comment[]) => {
-      this.comments = data;
-      this.dataForGroup.emit(this.comments);
+      this.dataForGroup.emit(data);
     }));
   }
-
 }

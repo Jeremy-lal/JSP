@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="update">
+  <div class="update" *ngIf="commentService.toUpdate === true" >
     <i class="fas fa-times" (click)="close()" title="Annuler"></i>
-    <h2 *ngIf="commentService.toUpdate === true">Modifier votre commentaire</h2>
+    <h2>Modifier votre commentaire</h2>
   </div>
   
   <form [formGroup]="commentForm" (ngSubmit)="sendComment()">

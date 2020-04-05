@@ -14,13 +14,13 @@ export class TchatResponseComponent implements OnInit, OnChanges {
   @Output() dataToDisplay = new EventEmitter<Comment[]>();
   responses: Comment[];
   comments: Comment[];
+  mode = 'responses';
 
   constructor(private commentService: CommentService) { }
 
   ngOnChanges() {
-    this.commentService.getResponseCommentById(this.message).subscribe((datas) => {
+    this.commentService.getResponseCommentById().subscribe((datas) => {
       this.responses = datas;
-      console.log(this.responses);
     });
   }
   ngOnInit() {}

@@ -2,9 +2,8 @@ import { Comment } from './../../shared/models/comment';
 import { User } from '../../shared/models/user';
 import { UserService } from './../../shared/services/user.service';
 import { CommentService } from './../../shared/services/comment.service';
-import { Component, OnInit, Inject, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-response-form',
@@ -13,7 +12,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class ResponseFormComponent implements OnInit {
 
-  @Input() message: Comment;
   @Output() dataResponse = new EventEmitter<Comment[]>();
   responses: Comment[];
 
@@ -36,11 +34,10 @@ export class ResponseFormComponent implements OnInit {
     this.commentService.createComment(responseToPost).subscribe(() => {
       this.getResponse();
     });
-    this.commentService.openFormForResponse = false;
   }
 
   getResponse() {
-    this.commentService.getResponseCommentById(this.message).subscribe(((data: Comment[]) => {
+    this.commentService.getResponseCommentById().subscribe(((data: Comment[]) => {
       this.responses = data;
       this.dataResponse.emit(this.responses);
     }));

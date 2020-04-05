@@ -10,12 +10,12 @@
                     <i class="fas fa-user-alt"></i>
                     <span>Profil</span>
                 </button>
-                <button mat-menu-item routerLink="/admin">
+                <button mat-menu-item routerLink="/admin" *ngIf="varEnv.accesChannels.admin.indexOf(currentUser.status) != -1">
                     <i class="fas fa-user-shield"></i>
                     <span>Admin</span>
                 </button>
-                <button mat-menu-item>
-                    <i class="fas fa-power-off" (click)='logOut()'></i>
+                <button mat-menu-item (click)='logOut()'>
+                    <i class="fas fa-power-off"></i>
                     <span>Déconnexion</span>
                 </button>
             </mat-menu>
@@ -34,10 +34,10 @@
 
         <h2>Chaînes Groupe</h2>
         <ul>
-            <li (click)="sendDataForDisplay('Jsp1')"># JSP1</li>
-            <li (click)="sendDataForDisplay('Jsp2')"># JSP2</li>
-            <li (click)="sendDataForDisplay('Jsp3')"># JSP3</li>
-            <li (click)="sendDataForDisplay('Jsp4')"># JSP4</li>
+            <li (click)="sendDataForDisplay('Jsp1')" *ngIf="varEnv.accesChannels.jsp1.indexOf(currentUser.status) != -1"># JSP1</li>
+            <li (click)="sendDataForDisplay('Jsp2')" *ngIf="varEnv.accesChannels.jsp2.indexOf(currentUser.status) != -1"># JSP2</li>
+            <li (click)="sendDataForDisplay('Jsp3')" *ngIf="varEnv.accesChannels.jsp3.indexOf(currentUser.status) != -1"># JSP3</li>
+            <li (click)="sendDataForDisplay('Jsp4')" *ngIf="varEnv.accesChannels.jsp4.indexOf(currentUser.status) != -1"># JSP4</li>
         </ul>
     </div>
 </div>

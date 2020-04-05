@@ -1,6 +1,17 @@
+.container {
+    height: 83vh;
+    background-color: white;
+    padding: 1rem;
+}
 .message {
     padding-bottom: 1rem;
+    margin-bottom: 1rem;
     border-bottom: 2px solid rgb(168, 8, 8);
+    overflow: hidden;
+}
+
+.tchatResponse {
+    margin-bottom: 1rem;
 }
 i {
     font-size: 2rem;

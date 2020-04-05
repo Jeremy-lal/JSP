@@ -11,7 +11,7 @@
             </div>
             <div class="tchat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
                 <div class="messages" *ngFor="let comment of dataToDisplay">
-                    <app-message [message]="comment" (showResponse)="displaySide($event)" (giveMessage)="giveMessage($event)" (dataToDisplay)="getData($event)"></app-message>
+                    <app-message [message]="comment" [mode]="mode" (showResponse)="displaySide($event)" (giveMessage)="giveMessage($event)" (dataToDisplay)="getData($event)"></app-message>
                 </div>
             </div>
         </mat-sidenav-content>

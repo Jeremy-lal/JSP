@@ -11,12 +11,8 @@ export class CommentService {
   static URL = 'http://localhost:3000/comments/';
 
   toUpdate = false;
-  commentsCommun: Comment[];
   locate = 'Commun';
-
-  openFormForResponse = false;
   commentIdForResponse: number;
-  showResponseTchat = false;
 
   constructor(private http: HttpClient) { }
 
@@ -32,8 +28,8 @@ export class CommentService {
     return this.http.get<Comment[]>(CommentService.URL + 'response/grp/' + grp);
   }
 
-  getResponseCommentById(message: Comment): Observable<Comment[]> {
-    return this.http.get<Comment[]>(CommentService.URL + 'response/' + message.id);
+  getResponseCommentById(): Observable<Comment[]> {
+    return this.http.get<Comment[]>(CommentService.URL + 'response/' + this.commentIdForResponse);
   }
 
   getNumberResponse(message: Comment): Observable<Count> {

@@ -1,7 +1,7 @@
+import { User } from './../../shared/models/user';
 import { ScrollDirective } from './../../shared/directives/scroll.directive';
 import { CommentService } from './../../shared/services/comment.service';
 import { Comment } from './../../shared/models/comment';
-import { TchatService } from './../../shared/services/tchat.service';
 import { Component, OnInit, Input, OnChanges, ViewChild, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -13,10 +13,12 @@ export class TchatComponent implements OnInit, OnChanges {
 
   @Input() dataToDisplay: Comment[];
   message: Comment;
-  @ViewChild(ScrollDirective, {static: false}) Component;
+  @ViewChild(ScrollDirective, { static: false }) Component;
   scroll: ScrollDirective;
   locate: string;
   opened = false;
+  currentUser: User;
+  mode = 'basic';
 
   constructor(private commentService: CommentService) { }
 
@@ -43,6 +45,5 @@ export class TchatComponent implements OnInit, OnChanges {
   getData(event) {
     this.dataToDisplay = event;
   }
-
 
 }

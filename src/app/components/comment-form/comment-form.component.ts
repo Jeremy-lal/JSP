@@ -1,4 +1,3 @@
-import { TchatService } from './../../shared/services/tchat.service';
 import { Comment } from './../../shared/models/comment';
 import { User } from '../../shared/models/user';
 import { UserService } from './../../shared/services/user.service';
@@ -23,8 +22,7 @@ export class CommentFormComponent implements OnInit {
 
   currentUser: User;
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<CommentFormComponent>, public commentService: CommentService,
-              private userService: UserService, @Inject(MAT_DIALOG_DATA) public commentForAction: Comment,
-              private tchatService: TchatService) { }
+              private userService: UserService, @Inject(MAT_DIALOG_DATA) public commentForAction: Comment) { }
 
   ngOnInit() {
     this.currentUser = this.userService.currentUser;

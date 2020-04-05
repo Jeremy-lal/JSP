@@ -10,9 +10,9 @@
 }
 
 .container:hover {
-    // background-color: rgba(grey, $alpha: 0.1);
     .action {
         display: block;
+        justify-self: flex-end;
     }
 }
 
@@ -41,14 +41,13 @@ img {
 .details {
     display: flex;
     flex-direction: row;
-    // border: 2px solid red
 }
 
 .action {
-    // padding-left: 72%;
+    padding-left: 10%;
     justify-self: flex-end;
     display: none; 
-    // border: 2px solid blue; 
+    justify-self: flex-end;
 }
 
 
