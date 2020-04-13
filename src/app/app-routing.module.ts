@@ -1,3 +1,4 @@
+import { ChangePwdComponent } from './pages/change-pwd/change-pwd.component';
 import { ConversationsComponent } from './pages/conversations/conversations.component';
 import { TchatComponent } from './components/tchat/tchat.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: ConnexionPageComponent },
   { path: 'conversation', component: ConversationsComponent, canActivate: [AuthGuard] },
   { path: 'profil', component: ProfilPageComponent, canActivate: [AuthGuard] },
+  { path: 'changePwd', component: ChangePwdComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
   { path: '**', component: Page404Component }
 ];

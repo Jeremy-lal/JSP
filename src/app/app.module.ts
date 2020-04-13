@@ -38,6 +38,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ScrollDirective } from './shared/directives/scroll.directive';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { PictureFromComponent } from './components/forms/picture-from/picture-from.component';
+import { ChangePwdComponent } from './pages/change-pwd/change-pwd.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { PictureFromComponent } from './components/forms/picture-from/picture-fr
     ScrollDirective,
     ResponseFormComponent,
     TchatResponseComponent,
-    PictureFromComponent
+    PictureFromComponent,
+    ChangePwdComponent
   ],
   imports: [
     BrowserModule,

@@ -94,6 +94,15 @@ export class UserService {
     return this.http.put(UserService.URL + 'picture/' + id, userToUpdate);
   }
 
+  updateUserPwd(password: string, newPassword: string): Observable<string> {
+    const params = {
+      user: this.currentUser,
+      pwd: password,
+      newPwd: newPassword
+    };
+    return this.http.put<string>(UserService.URL_AUTH + 'pwd', params);
+  }
+
   deleteUser(id) {
     return this.http.delete(UserService.URL + id);
   }
