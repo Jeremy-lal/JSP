@@ -1,3 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatMenuModule, MatDialogModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SidemenuComponent } from './sidemenu.component';
@@ -8,7 +11,8 @@ describe('SidemenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidemenuComponent ]
+      declarations: [ SidemenuComponent ],
+      imports: [ MatMenuModule, MatDialogModule, RouterTestingModule, HttpClientTestingModule]
     })
     .compileComponents();
   }));

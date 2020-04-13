@@ -1,3 +1,8 @@
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatMenuModule, MatDialogModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SidemenuComponent } from './../../components/sidemenu/sidemenu.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChangePwdComponent } from './change-pwd.component';
@@ -8,7 +13,8 @@ describe('ChangePwdComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChangePwdComponent ]
+      declarations: [ ChangePwdComponent, SidemenuComponent ],
+      imports: [ReactiveFormsModule, MatMenuModule, HttpClientTestingModule, RouterTestingModule, MatDialogModule]
     })
     .compileComponents();
   }));

@@ -24,7 +24,6 @@ import { PopupSignOutComponent } from './components/popup-sign-out/popup-sign-ou
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { TchatComponent } from './components/tchat/tchat.component';
 import { MessageComponent } from './components/message/message.component';
-import { ResponseFormComponent } from './components/response-form/response-form.component';
 import { TchatResponseComponent } from './components/tchat-response/tchat-response.component';
 
 // material
@@ -39,6 +38,7 @@ import { ScrollDirective } from './shared/directives/scroll.directive';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { PictureFromComponent } from './components/forms/picture-from/picture-from.component';
 import { ChangePwdComponent } from './pages/change-pwd/change-pwd.component';
+import { ResponseFormComponent } from './components/forms/response-form/response-form.component';
 
 
 @NgModule({

@@ -21,10 +21,11 @@ export class ProfilPageComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.userService.currentUser;
-    console.log(this.currentUser);
-    this.noteService.getUserNote(this.currentUser.id).subscribe((data) => {
-      this.notecurrentUser = data;
-    });
+    if (this.currentUser) {
+      this.noteService.getUserNote(this.currentUser.id).subscribe((data) => {
+        this.notecurrentUser = data;
+      });
+    }
   }
 
   openPictureForm() {

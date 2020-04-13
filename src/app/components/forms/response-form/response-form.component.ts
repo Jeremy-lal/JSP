@@ -1,7 +1,7 @@
-import { Comment } from './../../shared/models/comment';
-import { User } from '../../shared/models/user';
-import { UserService } from './../../shared/services/user.service';
-import { CommentService } from './../../shared/services/comment.service';
+import { Comment } from './../../../shared/models/comment';
+import { User } from '../../../shared/models/user';
+import { UserService } from '../../../shared/services/user.service';
+import { CommentService } from '../../../shared/services/comment.service';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 

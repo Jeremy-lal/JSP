@@ -1,6 +1,8 @@
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatMenuModule } from '@angular/material/menu';
+import { SidemenuComponent } from './../../components/sidemenu/sidemenu.component';
 import { MatDialogModule } from '@angular/material';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { NavBarTopComponent } from './../../components/nav-bar-top/nav-bar-top.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfilPageComponent } from './profil-page.component';
@@ -13,8 +15,9 @@ describe('ProfilPageComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         ProfilPageComponent,
-        NavBarTopComponent],
-      imports: [HttpClientTestingModule, MatDialogModule]
+        SidemenuComponent
+       ],
+      imports: [HttpClientTestingModule, MatDialogModule, MatMenuModule, RouterTestingModule]
     })
       .compileComponents();
   }));
