@@ -1,7 +1,7 @@
-import { Note } from './../../shared/models/note';
+import { Note } from '../../../shared/models/note';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { NoteService } from '../../shared/services/note.service';
+import { NoteService } from '../../../shared/services/note.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({

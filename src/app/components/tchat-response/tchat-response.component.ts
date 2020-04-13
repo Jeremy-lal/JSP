@@ -19,9 +19,11 @@ export class TchatResponseComponent implements OnInit, OnChanges {
   constructor(private commentService: CommentService) { }
 
   ngOnChanges() {
-    this.commentService.getResponseCommentById().subscribe((datas) => {
-      this.responses = datas;
-    });
+    if (this.message) {
+      this.commentService.getResponseCommentById().subscribe((datas) => {
+        this.responses = datas;
+      });
+    }
   }
   ngOnInit() {}
 

@@ -16,9 +16,9 @@ import { Page404Component } from './pages/page404/page404.component';
 import { ConversationsComponent } from './pages/conversations/conversations.component';
 
 // components
-import { FormNewUserComponent } from './components/form-new-user/form-new-user.component';
-import { FormNewNoteComponent } from './components/form-new-note/form-new-note.component';
-import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { FormNewUserComponent } from './components/forms/form-new-user/form-new-user.component';
+import { FormNewNoteComponent } from './components/forms/form-new-note/form-new-note.component';
+import { CommentFormComponent } from './components/forms/comment-form/comment-form.component';
 import { UserAdminComponent } from './components/user-admin/user-admin.component';
 import { PopupSignOutComponent } from './components/popup-sign-out/popup-sign-out.component';
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
@@ -37,6 +37,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import { ScrollDirective } from './shared/directives/scroll.directive';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { PictureFromComponent } from './components/forms/picture-from/picture-from.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     ConversationsComponent,
     ScrollDirective,
     ResponseFormComponent,
-    TchatResponseComponent
+    TchatResponseComponent,
+    PictureFromComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
               { provide: MAT_DIALOG_DATA, useValue: {} },
   ],
   bootstrap: [AppComponent],
-  entryComponents: [CommentFormComponent, FormNewUserComponent, FormNewNoteComponent, PopupSignOutComponent]
+  entryComponents: [CommentFormComponent, FormNewUserComponent, FormNewNoteComponent, PopupSignOutComponent, PictureFromComponent]
 })
 export class AppModule { }
 

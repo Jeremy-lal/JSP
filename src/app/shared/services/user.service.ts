@@ -1,3 +1,4 @@
+import { UsersByGoups } from './../models/usersByGroups';
 import { User } from './../models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
@@ -70,6 +71,10 @@ export class UserService {
     return this.http.get<User[]>(UserService.URL);
   }
 
+  getAllUsersByGroups(): Observable<UsersByGoups> {
+    return this.http.get<UsersByGoups>(UserService.URL + 'groups');
+  }
+
   getUsersByGroup(grp: string): Observable<User[]> {
     return this.http.get<User[]>(UserService.URL + 'role/' + grp );
   }
@@ -78,9 +83,15 @@ export class UserService {
     return this.http.post(UserService.URL_AUTH + 'signup', newUser);
   }
 
-  updateUser(userToUpdate) {
+  updateUser(userToUpdate: User) {
     const id = userToUpdate.id;
+    delete userToUpdate.note;
     return this.http.put(UserService.URL + id, userToUpdate);
+  }
+
+  updateUserPicture(userToUpdate: User) {
+    const id = userToUpdate.id;
+    return this.http.put(UserService.URL + 'picture/' + id, userToUpdate);
   }
 
   deleteUser(id) {

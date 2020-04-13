@@ -1,7 +1,7 @@
-import { UserService } from './../../shared/services/user.service';
+import { UserService } from '../../../shared/services/user.service';
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { User } from '../../shared/models/user';
+import { FormBuilder, Validators } from '@angular/forms';
+import { User } from '../../../shared/models/user';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -16,9 +16,15 @@ export class FormNewUserComponent implements OnInit {
   user = new User();
 
   userForm = this.fb.group({
-
-    firstname: [''], lastname: [''], birthday: [''], tel: [''], email: [''], status: [''], imgURL: [''],
-    username: [''], pwd: [''], adress: ['']
+    firstname: ['', Validators.required],
+    lastname: ['', Validators.required],
+    birthday: ['', Validators.required],
+    tel: ['', [Validators.required, Validators.minLength(10)]],
+    email: ['', Validators.required],
+    status: ['', Validators.required],
+    username: ['', Validators.required],
+    pwd: ['', [Validators.required, Validators.minLength(10)]],
+    adress: ['', Validators.required]
   });
 
 
@@ -39,12 +45,12 @@ export class FormNewUserComponent implements OnInit {
       this.userForm.controls.email.setValue(this.userToUpdate.email);
       this.userForm.controls.pwd.setValue(this.userToUpdate.pwd);
       this.userForm.controls.status.setValue(this.userToUpdate.status);
-      this.userForm.controls.imgURL.setValue(this.userToUpdate.imgURL);
     }
   }
 
   sendUser(): void {
-    const userToPost = this.userForm.value;
+    const userToPost: User = this.userForm.value;
+    userToPost.imgURL = 'default.png';
     this.userService.createUser(userToPost).subscribe((eventPosted) => {
       console.log(eventPosted);
     });

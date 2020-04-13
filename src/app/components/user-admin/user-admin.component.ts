@@ -1,10 +1,10 @@
-import { FormNewNoteComponent } from './../form-new-note/form-new-note.component';
-import { Component, OnInit, Input } from '@angular/core';
+import { FormNewNoteComponent } from '../forms/form-new-note/form-new-note.component';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NoteService } from '../../shared/services/note.service';
 import { UserService } from '../../shared/services/user.service';
 import { MatDialog } from '@angular/material';
 import { User } from '../../shared/models/user';
-import { FormNewUserComponent } from '../form-new-user/form-new-user.component';
+import { FormNewUserComponent } from '../forms/form-new-user/form-new-user.component';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -16,30 +16,11 @@ import { HttpClient } from '@angular/common/http';
 export class UserAdminComponent implements OnInit {
 
   @Input() pers: User;
-  URL = 'http://localhost:3000/picture';
+  @Output() reloadData = new EventEmitter<boolean>();
 
-  images;
-
-  constructor(private http: HttpClient, private userService: UserService, public dialog: MatDialog, private noteService: NoteService) { }
+  constructor(private userService: UserService, public dialog: MatDialog, private noteService: NoteService) { }
 
   ngOnInit() {
-  }
-
-  selectImage(event) {
-    if (event.target.files.length > 0) {
-      const file = event.target.files[0];
-      this.images = file;
-    }
-  }
-
-  onSubmit() {
-    const formData = new FormData();
-    formData.append('picture', this.images);
-
-    this.http.post<any>(this.URL, formData).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err)
-    );
   }
 
   openNoteForm(userId) {
@@ -52,7 +33,9 @@ export class UserAdminComponent implements OnInit {
 
 
   deleteUser(id: number) {
-    this.userService.deleteUser(id).subscribe();
+    this.userService.deleteUser(id).subscribe(() => {
+      this.reloadData.emit(true);
+    });
   }
 
   updateUser(user) {
@@ -60,6 +43,9 @@ export class UserAdminComponent implements OnInit {
     const dialogRef = this.dialog.open(FormNewUserComponent, {
       width: '70%',
       data: user
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.reloadData.emit(true);
     });
 
   }

@@ -1,7 +1,7 @@
-import { Comment } from './../../shared/models/comment';
-import { User } from '../../shared/models/user';
-import { UserService } from './../../shared/services/user.service';
-import { CommentService } from './../../shared/services/comment.service';
+import { Comment } from '../../../shared/models/comment';
+import { User } from '../../../shared/models/user';
+import { UserService } from '../../../shared/services/user.service';
+import { CommentService } from '../../../shared/services/comment.service';
 import { Component, OnInit, Inject, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -32,7 +32,11 @@ export class CommentFormComponent implements OnInit {
     }
   }
 
-  sendComment(): void {
+  sendComment() {
+    if ((this.currentUser.status !== 'admin' && this.currentUser.status !== 'superAdmin') && this.commentService.locate === 'Commun') {
+      alert('La chaîne commun est réservée aux formateurs');
+      return false;
+    }
     const commentToPost: Comment = this.commentForm.value;
     commentToPost.user_id = this.userService.currentUser.id;
     commentToPost.grp = this.commentService.locate;

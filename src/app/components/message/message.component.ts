@@ -1,5 +1,5 @@
 import { UserService } from './../../shared/services/user.service';
-import { CommentFormComponent } from './../comment-form/comment-form.component';
+import { CommentFormComponent } from '../forms/comment-form/comment-form.component';
 import { CommentService } from './../../shared/services/comment.service';
 import { Comment } from './../../shared/models/comment';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
