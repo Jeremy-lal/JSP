@@ -1,0 +1,84 @@
+.container {
+    background-color: white;
+    color: black;
+}
+.comment {
+    display: flex;
+    flex-direction: row;
+    // width: 97%;
+    padding: 0.5rem;
+}
+
+.container:hover {
+    .action {
+        display: block;
+        justify-self: flex-end;
+    }
+}
+
+
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+.left {
+    width: 6%;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
+}
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.rigth {
+    width: 94%;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+}
+
+.action {
+    padding-left: 10%;
+    justify-self: flex-end;
+    display: none; 
+    justify-self: flex-end;
+}
+
+
+.name {
+    font-weight: bold;
+    font-size: 1.7rem;
+    padding-right: 1rem;
+}
+
+.date {
+    align-self: flex-end;
+}
+
+.message p{
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    overflow: hidden;
+}
+
+i {
+    padding-right: 0.5rem;
+    font-size: 1rem;
+    color: rgb(168, 8, 8);
+}
+i:hover {
+    cursor: pointer;
+}
+
+.response {
+    padding-left: 3%;
+}
+.response:hover {
+    cursor: pointer;
+}

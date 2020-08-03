@@ -36,7 +36,7 @@
           <p>Adresse : {{pers.adress}}</p>
           <p>Email : {{pers.email}}</p>
           <p>N° de téléphone : {{pers.tel}}</p>
-          <p>Status : {{pers.status}}</p>
+          <p>Status : {{pers?.status}}</p>
           <p>Nom d'utilisateur : {{pers.username}}</p>
         </div>
 
@@ -53,6 +53,7 @@
               <td><i class="material-icons" (click)="deleteNote(note.id)"> delete </i></td>
             </tr>
           </table>
+
         </div>
 
       </div>

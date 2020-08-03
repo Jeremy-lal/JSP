@@ -4,9 +4,45 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'http://localhost:3000'
+  serverUrl: 'http://localhost:3000',
+  accesChannels: {
+    jsp1: ['Jsp1', 'admin', 'superAdmin'],
+    jsp2: ['Jsp2', 'admin', 'superAdmin'],
+    jsp3: ['Jsp3', 'admin', 'superAdmin'],
+    jsp4: ['Jsp4', 'admin', 'superAdmin'],
+    admin: ['admin', 'superAdmin'],
+    superAdmin: ['superAdmin'],
+  },
+  accesWriteChannels: {
+    jsp1: ['Jsp1', 'admin', 'superAdmin'],
+    jsp2: ['Jsp2', 'admin', 'superAdmin'],
+    jsp3: ['Jsp3', 'admin', 'superAdmin'],
+    jsp4: ['Jsp4', 'admin', 'superAdmin'],
+    question: ['Jsp1', 'Jsp2', 'Jsp3', 'Jsp4', 'admin', 'superAdmin'],
+    commun: ['admin', 'superAdmin'],
+  },
 };
 
+export interface Environment {
+  production: boolean;
+  serverUrl: string;
+  accesChannels: {
+    jsp1: string[],
+    jsp2: string[],
+    jsp3: string[],
+    jsp4: string[],
+    admin: string[],
+    superAdmin: string[],
+  };
+  accesWriteChannels: {
+    jsp1: string[],
+    jsp2: string[],
+    jsp3: string[],
+    jsp4: string[],
+    commun: string[],
+    question: string[],
+  };
+}
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

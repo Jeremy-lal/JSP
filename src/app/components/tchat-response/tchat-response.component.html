@@ -1,0 +1,14 @@
+<div class="container" *ngIf="message">
+    <div class="align">
+        <i class="fas fa-times" (click)="close()" title="Fermer"></i>
+    </div>
+    
+    <div class="message">
+        <app-message [message]="message"  [mode]="mode"></app-message>
+    </div>
+    
+    <div class="tchatResponse" *ngFor="let response of responses">
+        <app-message [message]="response" (dataResponse)="getResponse($event)"></app-message>
+    </div>
+    <app-response-form (dataResponse)="getResponse($event)"></app-response-form>
+</div>

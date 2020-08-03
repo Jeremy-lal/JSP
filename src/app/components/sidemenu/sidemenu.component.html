@@ -1,0 +1,43 @@
+<div class="container" *ngIf="currentUser">
+    <h1>JSP Mérignac</h1>
+    <div class="user">
+        <div class="options">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <i class="fas fa-sort-down"></i>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/profil"> 
+                    <i class="fas fa-user-alt"></i>
+                    <span>Profil</span>
+                </button>
+                <button mat-menu-item routerLink="/admin" *ngIf="varEnv.accesChannels.admin.indexOf(currentUser.status) != -1">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Admin</span>
+                </button>
+                <button mat-menu-item (click)='logOut()'>
+                    <i class="fas fa-power-off"></i>
+                    <span>Déconnexion</span>
+                </button>
+            </mat-menu>
+        </div>
+        <div class="name">
+            <p>{{currentUser.firstname}} {{currentUser.lastname}}</p>
+        </div>
+    </div>
+
+    <div class="conversation">
+        <h2>Chaînes Communes</h2>
+        <ul>
+            <li (click)="sendDataForDisplay('Commun')"># Commun</li>
+            <li (click)="sendDataForDisplay('Question')"># Question</li>
+        </ul>
+
+        <h2>Chaînes Groupe</h2>
+        <ul>
+            <li (click)="sendDataForDisplay('Jsp1')" *ngIf="varEnv.accesChannels.jsp1.indexOf(currentUser.status) != -1"># JSP1</li>
+            <li (click)="sendDataForDisplay('Jsp2')" *ngIf="varEnv.accesChannels.jsp2.indexOf(currentUser.status) != -1"># JSP2</li>
+            <li (click)="sendDataForDisplay('Jsp3')" *ngIf="varEnv.accesChannels.jsp3.indexOf(currentUser.status) != -1"># JSP3</li>
+            <li (click)="sendDataForDisplay('Jsp4')" *ngIf="varEnv.accesChannels.jsp4.indexOf(currentUser.status) != -1"># JSP4</li>
+        </ul>
+    </div>
+</div>

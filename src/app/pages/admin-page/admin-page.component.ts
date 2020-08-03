@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
-import { UserService } from './../../shared/services/user.service';
+import { UserService } from '../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../shared/models/user';
 import { MatDialog } from '@angular/material';
-import { FormNewUserComponent } from '../../components/form-new-user/form-new-user.component';
+import { FormNewUserComponent } from '../../components/forms/form-new-user/form-new-user.component';
+import { UsersByGoups } from 'src/app/shared/models/usersByGroups';
 
 @Component({
   selector: 'app-admin-page',
@@ -14,19 +14,10 @@ export class AdminPageComponent implements OnInit {
 
   constructor(private userService: UserService, public dialog: MatDialog, private router: Router) { }
 
-  listjsp1: User[];
-  listjsp2: User[];
-  listjsp3: User[];
-  listjsp4: User[];
-  listadmin: User[];
+  users: UsersByGoups;
 
   ngOnInit() {
-    this.userService.isLogged();
-    this.userService.getUsersByGroup('jsp1').subscribe((jsp1: User[]) => this.listjsp1 = jsp1);
-    this.userService.getUsersByGroup('jsp2').subscribe((jsp2: User[]) => this.listjsp2 = jsp2);
-    this.userService.getUsersByGroup('jsp3').subscribe((jsp3: User[]) => this.listjsp3 = jsp3);
-    this.userService.getUsersByGroup('jsp4').subscribe((jsp4: User[]) => this.listjsp4 = jsp4);
-    this.userService.getUsersByGroup('admin').subscribe((admin: User[]) => this.listadmin = admin);
+    this.getUsersByGroup();
   }
 
   openUserForm(): void {
@@ -34,6 +25,16 @@ export class AdminPageComponent implements OnInit {
     const dialogRef = this.dialog.open(FormNewUserComponent, {
       width: '70%',
     });
+    dialogRef.afterClosed().subscribe(() => {
+      this.getUsersByGroup();
+    });
   }
 
+  getUsersByGroup() {
+    this.userService.getAllUsersByGroups().subscribe((data) => this.users = data);
+  }
+
+  reloadData(bool: boolean) {
+    this.getUsersByGroup();
+  }
 }

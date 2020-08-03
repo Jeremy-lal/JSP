@@ -1,31 +1,59 @@
-<app-nav-bar-top></app-nav-bar-top>
-
 <div class="container">
-  <div class="left">
-    <img [src]="currentUser?.imgURL" alt="image de l'utilisateur">
-    <div class="note" *ngIf=" currentUser?.note.length > 0 ">
-      <table>
-        <tr class="titretab">
-          <td>Description</td>
-          <td>Note</td>
-        </tr>
-        <tr *ngFor="let note of currentUser?.note">
-          <td>{{note.title}}</td>
-          <td>{{note.valeur}}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+  <app-sidemenu></app-sidemenu>
+  <div class="leftContainer">
+    
+    
+    <div class="profil">
 
-  <div class="right">
-    <h1>{{currentUser?.firstname}} {{currentUser?.lastname}}</h1>
-    <p>Status : {{currentUser?.status}}</p>
-    <h2>A propos</h2>
-    <ul>
-      <li><label>Date de naissance:</label>     {{currentUser?.birthday | date :'mediumDate'}}</li>
-      <li><label>N° de téléphone:</label>    {{currentUser?.tel}}</li>
-      <li><label>Adresse: </label>   {{currentUser?.adress}}</li>
-      <li><label>Email: </label>   {{currentUser?.email}}</li>
-    </ul>
+      <div class="settings">
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="cog" title="Paramètres">
+            <i class="fas fa-cog"></i>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openPictureForm()" > 
+              <i class="fas fa-portrait"></i>
+                <span>Photo de profil</span>
+            </button>
+            <button mat-menu-item routerLink="/changePwd">
+              <i class="fas fa-key"></i>
+                <span>Mot de passe</span>
+            </button>
+        </mat-menu>
+    </div>
+
+      <div class="user">
+        <img src="{{'http://localhost:3000/picture/' + currentUser?.imgURL}}" alt="image de l'utilisateur">
+        <h1>{{currentUser?.firstname}} {{currentUser?.lastname}}</h1>
+      </div>
+
+      <div class="details">
+        <div class="propos">
+          <h2>A propos</h2>
+          <ul>
+            <li><label>Date de naissance:</label> {{currentUser?.birthday | date :'mediumDate'}}</li>
+            <li><label>N° de téléphone:</label> {{currentUser?.tel}}</li>
+            <li><label>Adresse: </label> {{currentUser?.adress}}</li>
+            <li><label>Email: </label> {{currentUser?.email}}</li>
+            <li><label>Status: </label>{{currentUser?.status}}</li>
+          </ul>
+        </div>
+
+        <div class="note" *ngIf=" currentUser?.note.length > 0 ">
+          <h2>Notes</h2>
+          <table>
+            <tr class="titretab">
+              <td>Description</td>
+              <td>Note</td>
+            </tr>
+            <tr *ngFor="let note of currentUser?.note">
+              <td>{{note.title}}</td>
+              <td>{{note.valeur}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </div>

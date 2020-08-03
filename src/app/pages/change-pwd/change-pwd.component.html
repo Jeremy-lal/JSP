@@ -1,0 +1,27 @@
+<div class="container">
+    <app-sidemenu></app-sidemenu>
+    <div class="leftContainer">
+
+        <h2> Changement de mot de passe</h2>
+        <form [formGroup]="newPwd" (ngSubmit)="changePwd()">
+
+            <h3>Mot de passe actuel</h3>
+            <input type="password" name="password" formControlName="pwd" required>
+
+            <h3>Nouveau mot de passe (8 charactères minimum)</h3>
+            <input type="password" name="password1" formControlName="newPwd1" required>
+
+            <h3>Confirmer le nouveau mot de passe</h3>
+            <input type="password" name="password2" formControlName="newPwd2" required>
+
+
+            <div>
+                <button type="submit" class="form-btn" [disabled]="!newPwd.valid">Valider</button>
+            </div>
+            <p>{{message}}</p>
+
+        </form>
+
+
+    </div>
+</div>

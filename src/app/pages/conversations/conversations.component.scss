@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+app-sidemenu {
+    width: 15%;
+    position: fixed;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 100vh;
+    padding-left: 15%;
+
+}
+
+app-comment-form {
+    bottom: 0;
+    right: 0;
+    width: 85%;
+    align-self: center;
+    position: fixed;
+}
+
+app-tchat {
+    height: 83vh;
+}
+
+.rigth {
+    width: 35%;
+    height: 100vh;
+}

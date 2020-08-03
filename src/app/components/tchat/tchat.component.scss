@@ -1,0 +1,29 @@
+
+.container {
+    width: 100%;
+    overflow: auto;
+    background-color: white;
+}
+
+mat-sidenav {
+    width: 35%;
+}
+
+.locate {
+    border-bottom: 1px solid black;
+    background-color: white;
+    width: 85%;
+    color: black;
+    font-size: 2rem;
+    padding: 1rem;
+    position: fixed;
+}
+
+.tchat {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 70px;
+    height: 79vh;
+    background-color: white;
+}

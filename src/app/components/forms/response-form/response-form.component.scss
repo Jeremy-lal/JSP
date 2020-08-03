@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    background-color: white;
+  }
+  
+  form {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 2.5%;
+  }
+  
+  textarea {
+    width: 100%;
+    font-size: 1.5rem;
+    border: none;
+    resize: none;
+  }
+  
+  button {
+    border: none;
+    background-color: transparent;
+  }
+  
+  i {
+    color: rgb(168, 8, 8);
+    font-size: 2rem;
+  }
+  
+  i:hover {
+    cursor: pointer;
+  }

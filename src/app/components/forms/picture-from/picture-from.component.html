@@ -1,0 +1,10 @@
+<h2>Changer la photo de profil</h2>
+<form>
+    <div>
+        <input type="file" name='image' accept="image/*" (change)="selectImage($event)">
+    </div>
+    <div>
+        <button type='submit' (click)="onSubmit()">Valider</button>
+    </div>
+
+</form>

@@ -1,11 +1,38 @@
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
 }
+
+app-sidemenu {
+  width: 15%;
+  position: fixed;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  height: 100vh;
+  padding-left: 15%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: rgb(168, 8, 8);
+  padding: 2rem;
+  font-weight: bold;
+}
+
 h2 {
-  text-align: center;;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(168, 8, 8);
+  padding: 1rem;
+  font-weight: bold;
 }
 
 app-user-admin {
@@ -14,17 +41,22 @@ app-user-admin {
 }
 
 .addUser {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
 
 .addUser div {
-  font-size: 1.5rem;
   display: flex;
   align-self: flex-end;
-  padding: 0.4rem 1rem 0 0;
+  padding: 2rem;
 }
 
-.newUser:hover {
+.fa-user-plus {
+  font-size: 2rem;
+  color: rgb(168, 8, 8);
+}
+
+.fa-user-plus:hover {
   cursor: pointer;
 }

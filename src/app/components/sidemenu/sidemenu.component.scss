@@ -1,0 +1,62 @@
+.container {
+    background-color: rgba(4, 4, 14,0.9);
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: rgb(168, 8, 8);
+    text-align: center;
+    padding: 0.5rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin: 4rem 0 2rem 0;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    height: 100%;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    color: white;
+}
+
+i {
+    padding-right: 0.5rem;
+}
+
+.conversation {
+    margin-top: 10rem;
+}
+
+li {
+    color: rgba(white, $alpha: 0.7);
+    font-size: 1.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 10%;
+}
+
+li:hover {
+    cursor: pointer;
+    color: rgba(white, $alpha: 1.0);
+    font-weight: bold;
+}
+
+.fa-sort-down{
+    color: white;
+    font-size: 1.5rem;
+}
+
+i:hover {
+    cursor: pointer;
+}
