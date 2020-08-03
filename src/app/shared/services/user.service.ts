@@ -17,25 +17,6 @@ export class UserService {
   toUpdate = false;
   token: string;
   currentUser: User;
-  // currentUser: User =
-  //   {
-  //     id: 2,
-  //     firstname: 'Jeremy',
-  //     lastname: 'Lalait',
-  //     birthday: new Date(),
-  //     tel: '0620460443',
-  //     email: 'jlalait33700@gmail.com',
-  //     adress: {
-  //       street: 'bjbhjbjhbj',
-  //       postcode: 33700,
-  //       city: 'string'
-  //     },
-  //     status: 'superAdmin',
-  //     username: 'j.lalait',
-  //     pwd: '$argon2i$v=19$m=4096,t=3,p=1$on5LhE4QZI4DvNmtmyD2vw$aJ7WNcKXyEUSCcUhnCFI7ne3CnvAB9r+yymdD4QPZWw',
-  //     imgURL: 'https://image.shutterstock.com/image-vector/admin-stamp-watermark-scratched-style-260nw-1138728377.jpg',
-  //     note: []
-  //   };
 
   constructor(private http: HttpClient) { }
 
@@ -68,43 +49,51 @@ export class UserService {
   }
 
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL);
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.token });
+    return this.http.get<User[]>(UserService.URL, {headers});
   }
 
   getAllUsersByGroups(): Observable<UsersByGoups> {
-    return this.http.get<UsersByGoups>(UserService.URL + 'groups');
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.token });
+    return this.http.get<UsersByGoups>(UserService.URL + 'groups', {headers});
   }
 
   getUsersByGroup(grp: string): Observable<User[]> {
-    return this.http.get<User[]>(UserService.URL + 'role/' + grp );
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.token });
+    return this.http.get<User[]>(UserService.URL + 'role/' + grp, {headers} );
   }
 
   createUser(newUser) {
-    return this.http.post(UserService.URL_AUTH + 'signup', newUser);
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.token });
+    return this.http.post(UserService.URL_AUTH + 'signup', newUser, {headers});
   }
 
   updateUser(userToUpdate: User) {
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.token });
     const id = userToUpdate.id;
     delete userToUpdate.note;
-    return this.http.put(UserService.URL + id, userToUpdate);
+    return this.http.put(UserService.URL + id, userToUpdate, {headers});
   }
 
   updateUserPicture(userToUpdate: User) {
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.token });
     const id = userToUpdate.id;
-    return this.http.put(UserService.URL + 'picture/' + id, userToUpdate);
+    return this.http.put(UserService.URL + 'picture/' + id, userToUpdate, {headers});
   }
 
   updateUserPwd(password: string, newPassword: string): Observable<string> {
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.token });
     const params = {
       user: this.currentUser,
       pwd: password,
       newPwd: newPassword
     };
-    return this.http.put<string>(UserService.URL_AUTH + 'pwd', params);
+    return this.http.put<string>(UserService.URL_AUTH + 'pwd', params, {headers});
   }
 
   deleteUser(id) {
-    return this.http.delete(UserService.URL + id);
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.token });
+    return this.http.delete(UserService.URL + id, {headers});
   }
 
 }

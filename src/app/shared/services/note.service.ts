@@ -1,5 +1,5 @@
 import { UserService } from './user.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Note } from './../models/note';
 import { Injectable } from '@angular/core';
 
@@ -15,20 +15,24 @@ export class NoteService {
   constructor(private http: HttpClient, private userService: UserService) { }
 
   getUserNote(id: number) {
-    return this.http.get<Note[]>(NoteService.URL + id);
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.userService.token });
+    return this.http.get<Note[]>(NoteService.URL + id, {headers});
   }
 
   addNote(note: Note) {
-    return  this.http.post(NoteService.URL, note);
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.userService.token });
+    return  this.http.post(NoteService.URL, note, {headers});
   }
 
   updateNote(note: Note) {
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.userService.token });
     const id = note.id;
-    return this.http.put(NoteService.URL + id, note);
+    return this.http.put(NoteService.URL + id, note, {headers});
   }
 
   deleteNote(id: number) {
-    return this.http.delete(NoteService.URL + id);
+    const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.userService.token });
+    return this.http.delete(NoteService.URL + id, {headers});
   }
 }
 
