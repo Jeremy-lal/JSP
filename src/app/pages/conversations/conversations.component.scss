@@ -10,13 +10,25 @@ app-sidemenu {
     position: fixed;
 }
 
-.left {
+.rigth {
     display: flex;
     flex-direction: column;
     width: 85%;
     height: 100vh;
     padding-left: 15%;
 
+    button {
+        background-color: rgba(4, 4, 14,0.9);
+        color: rgb(168, 8, 8);
+        border: none;
+        font-size: 2rem;
+        padding: 0.5rem;
+        display: none;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
 }
 
 app-comment-form {
@@ -28,10 +40,29 @@ app-comment-form {
 }
 
 app-tchat {
-    height: 83vh;
+    height: 80vh;
 }
 
-.rigth {
-    width: 35%;
-    height: 100vh;
+.toggleSide {
+    display: block;
+    position: absolute;
+    width: 60%;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 1000px) {
+    app-sidemenu {
+        display: none;
+    }
+
+    .rigth, app-comment-form {
+        width: 100%;
+        padding: 0;
+    }
+
+    .rigth {
+        button {
+            display: block;
+        }
+    }
 }

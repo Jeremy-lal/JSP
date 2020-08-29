@@ -6,7 +6,7 @@
 }
 
 mat-sidenav {
-    width: 35%;
+    width: 45%;
 }
 
 .locate {
@@ -27,3 +27,36 @@ mat-sidenav {
     height: 79vh;
     background-color: white;
 }
+
+@media screen and (max-width: 1110px) {
+    mat-sidenav {
+        width: 55%;
+    }
+}
+
+
+@media screen and (max-width: 1110px) {
+    mat-sidenav {
+        width: 55%;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    mat-sidenav {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    mat-sidenav {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    mat-sidenav {
+        width: 85%;
+    }
+}
+  

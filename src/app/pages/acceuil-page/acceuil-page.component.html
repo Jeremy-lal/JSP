@@ -1,1 +1,140 @@
-<button (click)="goToHome()">Se connecter</button>
+<div class="container">
+
+    <div class="top">
+      <div class="logo fixed">
+        <div class="center">
+          <img src="https://www.france-elite.com/1754-thickbox_default/auttocolant-jsp.jpg" alt="logo section">
+          <h1>Jeunes Sapeurs-Pompier Paul Saldou - Mérignac</h1>
+        </div>
+      </div>
+    
+      <mat-toolbar color="warn">
+        <mat-toolbar-row>
+          <div class="burger">
+            <button mat-icon-button (click)="sidenav.toggle()" class="btnBurger">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <p>Menu</p>
+          </div>
+    
+          <div class="menuLarge">
+            <a href="#presentation" mat-list-item>Présentation</a>
+            <a href="#section" mat-list-item>La section</a>
+            <a href="#recrutement" mat-list-item> Recrutement</a>
+            <a href="#histoire" mat-list-item>Histoire</a>
+            <a href="#galerie" mat-list-item>Galerie</a>
+            <a href="#contact" mat-list-item>Contact</a>
+            <a  mat-button (click)="goToHome()"><i class="fas fa-user" title="Connexion"></i></a>
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+    
+    
+      <!-- <div style="height: 80vh;" class="fixed"> -->
+    
+      <mat-sidenav-container>
+        <mat-sidenav #sidenav>
+          <mat-nav-list>
+            <a (click)="sidenav.toggle()" mat-list-item><i class="fas fa-times"></i></a>
+            <a href="#presentation" mat-list-item>Présentation</a>
+            <a href="#section" mat-list-item>La section</a>
+            <a href="#recrutement" mat-list-item> Recrutement</a>
+            <a href="#histoire" mat-list-item>Histoire</a>
+            <a href="#galerie" mat-list-item>Galerie</a>
+            <a href="#contact" mat-list-item>Contact</a>
+            <a  mat-list-item (click)="goToHome()"><i class="fas fa-user"></i>Connexion</a>
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+    
+    
+          <div class="corps">
+    
+            <section>
+              <h2 id="presentation">Présentation</h2>
+              <p>La formation, encadrée par des sapeurs pompiers, se déroule le mercredi après-midi.</p>
+              <p>Elle est composée de cours théoriques et pratiques, de sport (en fin de journée), de rencontres sportives
+                ou
+                encore de manoeuvres.</p>
+              <p class="mgb">Cette formation se déroule sur 4 ans composé de 4 cycles: JSP1, JSP2, JSP3 et JSP4.</p>
+    
+              <p>Elle aborde différents aspect du métier de pompier:</p>
+              <ul class="mgb">
+                <li>prompt secours (secours à personne),</li>
+                <li>lutte contre les incendies (théorie et manoeuvres),</li>
+                <li>protection des bien et de l'environement,</li>
+                <li>activité sportive.</li>
+              </ul>
+    
+              <p>Au terme de ces 4 cycles, le JSP à la possibilité de passer le brevet National des Jeunes Sapeur-Pompier
+                afin
+                de devenir Sapeur-Pompier Volontaire.</p>
+    
+            </section>
+    
+            <section>
+              <h2 id="section">La Section</h2>
+              <p>La section des Jeunes Sapeurs-Pompier de Paul Saldou - Mérignac existe depuis 2005.</p>
+              <p class="mgb">Chaque mercredi après-midi (hors période de vacance scolaire), les JSP se réunissent afin
+                d'apprendre le métier de Pompier.</p>
+    
+              <p>Lors d'une apès-midi type, on peut y retrouver dans l'ordre:</p>
+              <ul class="mgb">
+                <li>rassemblement : appel et présentation du programme de la journée,</li>
+                <li>réalisation du programme (théorique et pratique),</li>
+                <li>scéance de sport,</li>
+                <li>douche,</li>
+                <li>nétoyage des locaux,</li>
+                <li>rassemblement pour demandé les ressentis ainsi que pour donner divers informations.</li>
+              </ul>
+    
+    
+            </section>
+    
+            <section>
+              <h2 id="recrutement">Recrutement</h2>
+              <p> Certaines modalités sont requises :</p>
+              <ul class="mgb">
+                <li>être âgé de 11 à 18 ans,</li>
+                <li>fournir un certificat médical d'aptitude physique,</li>
+                <li>fournir un certificat de vaccination antitétanique,</li>
+                <li>fournir une autorisation parentale ou des personnes investies de l'autorité parentale.</li>
+              </ul>
+    
+              <p>Par la suite, une séance de recrutement sera organiser. Durant cette scéance, des tests sportifs, des
+                tests
+                écrits (dictée, mathématiques) et un entretiens oral seront organisés.</p>
+            </section>
+    
+            <section>
+              <h2 id="histoire">Histoire</h2>
+            </section>
+    
+            <section>
+              <h2 id="galerie">Galerie</h2>
+            </section>
+    
+            <section>
+              <h2 id="contact">Contact</h2>
+              <div class="contact">
+                <div class="info">
+                  <p>Téléphone: 05-56-12-89-10</p>
+                  <p>Mail: jsp.merignac@gmail.com</p>
+                  <p>Adresse: 135 Avenue de l'Yser, 33700 Mérignac</p>
+                </div>
+                <div class="map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1682.138881455389!2d-0.6667807182750703!3d44.84174781267801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54d9e4fed3be9f%3A0xe05d35665f7e706d!2s135%20Avenue%20de%20l&#39;Yser%2C%2033700%20M%C3%A9rignac!5e0!3m2!1sfr!2sfr!4v1598262140396!5m2!1sfr!2sfr"
+                    width="400" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+                </div>
+              </div>
+            </section>
+    
+          </div>
+    
+    
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    

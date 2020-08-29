@@ -16,6 +16,7 @@ export class ProfilPageComponent implements OnInit {
 
   currentUser: User;
   notecurrentUser: Note[];
+  toggle = false;
 
   constructor(private userService: UserService, private noteService: NoteService, public dialog: MatDialog, private router: Router) { }
 
@@ -32,6 +33,16 @@ export class ProfilPageComponent implements OnInit {
     this.dialog.open(PictureFromComponent, {
       data: this.currentUser
     });
+  }
+
+  toggleSideMenu($event) {
+    const sideNav = document.getElementById('sideMenu');
+    if (this.toggle === false ) {
+      sideNav.classList.add('toggleSide');
+    } else {
+      sideNav.classList.remove('toggleSide');
+    }
+    this.toggle = !this.toggle;
   }
 
 }

@@ -1,6 +1,7 @@
 <div class="container">
-  <app-sidemenu></app-sidemenu>
-  <div class="leftContainer">
+  <app-sidemenu id="sideMenu" (CloseSide)="toggleSideMenu($event)"></app-sidemenu>
+  <div class="rightContainer">
+    <button (click)="toggleSideMenu()" [disabled]="toggle" class="menu">Menu</button>
     
     
     <div class="profil">

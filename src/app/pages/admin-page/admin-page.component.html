@@ -1,6 +1,8 @@
 <div class="container">
-  <app-sidemenu></app-sidemenu>
-  <div class="left" *ngIf="users">
+  <app-sidemenu (CloseSide)="toggleSideMenu($event)" id='sideMenu'></app-sidemenu>
+  <div class="right" *ngIf="users">
+
+    <button (click)="toggleSideMenu()" [disabled]="toggle" class="menu">Menu</button>
 
     <h1>Tableau de bord</h1>
     

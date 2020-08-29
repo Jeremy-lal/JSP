@@ -16,6 +16,7 @@ import { MatDialog } from '@angular/material';
 export class SidemenuComponent implements OnInit {
 
   @Output() dataForGroup = new EventEmitter<Comment[]>();
+  @Output() CloseSide = new EventEmitter<string>();
   varEnv: Environment;
   currentUser: User;
 
@@ -39,5 +40,9 @@ export class SidemenuComponent implements OnInit {
     this.commentService.getComment(where).subscribe(((data: Comment[]) => {
       this.dataForGroup.emit(data);
     }));
+  }
+
+  toggleSide() {
+    this.CloseSide.emit('close');
   }
 }

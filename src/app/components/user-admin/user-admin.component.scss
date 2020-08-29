@@ -61,3 +61,17 @@ i {
 .note {
   text-align: center;
 }
+
+@media screen and (max-width: 1400px) {
+  .bottom {
+    flex-direction: column;
+
+    .left {
+      margin-bottom: 2rem;
+    }
+
+    .right {
+     align-self: center;
+    }
+  }
+}

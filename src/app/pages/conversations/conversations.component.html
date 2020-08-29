@@ -1,6 +1,7 @@
 <div class="container">
-    <app-sidemenu (dataForGroup)="getComments($event)"></app-sidemenu>
-    <div class="left" >
+    <app-sidemenu (dataForGroup)="getComments($event)" id="sideMenu" (CloseSide)="toggleSideMenu($event)"></app-sidemenu>
+    <div class="rigth">
+        <button (click)="toggleSideMenu()" [disabled]="toggle">Menu</button>
         <app-tchat [dataToDisplay]="commentsForGroup"></app-tchat>
         <app-comment-form (dataForGroup)="getComments($event)"></app-comment-form>
     </div>

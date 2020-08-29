@@ -8,9 +8,10 @@
 app-sidemenu {
   width: 15%;
   position: fixed;
+  display: block;
 }
 
-.leftContainer {
+.rightContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,4 +134,69 @@ button {
 i, span {
   font-size: 1.5rem;
   padding-right: 0.5rem;
+}
+
+.toggleSide {
+  display: block;
+  position: absolute;
+  width: 60%;
+  z-index: 1000;
+}
+
+.menu {
+  width: 100%;
+  background-color: rgba(4, 4, 14,0.9);
+  color: rgb(168, 8, 8);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  display: none;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .details {
+    flex-direction: column;
+
+    .propos, .note {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  app-sidemenu {
+      display: none;
+  }
+
+  .rightContainer {
+      width: 100%;
+      padding: 0;
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .user {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    img {
+      padding: 2rem;
+    }
+  }
+
+  .propos {
+    li{
+      font-size: 1.5rem;
+    }
+  }
+
+
 }

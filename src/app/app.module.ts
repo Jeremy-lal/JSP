@@ -39,6 +39,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { PictureFromComponent } from './components/forms/picture-from/picture-from.component';
 import { ChangePwdComponent } from './pages/change-pwd/change-pwd.component';
 import { ResponseFormComponent } from './components/forms/response-form/response-form.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+
 
 
 @NgModule({
@@ -79,7 +82,9 @@ import { ResponseFormComponent } from './components/forms/response-form/response
     MatStepperModule,
     MatMenuModule,
     MatSelectModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule
   ],
   providers: [{ provide: MatDialogRef, useValue: {}},
               { provide: MAT_DIALOG_DATA, useValue: {} },

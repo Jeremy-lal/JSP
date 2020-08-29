@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ConversationsComponent implements OnInit {
 
   commentsForGroup: Comment[];
+  toggle = false;
 
   constructor(public commentService: CommentService) { }
 
@@ -21,6 +22,16 @@ export class ConversationsComponent implements OnInit {
 
   getComments(data) {
     this.commentsForGroup = data;
+  }
+
+  toggleSideMenu($event) {
+    const sideNav = document.getElementById('sideMenu');
+    if (this.toggle === false ) {
+      sideNav.classList.add('toggleSide');
+    } else {
+      sideNav.classList.remove('toggleSide');
+    }
+    this.toggle = !this.toggle;
   }
 
 }

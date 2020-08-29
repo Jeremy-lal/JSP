@@ -1,0 +1,196 @@
+.top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    background-color: rgba(4, 4, 14,0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .center {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      align-self: center;
+      width: 80%;
+  
+      img {
+        width: 100px;
+        padding: 0.5rem;
+      }
+    }
+  }
+  
+  h1 {
+    color: white;
+    font-size: 2rem;
+  }
+  
+  mat-sidenav-content {
+    background-color: white;
+    color: black;
+  }
+  
+  mat-icon{
+    font-size: 2rem;
+  }
+  
+  .burger {
+    display: none;
+  }
+
+  .btnBurger {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: white;
+  }
+  
+  .menuLarge {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  
+    a {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: white;
+      text-decoration: none;
+    }
+  
+    a:hover {
+      border-bottom: 2px solid white;
+      cursor: pointer;
+    }
+  
+    i {
+      color: white;
+      font-size: 2rem;
+    }
+  
+  }
+  
+  mat-sidenav {
+    width: 40%;
+  }
+  
+  mat-nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+  
+    i {
+      margin-right: 0.6rem;
+    }
+  }
+  
+  .corps {
+    display: flex;
+    flex-direction: column;
+  
+    section {
+      width: 70%;
+      align-self: center;
+      margin: 3.5rem 0 1rem 0;
+  
+      h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+  
+      .mgb {
+        margin-bottom: 2rem;
+      }
+  
+      p, li {
+        font-size: 1.2rem;
+        font-weight: 100;
+      }
+
+      ul {
+        margin-left: 3rem;
+        padding-top: 0.5rem;
+      }
+    }
+  }
+  
+  .contact {
+    display: flex;
+    justify-content: space-around;
+  
+    .info {
+      align-self: center;
+    }
+  }
+  
+  mat-sidenav {
+    display: none;
+  }
+  
+  
+  @media screen and (max-width: 930px) {
+    .burger {
+      display: block;
+      width: 100%;
+      display: flex;
+  
+      p {
+        margin-left: 2rem;
+      }
+    }
+  
+    mat-sidenav {
+      display: block;
+      position: fixed;
+      top: 180px;
+    }
+  
+    .menuLarge {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    mat-sidenav {
+      display: block;
+      top: 170px;
+    }
+  }
+  
+  @media screen and (max-width: 492px) {
+    h1 {
+      font-size: 1.2rem;
+    }
+  
+    mat-sidenav {
+      display: block;
+      top: 170px;
+    }
+  }
+  
+  $sticky-breakpoint: 32em;
+  [id] {
+    @media (min-height: $sticky-breakpoint) {
+      scroll-margin-top: 200px; // 1
+    }
+  }
+  
+  #presentation {
+    margin-top: 185px;
+  }
+  
+  // .navigation {
+  
+  //   @media (min-height: $sticky-breakpoint) {
+  //     position: sticky;
+  //     top: 0;
+  //   }
+  // }

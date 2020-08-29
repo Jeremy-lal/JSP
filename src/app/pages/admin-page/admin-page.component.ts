@@ -15,6 +15,7 @@ export class AdminPageComponent implements OnInit {
   constructor(private userService: UserService, public dialog: MatDialog, private router: Router) { }
 
   users: UsersByGoups;
+  toggle = false;
 
   ngOnInit() {
     this.getUsersByGroup();
@@ -36,5 +37,15 @@ export class AdminPageComponent implements OnInit {
 
   reloadData(bool: boolean) {
     this.getUsersByGroup();
+  }
+
+  toggleSideMenu($event) {
+    const sideNav = document.getElementById('sideMenu');
+    if (this.toggle === false ) {
+      sideNav.classList.add('toggleSide');
+    } else {
+      sideNav.classList.remove('toggleSide');
+    }
+    this.toggle = !this.toggle;
   }
 }
