@@ -51,7 +51,7 @@ table {
   background-color: transparent;
   border: 1px solid white;
   text-align: center;
-  min-width: 100px;
+  min-width: 200px;
 }
 
 i {
@@ -73,5 +73,31 @@ i {
     .right {
      align-self: center;
     }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  p { 
+    font-size: 1rem;
+  }
+
+  .titretab td {
+    font-size: 1.2rem;
+    min-width: 130px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  p { 
+    font-size: 0.85rem;
+  }
+
+  td {
+    font-size: 0.85rem;
+  }
+
+  .titretab td {
+    font-size: 1rem;
+    min-width: 100px;
   }
 }

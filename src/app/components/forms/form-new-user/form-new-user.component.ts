@@ -51,9 +51,7 @@ export class FormNewUserComponent implements OnInit {
   sendUser(): void {
     const userToPost: User = this.userForm.value;
     userToPost.imgURL = 'default.png';
-    this.userService.createUser(userToPost).subscribe((eventPosted) => {
-      console.log(eventPosted);
-    });
+    this.userService.createUser(userToPost).subscribe();
     this.dialogRef.close();
   }
 
@@ -61,9 +59,7 @@ export class FormNewUserComponent implements OnInit {
     const userToUpdate: User = this.userForm.value;
     userToUpdate.id = this.userToUpdate.id;
 
-    this.userService.updateUser(userToUpdate).subscribe((eventPosted) => {
-      console.log(eventPosted);
-    });
+    this.userService.updateUser(userToUpdate).subscribe();
     this.dialogRef.close();
     this.userService.toUpdate = false;
   }

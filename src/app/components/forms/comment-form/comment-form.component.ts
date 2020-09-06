@@ -63,9 +63,7 @@ export class CommentFormComponent implements OnInit {
   updateComment() {
     const commentToUpdate: Comment = this.commentForm.value;
     commentToUpdate.id = this.commentForAction.id;
-    this.commentService.updateComment(commentToUpdate).subscribe((eventPosted) => {
-      console.log(eventPosted);
-    });
+    this.commentService.updateComment(commentToUpdate).subscribe();
     this.dialogRef.close();
     this.userService.toUpdate = false;
   }

@@ -39,7 +39,7 @@ export class PictureFromComponent implements OnInit {
     );
     this.pers.imgURL = name;
     this.dialogRef.close();
-    this.userService.updateUserPicture(this.pers).subscribe();
+    this.userService.updateUserPicture(this.pers).subscribe((data) => window.location.reload());
   }
 
   sansAccent(stringToconvert: string) {

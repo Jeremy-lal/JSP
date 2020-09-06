@@ -5,11 +5,10 @@
 .comment {
     display: flex;
     flex-direction: row;
-    // width: 97%;
     padding: 0.5rem;
 }
 
-.container:hover {
+.container:hover, .container:active {
     .action {
         display: block;
         justify-self: flex-end;
@@ -45,7 +44,6 @@ img {
 
 .action {
     padding-left: 10%;
-    justify-self: flex-end;
     display: none; 
     justify-self: flex-end;
 }
@@ -81,4 +79,31 @@ i:hover {
 }
 .response:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+    .message p{
+        font-size: 1.2rem;
+        padding: 0.2rem;
+    }
+
+    .name {
+        font-size: 1.3rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .message p{
+        font-size: 1rem;
+    }
+
+    .name {
+        font-size: 1.1rem;
+        padding-right: 0.3rem;
+    }
+
+    .action {
+        padding-left: 5%;
+    }
 }

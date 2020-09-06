@@ -28,6 +28,12 @@
     color: white;
     font-size: 2rem;
   }
+
+  img {
+    margin-top: 2rem;
+    width: 80%;
+    align-self: center;
+  }
   
   mat-sidenav-content {
     background-color: white;
@@ -100,6 +106,9 @@
         text-align: center;
         font-size: 2rem;
         margin-bottom: 3rem;
+        padding: 1rem;
+        background-color: rgba(4, 4, 14,0.7);
+        color: white;
       }
   
       .mgb {
@@ -129,6 +138,11 @@
   
   mat-sidenav {
     display: none;
+  }
+
+  .footer {
+    text-align: center;
+    margin: 2rem;
   }
   
   
@@ -179,13 +193,10 @@
   $sticky-breakpoint: 32em;
   [id] {
     @media (min-height: $sticky-breakpoint) {
-      scroll-margin-top: 200px; // 1
+      scroll-margin-top: 210px; // 1
     }
   }
   
-  #presentation {
-    margin-top: 185px;
-  }
   
   // .navigation {
   

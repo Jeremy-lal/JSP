@@ -28,9 +28,7 @@ export class FormNewNoteComponent implements OnInit {
   sendNote(): void {
     const noteToPost: Note = this.noteForm.value;
     noteToPost.user_id = this.userId;
-    this.noteService.addNote(noteToPost).subscribe((eventPosted) => {
-      console.log(eventPosted);
-    });
+    this.noteService.addNote(noteToPost).subscribe();
     this.dialogRef.close();
   }
 }

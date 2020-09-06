@@ -83,12 +83,6 @@ label {
   align-items: center;
 }
 
-td {
-  font-size: 1rem;
-  padding: 0.5rem;
-  margin-right: 0.5rem;
-}
-
 table {
   border-collapse: collapse;
 }
@@ -103,6 +97,8 @@ td {
   border: 1px solid black;
   text-align: center;
   min-width: 300px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .settings {
@@ -157,12 +153,13 @@ i, span {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1500px) {
   .details {
     flex-direction: column;
 
     .propos, .note {
-      width: 100%;
+      width: 80%;
+      padding-left: 7%;
     }
   }
 }
@@ -192,11 +189,32 @@ i, span {
     }
   }
 
+  td {
+    font-size: 1.2rem;
+    min-width: 250px;
+  }
+
   .propos {
     li{
       font-size: 1.5rem;
     }
   }
+}
 
+@media screen and (max-width: 600px) {
+
+    td {
+      font-size: 1.2rem;
+      min-width: 200px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    td {
+      font-size: 1rem;
+      min-width: 160px;
+    }
 
 }

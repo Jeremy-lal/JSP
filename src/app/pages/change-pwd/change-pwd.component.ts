@@ -12,6 +12,8 @@ export class ChangePwdComponent implements OnInit {
 
   newPwd: FormGroup;
   message = '';
+  toggle = false;
+
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
@@ -34,4 +36,13 @@ export class ChangePwdComponent implements OnInit {
     }
   }
 
+  toggleSideMenu($event) {
+    const sideNav = document.getElementById('sideMenu');
+    if (this.toggle === false ) {
+      sideNav.classList.add('toggleSide');
+    } else {
+      sideNav.classList.remove('toggleSide');
+    }
+    this.toggle = !this.toggle;
+  }
 }

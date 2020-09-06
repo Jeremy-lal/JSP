@@ -34,13 +34,11 @@ mat-sidenav {
     }
 }
 
-
-@media screen and (max-width: 1110px) {
-    mat-sidenav {
-        width: 55%;
+@media screen and (max-width: 1000px) {
+    .locate {
+        width: 1000%;
     }
 }
-
 
 @media screen and (max-width: 900px) {
     mat-sidenav {
