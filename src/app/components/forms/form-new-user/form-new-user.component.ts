@@ -14,6 +14,7 @@ export class FormNewUserComponent implements OnInit {
   isLinear = false;
   currentUser: User;
   user = new User();
+  date: Date;
 
   userForm = this.fb.group({
     firstname: ['', Validators.required],
@@ -40,11 +41,14 @@ export class FormNewUserComponent implements OnInit {
       this.userForm.controls.lastname.setValue(this.userToUpdate.lastname);
       this.userForm.controls.username.setValue(this.userToUpdate.username);
       this.userForm.controls.adress.setValue(this.userToUpdate.adress);
-      this.userForm.controls.birthday.setValue(this.userToUpdate.birthday);
+      this.date = new Date(this.userToUpdate.birthday);
+      this.userForm.controls.birthday.setValue(new Date(this.userToUpdate.birthday));
       this.userForm.controls.tel.setValue(this.userToUpdate.tel);
       this.userForm.controls.email.setValue(this.userToUpdate.email);
       this.userForm.controls.pwd.setValue(this.userToUpdate.pwd);
       this.userForm.controls.status.setValue(this.userToUpdate.status);
+      console.log(this.date);
+
     }
   }
 

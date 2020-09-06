@@ -34,9 +34,9 @@ export class MessageComponent implements OnInit {
   }
 
   displayResponse() {
-      this.commentService.commentIdForResponse = this.message.id;
-      this.showResponse.emit(true);
-      this.giveMessage.emit(this.message);
+    this.commentService.commentIdForResponse = this.message.id;
+    this.showResponse.emit(true);
+    this.giveMessage.emit(this.message);
   }
 
   updateComment(comment: Comment) {
@@ -51,17 +51,16 @@ export class MessageComponent implements OnInit {
   }
 
   deleteComment(comment: Comment) {
-      this.commentService.deleteComment(comment.id).subscribe(() => {
-        this.reload();
-      });
+    this.commentService.deleteComment(comment.id).subscribe(() => {
+    });
+    setTimeout(() => {
+      this.reload();
+    }, 20);
   }
 
   reload() {
-    if (this.mode === 'basic') {
       this.reloadComment();
-      } else {
-        this.reloadResponse();
-      }
+      this.reloadResponse();
   }
 
   reloadComment() {

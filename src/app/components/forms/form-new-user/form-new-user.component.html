@@ -21,7 +21,7 @@
 
       <div class="section-input">
         <div class="login-form">
-          <input type="date" name="birthday" formControlName="birthday" required>
+          <input type="date" name="birthday" [ngModel]="date | date:'yyyy-MM-dd'" formControlName="birthday" required>
         </div>
       </div>
 
@@ -78,7 +78,7 @@
         </div>
       </div>
 
-      <div class="section-input">
+      <div class="section-input" *ngIf="userService.toUpdate === false">
         <div class="login-form">
           <input type="text" name="pwd" formControlName="pwd" required>
           <label class="label-name"><span class="content-name">Mot de passe</span></label>

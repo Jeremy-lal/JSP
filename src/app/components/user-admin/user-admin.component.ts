@@ -29,6 +29,9 @@ export class UserAdminComponent implements OnInit {
       width: '550px',
       data: userId
     });
+    dialogRef.afterClosed().subscribe(result => {
+      this.reloadData.emit(true);
+    });
   }
 
 
