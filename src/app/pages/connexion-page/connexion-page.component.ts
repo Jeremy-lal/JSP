@@ -19,6 +19,7 @@ export class ConnexionPageComponent implements OnInit {
 ];
 
   indexPicture: number;
+  badPWD = false;
 
   constructor(private route: Router, private userService: UserService, private router: Router,
               private fb: FormBuilder) { }
@@ -33,11 +34,18 @@ export class ConnexionPageComponent implements OnInit {
   }
 
   login() {
-    this.userService.connexion(this.signInForm.value).subscribe(() => {
-      if (this.userService.currentUser !== undefined) {
-        this.router.navigateByUrl('/conversation');
-      }
-    });
+    this.userService.connexion(this.signInForm.value).subscribe(
+      data => {},
+      err => {
+        this.badPWD = true;
+        this.signInForm.controls.username.setValue('');
+        this.signInForm.controls.pwd.setValue('');
+      },
+      () => {
+        if (this.userService.currentUser !== undefined) {
+          this.router.navigateByUrl('/board');
+        }
+      });
   }
 
 

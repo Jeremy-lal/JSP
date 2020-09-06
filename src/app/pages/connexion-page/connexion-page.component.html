@@ -20,6 +20,7 @@
         </div>
         <div class="login-form">
           <button type="button" class="form-btn" (click)='login()'>Connexion</button>
+          <p class="badAuth" [hidden]="!badPWD">Erreur de l'identifiant ou du mot de passe</p>
         </div>
       </div>
     </form>
